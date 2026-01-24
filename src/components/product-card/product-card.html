@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card Component</title>
+    <link rel="stylesheet" href="/tailwind_theme/tailwind.css">
+    <link rel="stylesheet" href="product-card.css">
+</head>
+<body class="bg-gray-50 p-8">
+    <!-- Product Card Component -->
+    <article 
+        data-component="product-card" 
+        data-product-id="1"
+        data-price="13.99"
+        data-title="60 Effective Zit Patches in Four Sizes"
+        data-description="BLISSED SKIN Invisible Acne Patches with Tea Tree Oil"
+        data-image="/assets/products/Product-acne-patch-60-Front.png"
+        data-sizes="8mm, 10mm, 12mm, 14mm"
+        data-stock="in-stock"
+        class="product-card group relative flex flex-col bg-white rounded-3xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer"
+        role="article"
+        aria-labelledby="product-title-1">
+        
+        <!-- Badge (Out of Stock / New / Sale) -->
+        <div class="js-badge absolute top-4 right-4 hidden bg-blissed-gray text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-10">
+            Out of Stock
+        </div>
+
+        <!-- Image Container -->
+        <div class="js-image-container relative w-full h-64 flex items-center justify-center p-6 bg-gradient-to-br from-[#F3E8FF] to-white overflow-hidden">
+            <img 
+                src="/assets/products/Product-acne-patch-60-Front.png" 
+                alt="Product Image" 
+                class="js-product-image w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                loading="lazy">
+        </div>
+
+        <!-- Content -->
+        <div class="flex flex-col gap-4 p-6">
+            <!-- Title -->
+            <h3 id="product-title-1" class="js-product-title font-playfair text-xl font-semibold text-blissed-gray leading-tight">
+                60 Effective Zit Patches in Four Sizes
+            </h3>
+
+            <!-- Description -->
+            <p class="js-product-description text-sm text-gray-600 leading-relaxed">
+                BLISSED SKIN Invisible Acne Patches with Tea Tree Oil
+            </p>
+
+            <!-- Sizes (Optional) -->
+            <div class="js-sizes-container flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-gray-500 font-medium">Sizes:</span>
+                <div class="js-sizes flex gap-2">
+                    <span class="text-xs bg-blissed-olive/10 text-blissed-gray px-2 py-1 rounded">8mm</span>
+                    <span class="text-xs bg-blissed-olive/10 text-blissed-gray px-2 py-1 rounded">10mm</span>
+                    <span class="text-xs bg-blissed-olive/10 text-blissed-gray px-2 py-1 rounded">12mm</span>
+                    <span class="text-xs bg-blissed-olive/10 text-blissed-gray px-2 py-1 rounded">14mm</span>
+                </div>
+            </div>
+
+            <!-- Price & CTA -->
+            <div class="flex items-center justify-between gap-4 mt-2">
+                <!-- Price -->
+                <span class="js-product-price text-2xl font-bold text-blissed-gray">
+                    $13.99
+                </span>
+
+                <!-- Add to Cart Button -->
+                <button 
+                    type="button"
+                    class="js-add-to-cart inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#155dfc] to-[#9810fa] text-white text-sm font-bold shadow-md transition-all hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blissed-gray/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Add to cart">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    <span class="js-button-text">Add to Cart</span>
+                </button>
+            </div>
+        </div>
+    </article>
+</body>
+</html>

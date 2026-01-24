@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Blissed Skin - Tips y Consejos para el Cuidado de la Piel</title>
+    <meta name="description" content="Descubre artículos, tips y consejos de expertos para el cuidado de tu piel. Aprende sobre rutinas, ingredientes naturales y soluciones efectivas para el acné.">
+    <meta name="keywords" content="blog skincare, cuidado de piel, consejos acné, rutinas faciales, ingredientes naturales">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blissedskin.com/blog/">
+    <meta property="og:title" content="Blog Blissed Skin - Tips de Skincare">
+    <meta property="og:description" content="Artículos y consejos de expertos para el cuidado de tu piel">
+    <meta property="og:image" content="https://blissedskin.com/assets/blog-cover.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://blissedskin.com/blog/">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/tailwind_theme/tailwind.css">
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/components/main-header/main-header.css">
+    <link rel="stylesheet" href="/src/components/main-footer/main-footer.css">
+    <link rel="stylesheet" href="/blog/components/blog-card/blog-card.css">
+</head>
+<body class="flex flex-col min-h-screen bg-white font-sans">
+    
+    <!-- HEADER -->
+    <header class="w-full bg-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-8 py-4 shadow-sm font-sans main-header sticky top-0 z-50" aria-label="Main header" data-component="main-header">
+        <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16">
+            <a href="/index.html">
+                <img src="/assets/logo.png" alt="Blissed Skin Logo" class="max-w-full max-h-full object-contain">
+            </a>
+        </div>
+        
+        <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0" aria-label="Main navigation">
+            <a href="/index.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Home</a>
+            <a href="/sections/PageAllProducts.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Products</a>
+            <a href="/blog/index.html" class="text-blissed-olive font-semibold text-base border-b-2 border-blissed-olive whitespace-nowrap">Blog</a>
+            <a href="/sections/HowToUsed.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">How To Used</a>
+            <a href="/index.html#reviews" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Reviews</a>
+        </nav>
+        
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex items-center bg-white border border-blissed-olive rounded-lg px-3 py-1.5 w-48 hover:border-[#8a9b6d] transition-colors">
+                <img src="/assets/search-icon.svg" alt="Search" class="w-4 h-4 mr-2 text-blissed-gray">
+                <input type="text" placeholder="Search" class="bg-transparent outline-none text-xs w-full text-blissed-gray placeholder-gray-400">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        
+        <!-- HERO SECTION -->
+        <section class="bg-gradient-to-r from-[#a63d97] to-[#d39ecb] py-20 px-6">
+            <div class="container mx-auto max-w-7xl text-center text-white">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold mb-6">
+                    Blissed Skin Blog
+                </h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                    Descubre tips, rutinas y secretos de expertos para el cuidado de tu piel. 
+                    Tu guía completa para una piel radiante y saludable.
+                </p>
+            </div>
+        </section>
+
+        <!-- CATEGORIES SECTION -->
+        <section class="py-12 px-6 bg-gray-50">
+            <div class="container mx-auto max-w-7xl">
+                <h2 class="text-center text-3xl font-playfair font-bold text-blissed-text-dark mb-8">
+                    Explora por Categoría
+                </h2>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <!-- Category 1 -->
+                    <a href="/blog/categories/skincare-tips.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                        <div class="text-5xl mb-4">✨</div>
+                        <h3 class="text-2xl font-semibold text-blissed-gray mb-3 group-hover:text-blissed-olive transition-colors">
+                            Skincare Tips
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Consejos prácticos para el cuidado diario de tu piel
+                        </p>
+                        <span class="text-blissed-olive font-semibold flex items-center gap-2">
+                            Ver artículos
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </a>
+
+                    <!-- Category 2 -->
+                    <a href="/blog/categories/ingredientes.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                        <div class="text-5xl mb-4">🌿</div>
+                        <h3 class="text-2xl font-semibold text-blissed-gray mb-3 group-hover:text-blissed-olive transition-colors">
+                            Ingredientes
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Descubre los beneficios de ingredientes naturales
+                        </p>
+                        <span class="text-blissed-olive font-semibold flex items-center gap-2">
+                            Ver artículos
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </a>
+
+                    <!-- Category 3 -->
+                    <a href="/blog/categories/rutinas.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                        <div class="text-5xl mb-4">💆</div>
+                        <h3 class="text-2xl font-semibold text-blissed-gray mb-3 group-hover:text-blissed-olive transition-colors">
+                            Rutinas
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Rutinas de skincare adaptadas a tu tipo de piel
+                        </p>
+                        <span class="text-blissed-olive font-semibold flex items-center gap-2">
+                            Ver artículos
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- LATEST POSTS SECTION -->
+        <section class="py-20 px-6">
+            <div class="container mx-auto max-w-7xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-playfair font-bold text-blissed-text-dark mb-4">
+                        Últimos Artículos
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                        Mantente al día con nuestros consejos más recientes y tendencias en el cuidado de la piel
+                    </p>
+                </div>
+
+                <!-- Blog Cards Grid -->
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    
+                    <!-- Blog Card 1 - Example -->
+                    <article 
+                        data-component="blog-card" 
+                        data-post-id="beneficios-pimple-patches"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+                        
+                        <div class="blog-card__image">
+                            <img 
+                                src="/assets/blog/thumbnails/beneficios-patches-thumb.jpg" 
+                                alt="5 Beneficios de los Pimple Patches"
+                                loading="lazy">
+                        </div>
+                        
+                        <div class="p-6">
+                            <span class="blog-card__category bg-blissed-lavender/20 text-blissed-gray">
+                                Skincare Tips
+                            </span>
+                            
+                            <h3 class="blog-card__title mt-3 text-xl font-playfair font-bold">
+                                <a href="/blog/posts/2026/01/beneficios-pimple-patches.html">
+                                    5 Beneficios de los Pimple Patches que Debes Conocer
+                                </a>
+                            </h3>
+                            
+                            <p class="blog-card__excerpt mt-3 text-gray-600 text-sm">
+                                Descubre por qué los parches para acné se han convertido en el producto favorito para el cuidado de la piel y cómo pueden transformar tu rutina.
+                            </p>
+                            
+                            <div class="blog-card__meta mt-4 flex items-center gap-4">
+                                <time datetime="2026-01-15">15 Ene 2026</time>
+                                <span>•</span>
+                                <span>5 min lectura</span>
+                            </div>
+                            
+                            <a href="/blog/posts/2026/01/beneficios-pimple-patches.html" class="blog-card__read-more mt-4 inline-flex">
+                                Leer más
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder Cards (to be filled with actual content) -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden group opacity-50">
+                        <div class="aspect-video bg-gradient-to-br from-[#EEF9E3] to-[#E1E4DE] flex items-center justify-center">
+                            <span class="text-gray-400 text-sm">Próximamente</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="inline-block text-xs font-semibold bg-gray-100 text-gray-500 px-3 py-1 rounded-full">
+                                Categoría
+                            </span>
+                            <h3 class="mt-3 text-xl font-playfair font-bold text-gray-400">
+                                Nuevo artículo próximamente
+                            </h3>
+                            <p class="mt-3 text-gray-400 text-sm">
+                                Estamos preparando más contenido increíble para ti...
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden group opacity-50">
+                        <div class="aspect-video bg-gradient-to-br from-[#EEF9E3] to-[#E1E4DE] flex items-center justify-center">
+                            <span class="text-gray-400 text-sm">Próximamente</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="inline-block text-xs font-semibold bg-gray-100 text-gray-500 px-3 py-1 rounded-full">
+                                Categoría
+                            </span>
+                            <h3 class="mt-3 text-xl font-playfair font-bold text-gray-400">
+                                Nuevo artículo próximamente
+                            </h3>
+                            <p class="mt-3 text-gray-400 text-sm">
+                                Estamos preparando más contenido increíble para ti...
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="py-20 px-6 bg-gradient-to-r from-[#EEF9E3] to-[#E1E4DE]">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-blissed-text-dark mb-6">
+                    ¿Lista para transformar tu piel?
+                </h2>
+                <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                    Descubre nuestra línea de productos diseñados con ingredientes naturales 
+                    para el cuidado efectivo de tu piel
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/sections/PageAllProducts.html" class="inline-block px-8 py-4 bg-gradient-to-r from-[#155dfc] to-[#9810fa] text-white font-bold rounded-full hover:opacity-90 hover:scale-105 transition-all shadow-lg">
+                        Ver Productos
+                    </a>
+                    <a href="/index.html#how-to-use" class="inline-block px-8 py-4 bg-white text-blissed-gray font-bold rounded-full hover:bg-gray-100 hover:scale-105 transition-all shadow-lg">
+                        Cómo Usar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] py-16 px-6 text-white font-sans main-footer" data-component="main-footer">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="w-32">
+                <img src="/assets/logo.png" alt="Blissed Skin" class="w-full brightness-0 invert filter">
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#" class="hover:text-[#9aad7a] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#9aad7a] transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-[#9aad7a] transition-colors">Return & Exchanges</a>
+                <a href="#" class="hover:text-[#9aad7a] transition-colors">Legal</a>
+            </div>
+            <div class="text-xs opacity-60">
+                © 2025 BlissedSkin, Powered Shopify
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/assets/js/components-init.js"></script>
+    <script src="/src/components/main-header/main-header.js"></script>
+    <script src="/src/components/main-footer/main-footer.js"></script>
+    <script src="/blog/components/blog-card/blog-card.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": "beneficios-pimple-patches",
+      "title": "5 Beneficios de los Pimple Patches que Debes Conocer",
+      "slug": "beneficios-pimple-patches",
+      "excerpt": "Descubre por qué los parches para acné se han convertido en el producto favorito para el cuidado de la piel...",
+      "author": "Blissed Skin",
+      "date": "2026-01-15",
+      "category": "skincare-tips",
+      "tags": ["pimple patches", "acné", "cuidado facial"],
+      "featured_image": "/assets/blog/featured/beneficios-patches.jpg",
+      "thumbnail": "/assets/blog/thumbnails/beneficios-patches-thumb.jpg",
+      "read_time": "5 min",
+      "url": "/blog/posts/2026/01/beneficios-pimple-patches.html",
+      "schema_type": "BlogPosting"
+    }
+  ],
+  "categories": {
+    "skincare-tips": {
+      "name": "Skincare Tips",
+      "slug": "skincare-tips",
+      "description": "Consejos y trucos para el cuidado de tu piel",
+      "color": "#9FB686"
+    },
+    "ingredientes": {
+      "name": "Ingredientes",
+      "slug": "ingredientes",
+      "description": "Todo sobre ingredientes naturales y sus beneficios",
+      "color": "#D1A3D9"
+    },
+    "rutinas": {
+      "name": "Rutinas",
+      "slug": "rutinas",
+      "description": "Rutinas de cuidado facial para cada tipo de piel",
+      "color": "#a63d97"
+    }
+  }
+}

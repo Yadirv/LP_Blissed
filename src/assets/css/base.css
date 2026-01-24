@@ -1,0 +1,22 @@
+/* base.css */
+:root {
+    --color-primary: #000;
+    --color-secondary: #fff;
+    --spacing-base: 1rem;
+}
+
+/* Reset básico */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+/* Utilidades de estado */
+.is-hidden { display: none !important; }
+.is-active { opacity: 1; visibility: visible; }

@@ -1,0 +1,93 @@
+/* Blog Post Component Styles */
+/* Scope: [data-component="blog-post"] */
+
+[data-component="blog-post"] {
+  /* Base styles handled by Tailwind */
+}
+
+/* Prose Styling Overrides for Blissed Skin Brand */
+[data-component="blog-post"] .prose {
+  max-width: none;
+  color: #3C3C3C;
+}
+
+[data-component="blog-post"] .prose h2 {
+  font-family: 'Playfair Display', serif;
+  color: #2D2D2D;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+[data-component="blog-post"] .prose h3 {
+  font-family: 'Playfair Display', serif;
+  color: #2D2D2D;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+[data-component="blog-post"] .prose p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #4A4A4A;
+}
+
+[data-component="blog-post"] .prose a {
+  color: #9FB686;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+[data-component="blog-post"] .prose a:hover {
+  color: #8a9b6d;
+}
+
+[data-component="blog-post"] .prose strong {
+  color: #3C3C3C;
+  font-weight: 600;
+}
+
+[data-component="blog-post"] .prose ul,
+[data-component="blog-post"] .prose ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+[data-component="blog-post"] .prose blockquote {
+  border-left: 4px solid #9FB686;
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: #4A4A4A;
+  background: linear-gradient(to right, #EEF9E3, #E1E4DE);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+
+/* Image Captions */
+[data-component="blog-post"] figcaption {
+  font-size: 0.875rem;
+  color: #6B7280;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Responsive Images */
+[data-component="blog-post"] img {
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Line Clamp Utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth Scroll for Anchor Links */
+html {
+  scroll-behavior: smooth;
+}

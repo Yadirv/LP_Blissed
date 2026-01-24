@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "id": "skincare-tips",
+      "name": "Skincare Tips",
+      "slug": "skincare-tips",
+      "description": "Consejos prácticos para el cuidado diario de tu piel",
+      "color": "#9FB686",
+      "icon": "✨"
+    },
+    {
+      "id": "ingredientes",
+      "name": "Ingredientes",
+      "slug": "ingredientes",
+      "description": "Descubre los beneficios de ingredientes naturales",
+      "color": "#D1A3D9",
+      "icon": "🌿"
+    },
+    {
+      "id": "rutinas",
+      "name": "Rutinas",
+      "slug": "rutinas",
+      "description": "Rutinas de skincare adaptadas a tu tipo de piel",
+      "color": "#a63d97",
+      "icon": "💆"
+    }
+  ]
+}

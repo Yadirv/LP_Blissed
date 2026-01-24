@@ -1,0 +1,33 @@
+/* main-header.css */
+
+/* Estado Sticky */
+.main-header {
+    transition: all 0.3s ease-in-out;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-header.is-sticky {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Estado Activo en Links */
+.main-header nav a.is-active {
+    color: #16a34a; /* green-600 */
+    position: relative;
+}
+
+.main-header nav a.is-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
