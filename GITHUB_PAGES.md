@@ -224,7 +224,46 @@ npm run build
 - ✅ Revisa la consola del navegador para errores 404
 - ✅ Verifica que GitHub Pages está activado en Settings → Pages
 
-**Los estilos no se aplican**
+**Los estilos no se aplican (páginas en subcarpetas)**
+**Problema común:** Archivos en `sections/`, `components/`, `blog/` no cargan CSS
+
+**Causa:** Rutas absolutas (`/assets/logo.png`) no funcionan en GitHub Pages con subdirectorios
+
+**Solución:**
+1. Cambiar de rutas absolutas a rutas relativas:
+   ```html
+   <!-- ❌ NO funciona en GitHub Pages -->
+   <link href="/tailwind_theme/tailwind.css" rel="stylesheet">
+   <img src="/assets/logo.png" alt="Logo">
+   
+   <!-- ✅ SÍ funciona en GitHub Pages -->
+   <link href="../tailwind_theme/tailwind.css" rel="stylesheet">
+   <img src="../assets/logo.png" alt="Logo">
+   ```
+
+2. Regla de rutas relativas según profundidad:
+   - Archivo en raíz (`index.html`): `assets/logo.png`
+   - Archivo 1 nivel (`sections/Page.html`): `../assets/logo.png`
+   - Archivo 2 niveles (`blog/posts/post.html`): `../../assets/logo.png`
+
+3. Script PowerShell para corregir automáticamente:
+   ```powershell
+   # Corregir todos los archivos HTML en carpetas
+   $files = Get-ChildItem -Path . -Recurse -Include "*.html" -Exclude "index.html"
+   foreach ($file in $files) {
+       $content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
+       $depth = ($file.FullName -split '\\').Count - (Get-Location).Path.Split('\').Count - 1
+       $prefix = if ($depth -eq 1) { "../" } else { "../../" }
+       
+       $content = $content -replace 'href="/tailwind_theme/', "href=`"$($prefix)tailwind_theme/"
+       $content = $content -replace 'src="/assets/', "src=`"$($prefix)assets/"
+       $content = $content -replace 'href="/assets/', "href=`"$($prefix)assets/"
+       
+       Set-Content -Path $file.FullName -Value $content -Encoding UTF8 -NoNewline
+   }
+   ```
+
+**Los estilos no se aplican (otras causas)**
 - ✅ Ejecuta `npm run build` para regenerar el CSS
 - ✅ Verifica que `tailwind.config.js` esté correctamente configurado
 - ✅ Confirma que los archivos CSS están incluidos en el commit
