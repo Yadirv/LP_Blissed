@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -18,33 +18,33 @@
     <link rel="canonical" href="https://blissedskin.com/blog/">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/tailwind_theme/tailwind.css">
-    <link rel="stylesheet" href="/src/assets/css/base.css">
-    <link rel="stylesheet" href="/src/components/main-header/main-header.css">
-    <link rel="stylesheet" href="/src/components/main-footer/main-footer.css">
-    <link rel="stylesheet" href="/blog/components/blog-card/blog-card.css">
+    <link rel="stylesheet" href="../tailwind_theme/tailwind.css">
+    <link rel="stylesheet" href="../src/assets/css/base.css">
+    <link rel="stylesheet" href="../src/components/main-header/main-header.css">
+    <link rel="stylesheet" href="../src/components/main-footer/main-footer.css">
+    <link rel="stylesheet" href="components/blog-card/blog-card.css">
 </head>
 <body class="flex flex-col min-h-screen bg-white font-sans">
     
     <!-- HEADER -->
     <header class="w-full bg-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-8 py-4 shadow-sm font-sans main-header sticky top-0 z-50" aria-label="Main header" data-component="main-header">
         <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16">
-            <a href="/index.html">
-                <img src="/assets/logo.png" alt="Blissed Skin Logo" class="max-w-full max-h-full object-contain">
+            <a href="../index.html">
+                <img src="../assets/logo.png" alt="Blissed Skin Logo" class="max-w-full max-h-full object-contain">
             </a>
         </div>
         
         <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0" aria-label="Main navigation">
-            <a href="/index.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Home</a>
-            <a href="/sections/PageAllProducts.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Products</a>
-            <a href="/blog/index.html" class="text-blissed-olive font-semibold text-base border-b-2 border-blissed-olive whitespace-nowrap">Blog</a>
-            <a href="/sections/HowToUsed.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">How To Used</a>
+            <a href="../index.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Home</a>
+            <a href="../sections/PageAllProducts.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Products</a>
+            <a href="index.html" class="text-blissed-olive font-semibold text-base border-b-2 border-blissed-olive whitespace-nowrap">Blog</a>
+            <a href="../sections/HowToUsed.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">How To Used</a>
             <a href="/index.html#reviews" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Reviews</a>
         </nav>
         
         <div class="flex items-center gap-6">
             <div class="hidden md:flex items-center bg-white border border-blissed-olive rounded-lg px-3 py-1.5 w-48 hover:border-[#8a9b6d] transition-colors">
-                <img src="/assets/search-icon.svg" alt="Search" class="w-4 h-4 mr-2 text-blissed-gray">
+                <img src="../assets/search-icon.svg" alt="Search" class="w-4 h-4 mr-2 text-blissed-gray">
                 <input type="text" placeholder="Search" class="bg-transparent outline-none text-xs w-full text-blissed-gray placeholder-gray-400">
             </div>
         </div>
@@ -74,7 +74,7 @@
                 </h2>
                 <div class="grid gap-6 md:grid-cols-3">
                     <!-- Category 1 -->
-                    <a href="/blog/categories/skincare-tips.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <a href="categories/skincare-tips.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
                         <div class="text-5xl mb-4">✨</div>
                         <h3 class="text-2xl font-semibold text-blissed-gray mb-3 group-hover:text-blissed-olive transition-colors">
                             Skincare Tips
@@ -91,7 +91,7 @@
                     </a>
 
                     <!-- Category 2 -->
-                    <a href="/blog/categories/ingredientes.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <a href="categories/ingredientes.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
                         <div class="text-5xl mb-4">🌿</div>
                         <h3 class="text-2xl font-semibold text-blissed-gray mb-3 group-hover:text-blissed-olive transition-colors">
                             Ingredientes
@@ -108,7 +108,7 @@
                     </a>
 
                     <!-- Category 3 -->
-                    <a href="/blog/categories/rutinas.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <a href="categories/rutinas.html" class="group block p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
                         <div class="text-5xl mb-4">💆</div>
                         <h3 class="text-2xl font-semibold text-blissed-gray mb-3 group-hover:text-blissed-olive transition-colors">
                             Rutinas
@@ -150,7 +150,7 @@
                         
                         <div class="blog-card__image">
                             <img 
-                                src="/assets/blog/thumbnails/beneficios-patches-thumb.jpg" 
+                                src="../assets/blog/thumbnails/beneficios-patches-thumb.jpg" 
                                 alt="5 Beneficios de los Pimple Patches"
                                 loading="lazy">
                         </div>
@@ -161,7 +161,7 @@
                             </span>
                             
                             <h3 class="blog-card__title mt-3 text-xl font-playfair font-bold">
-                                <a href="/blog/posts/2026/01/beneficios-pimple-patches.html">
+                                <a href="posts/2026/01/beneficios-pimple-patches.html">
                                     5 Beneficios de los Pimple Patches que Debes Conocer
                                 </a>
                             </h3>
@@ -176,7 +176,7 @@
                                 <span>5 min lectura</span>
                             </div>
                             
-                            <a href="/blog/posts/2026/01/beneficios-pimple-patches.html" class="blog-card__read-more mt-4 inline-flex">
+                            <a href="posts/2026/01/beneficios-pimple-patches.html" class="blog-card__read-more mt-4 inline-flex">
                                 Leer más
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -234,7 +234,7 @@
                     para el cuidado efectivo de tu piel
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/sections/PageAllProducts.html" class="inline-block px-8 py-4 bg-gradient-to-r from-[#155dfc] to-[#9810fa] text-white font-bold rounded-full hover:opacity-90 hover:scale-105 transition-all shadow-lg">
+                    <a href="../sections/PageAllProducts.html" class="inline-block px-8 py-4 bg-gradient-to-r from-[#155dfc] to-[#9810fa] text-white font-bold rounded-full hover:opacity-90 hover:scale-105 transition-all shadow-lg">
                         Ver Productos
                     </a>
                     <a href="/index.html#how-to-use" class="inline-block px-8 py-4 bg-white text-blissed-gray font-bold rounded-full hover:bg-gray-100 hover:scale-105 transition-all shadow-lg">
@@ -250,7 +250,7 @@
     <footer class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] py-16 px-6 text-white font-sans main-footer" data-component="main-footer">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="w-32">
-                <img src="/assets/logo.png" alt="Blissed Skin" class="w-full brightness-0 invert filter">
+                <img src="../assets/logo.png" alt="Blissed Skin" class="w-full brightness-0 invert filter">
             </div>
             <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide">
                 <a href="#" class="hover:text-[#9aad7a] transition-colors">Privacy Policy</a>
