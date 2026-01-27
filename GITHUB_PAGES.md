@@ -663,6 +663,7 @@ npm install aws4 crypto-js --save
 ```powershell
 # 1. Ver archivos modificados
 git status
+git add -A; git status
 
 # 2. Añadir archivos al staging area
 git add .                          # Todos los archivos
@@ -670,7 +671,7 @@ git add index.html                 # Archivo específico
 git add assets/css/                # Carpeta específica
 
 # 3. Hacer commit con mensaje descriptivo
-git commit -m "feat: Add new product section"
+git commit -m "fix: correct links products"
 
 # 4. Subir cambios a GitHub
 git push origin main
@@ -678,6 +679,17 @@ git push origin main
 # 5. Verificar deploy (1-2 minutos)
 # Visita tu URL de GitHub Pages
 ```
+### Tipos de Mensajes de Commit
+
+| Prefijo | Uso | Ejemplo |
+|---------|-----|---------|
+| `feat:` | Nueva funcionalidad | `feat: Add shopping cart` |
+| `fix:` | Corrección de bugs | `fix: Correct product pricing` |
+| `style:` | Cambios visuales (CSS) | `style: Update button colors` |
+| `docs:` | Documentación | `docs: Update README` |
+| `refactor:` | Refactorización | `refactor: Optimize image loading` |
+| `perf:` | Mejoras de performance | `perf: Lazy load images` |
+| `test:` | Tests | `test: Add cart validation` | 
 
 #### Opción B: Desde VS Code (Interfaz Visual)
 
@@ -716,18 +728,6 @@ git push origin main
 - Espera 1-2 minutos
 - Visita tu URL: `https://[tu-usuario].github.io/[repo-name]/`
 - Refresca con `Ctrl+Shift+R` (hard refresh)
-
-### Tipos de Mensajes de Commit
-
-| Prefijo | Uso | Ejemplo |
-|---------|-----|---------|
-| `feat:` | Nueva funcionalidad | `feat: Add shopping cart` |
-| `fix:` | Corrección de bugs | `fix: Correct product pricing` |
-| `style:` | Cambios visuales (CSS) | `style: Update button colors` |
-| `docs:` | Documentación | `docs: Update README` |
-| `refactor:` | Refactorización | `refactor: Optimize image loading` |
-| `perf:` | Mejoras de performance | `perf: Lazy load images` |
-| `test:` | Tests | `test: Add cart validation` |
 
 ### Workflow Completo Recomendado
 

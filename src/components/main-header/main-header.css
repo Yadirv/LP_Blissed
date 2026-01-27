@@ -3,13 +3,14 @@
 /* Estado Sticky */
 .main-header {
     transition: all 0.3s ease-in-out;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    background-color: #ffffff;
 }
 
 .main-header.is-sticky {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(10px);
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;

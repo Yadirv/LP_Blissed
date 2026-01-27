@@ -1790,9 +1790,6 @@ Footer-component {
 .flex-wrap {
   flex-wrap: wrap;
 }
-.flex-nowrap {
-  flex-wrap: nowrap;
-}
 .items-start {
   align-items: flex-start;
 }
@@ -1853,9 +1850,9 @@ Footer-component {
 .gap-\[9px\] {
   gap: 9px;
 }
-.gap-x-20 {
-  -moz-column-gap: 5rem;
-       column-gap: 5rem;
+.gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
 }
 .gap-x-6 {
   -moz-column-gap: 1.5rem;
@@ -2685,6 +2682,9 @@ body, html {
 }                    
 .hover\:underline:hover {
   text-decoration-line: underline;
+}                    
+.hover\:opacity-100:hover {
+  opacity: 1;
 }                    
 .hover\:opacity-70:hover {
   opacity: 0.7;
