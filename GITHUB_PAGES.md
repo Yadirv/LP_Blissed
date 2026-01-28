@@ -2,7 +2,7 @@
 
 ## 🚀 Despliegue Actual
 
-**URL del sitio:** https://[tu-usuario].github.io/[nombre-repo]/
+**URL del sitio:** https://yadirv.github.io/LP_Blissed/index.html
 
 Este proyecto está configurado para desplegarse automáticamente en GitHub Pages desde la rama principal.
 
@@ -93,6 +93,113 @@ npm run dev
 # Build para producción (minificado)
 npm run build
 ```
+
+## 🔄 Workflow de Actualización
+
+### Después de hacer cambios en el proyecto
+
+#### Opción A: Desde Terminal
+
+```powershell
+# 1. Ver archivos modificados
+git status
+git add -A; git status
+
+# 2. Añadir archivos al staging area
+git add .                          # Todos los archivos
+git add index.html                 # Archivo específico
+git add assets/css/                # Carpeta específica
+
+# 3. Hacer commit con mensaje descriptivo
+git commit -m "fix: correct links products"
+
+# 4. Subir cambios a GitHub
+git push origin main
+
+# 5. Verificar deploy (1-2 minutos)
+# Visita tu URL de GitHub Pages
+```
+### Tipos de Mensajes de Commit
+
+| Prefijo | Uso | Ejemplo |
+|---------|-----|---------|
+| `feat:` | Nueva funcionalidad | `feat: Add shopping cart` |
+| `fix:` | Corrección de bugs | `fix: Correct product pricing` |
+| `style:` | Cambios visuales (CSS) | `style: Update button colors` |
+| `docs:` | Documentación | `docs: Update README` |
+| `refactor:` | Refactorización | `refactor: Optimize image loading` |
+| `perf:` | Mejoras de performance | `perf: Lazy load images` |
+| `test:` | Tests | `test: Add cart validation` | 
+
+#### Opción B: Desde VS Code (Interfaz Visual)
+
+**Paso 1: Abrir Source Control**
+- Presiona `Ctrl+Shift+G` (Windows/Linux) o `Cmd+Shift+G` (Mac)
+- O click en el ícono de ramificación en la barra lateral izquierda
+
+**Paso 2: Revisar Cambios**
+- Verás lista de archivos modificados (M), nuevos (U), o eliminados (D)
+- Click en archivo para ver diferencias (diff)
+- Cambios en verde = añadidos, rojo = eliminados
+
+**Paso 3: Stage de Cambios**
+- **Opción 1:** Click en botón `+` (plus) junto a cada archivo
+- **Opción 2:** Hover sobre "Changes" y click en `+` para stage all
+- Los archivos pasan a sección "Staged Changes"
+
+**Paso 4: Escribir Mensaje de Commit**
+- En campo de texto superior, escribir mensaje descriptivo:
+  - `feat: Add new feature`
+  - `fix: Correct pricing bug`
+  - `style: Update hero section colors`
+  - `docs: Update README`
+- Usar prefijos convencionales (feat, fix, style, docs, refactor)
+
+**Paso 5: Hacer Commit**
+- Click en botón `✓ Commit` (checkmark)
+- O presiona `Ctrl+Enter` (Windows/Linux) o `Cmd+Enter` (Mac)
+
+**Paso 6: Push a GitHub**
+- Click en botón `↑ Sync Changes` o `⋯` → `Push`
+- Si es tu primer push: VS Code pedirá autenticación GitHub
+- Espera confirmación "Successfully pushed"
+
+**Paso 7: Verificar Deploy**
+- Espera 1-2 minutos
+- Visita tu URL: `https://[tu-usuario].github.io/[repo-name]/`
+- Refresca con `Ctrl+Shift+R` (hard refresh)
+
+### Workflow Completo Recomendado
+
+```
+1. Hacer cambios en Pinegrow/VS Code
+   ↓
+2. npm run build (si cambiaste TailwindCSS)
+   ↓
+3. Probar localmente (abrir index.html)
+   ↓
+4. git status (ver qué cambió)
+   ↓
+5. git add . (añadir cambios)
+   ↓
+6. git commit -m "mensaje descriptivo"
+   ↓
+7. git push origin main
+   ↓
+8. Esperar 1-2 minutos
+   ↓
+9. Verificar en GitHub Pages
+```
+
+### Atajos de Teclado VS Code
+
+| Acción | Windows/Linux | Mac |
+|--------|---------------|-----|
+| Abrir Source Control | `Ctrl+Shift+G` | `Cmd+Shift+G` |
+| Commit | `Ctrl+Enter` | `Cmd+Enter` |
+| Buscar archivos | `Ctrl+P` | `Cmd+P` |
+| Terminal integrada | `` Ctrl+` `` | `` Cmd+` `` |
+| Command Palette | `Ctrl+Shift+P` | `Cmd+Shift+P` |
 
 ## 📊 Configuración de Tracking (GTM + GA4)
 
@@ -654,112 +761,6 @@ npm install aws4 crypto-js --save
 <img src="/[nombre-repo]/assets/logo.png" alt="Logo">
 ```
 
-## 🔄 Workflow de Actualización
-
-### Después de hacer cambios en el proyecto
-
-#### Opción A: Desde Terminal
-
-```powershell
-# 1. Ver archivos modificados
-git status
-git add -A; git status
-
-# 2. Añadir archivos al staging area
-git add .                          # Todos los archivos
-git add index.html                 # Archivo específico
-git add assets/css/                # Carpeta específica
-
-# 3. Hacer commit con mensaje descriptivo
-git commit -m "fix: correct links products"
-
-# 4. Subir cambios a GitHub
-git push origin main
-
-# 5. Verificar deploy (1-2 minutos)
-# Visita tu URL de GitHub Pages
-```
-### Tipos de Mensajes de Commit
-
-| Prefijo | Uso | Ejemplo |
-|---------|-----|---------|
-| `feat:` | Nueva funcionalidad | `feat: Add shopping cart` |
-| `fix:` | Corrección de bugs | `fix: Correct product pricing` |
-| `style:` | Cambios visuales (CSS) | `style: Update button colors` |
-| `docs:` | Documentación | `docs: Update README` |
-| `refactor:` | Refactorización | `refactor: Optimize image loading` |
-| `perf:` | Mejoras de performance | `perf: Lazy load images` |
-| `test:` | Tests | `test: Add cart validation` | 
-
-#### Opción B: Desde VS Code (Interfaz Visual)
-
-**Paso 1: Abrir Source Control**
-- Presiona `Ctrl+Shift+G` (Windows/Linux) o `Cmd+Shift+G` (Mac)
-- O click en el ícono de ramificación en la barra lateral izquierda
-
-**Paso 2: Revisar Cambios**
-- Verás lista de archivos modificados (M), nuevos (U), o eliminados (D)
-- Click en archivo para ver diferencias (diff)
-- Cambios en verde = añadidos, rojo = eliminados
-
-**Paso 3: Stage de Cambios**
-- **Opción 1:** Click en botón `+` (plus) junto a cada archivo
-- **Opción 2:** Hover sobre "Changes" y click en `+` para stage all
-- Los archivos pasan a sección "Staged Changes"
-
-**Paso 4: Escribir Mensaje de Commit**
-- En campo de texto superior, escribir mensaje descriptivo:
-  - `feat: Add new feature`
-  - `fix: Correct pricing bug`
-  - `style: Update hero section colors`
-  - `docs: Update README`
-- Usar prefijos convencionales (feat, fix, style, docs, refactor)
-
-**Paso 5: Hacer Commit**
-- Click en botón `✓ Commit` (checkmark)
-- O presiona `Ctrl+Enter` (Windows/Linux) o `Cmd+Enter` (Mac)
-
-**Paso 6: Push a GitHub**
-- Click en botón `↑ Sync Changes` o `⋯` → `Push`
-- Si es tu primer push: VS Code pedirá autenticación GitHub
-- Espera confirmación "Successfully pushed"
-
-**Paso 7: Verificar Deploy**
-- Espera 1-2 minutos
-- Visita tu URL: `https://[tu-usuario].github.io/[repo-name]/`
-- Refresca con `Ctrl+Shift+R` (hard refresh)
-
-### Workflow Completo Recomendado
-
-```
-1. Hacer cambios en Pinegrow/VS Code
-   ↓
-2. npm run build (si cambiaste TailwindCSS)
-   ↓
-3. Probar localmente (abrir index.html)
-   ↓
-4. git status (ver qué cambió)
-   ↓
-5. git add . (añadir cambios)
-   ↓
-6. git commit -m "mensaje descriptivo"
-   ↓
-7. git push origin main
-   ↓
-8. Esperar 1-2 minutos
-   ↓
-9. Verificar en GitHub Pages
-```
-
-### Atajos de Teclado VS Code
-
-| Acción | Windows/Linux | Mac |
-|--------|---------------|-----|
-| Abrir Source Control | `Ctrl+Shift+G` | `Cmd+Shift+G` |
-| Commit | `Ctrl+Enter` | `Cmd+Enter` |
-| Buscar archivos | `Ctrl+P` | `Cmd+P` |
-| Terminal integrada | `` Ctrl+` `` | `` Cmd+` `` |
-| Command Palette | `Ctrl+Shift+P` | `Cmd+Shift+P` |
 
 ## 🚨 Troubleshooting
 

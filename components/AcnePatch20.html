@@ -2,6 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5633HD7Q');</script>
+        <!-- End Google Tag Manager -->
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
@@ -9,6 +17,11 @@
         <link rel="stylesheet" href="../src/components/main-header/main-header.css">
     </head>
     <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5633HD7Q"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
         <header class="w-full bg-white flex flex-col lg:flex-row items-center justify-start gap-8 px-6 lg:px-8 py-4 shadow-sm font-sans main-header" aria-label="Main header" data-component="main-header" data-node-id="402:727" data-pgc="header_default"> 
             <!-- Logo Container -->             
             <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16"> 
@@ -166,6 +179,41 @@
                     updateQuantityDisplay();
                 }
             }
+        </script>
+        
+        <!-- GTM Event: View Item -->
+        <script>
+        window.addEventListener('load', function() {
+            // Datos del producto Acne Patch 20
+            var productData = {
+                item_id: 'ACNE-PATCH-20',
+                item_name: '20 Extra Large Effective Zit Patches',
+                item_category: 'Skincare',
+                item_brand: 'Blissed Skin',
+                price: 8.49,
+                currency: 'USD'
+            };
+
+            // Evento para GA4
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'view_item',
+                ecommerce: {
+                    items: [productData]
+                }
+            });
+
+            // Evento para Meta Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'ViewContent', {
+                    content_name: productData.item_name,
+                    content_ids: [productData.item_id],
+                    content_type: 'product',
+                    value: productData.price,
+                    currency: productData.currency
+                });
+            }
+        });
         </script>
     </body>
 </html>
