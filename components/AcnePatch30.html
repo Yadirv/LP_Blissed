@@ -161,10 +161,12 @@
         </section>
         <script src="../src/assets/js/components-init.js"></script>
         <script src="../src/components/main-header/main-header.js"></script>
+        <script src="../src/assets/js/cart.js"></script>
         <script>
             let quantity = 1;
             const MIN_QUANTITY = 1;
             const MAX_QUANTITY = 5;
+            const PRODUCT_ID = 'ACNE-PATCH-30';
             
             function updateQuantityDisplay() {
                 document.getElementById('quantity').textContent = quantity;
@@ -183,6 +185,32 @@
                     updateQuantityDisplay();
                 }
             }
+
+            // Add to Cart button handler
+            document.addEventListener('DOMContentLoaded', function() {
+                const addToCartBtn = document.querySelector('button[aria-label="Add to Cart"]');
+                const instantPurchaseBtn = document.querySelector('button[aria-label="Instant Purchase"]');
+
+                if (addToCartBtn) {
+                    addToCartBtn.addEventListener('click', function() {
+                        const success = BlissedCart.add(PRODUCT_ID, quantity);
+                        if (success) {
+                            BlissedCart.notify('Product added to cart successfully!');
+                        } else {
+                            BlissedCart.notify('Failed to add product to cart', 'error');
+                        }
+                    });
+                }
+
+                if (instantPurchaseBtn) {
+                    instantPurchaseBtn.addEventListener('click', function() {
+                        // Add product to cart
+                        BlissedCart.add(PRODUCT_ID, quantity);
+                        // Redirect to checkout immediately
+                        window.location.href = '../sections/Checkout.html';
+                    });
+                }
+            });
         </script>
         
         <!-- GTM Event: View Item -->

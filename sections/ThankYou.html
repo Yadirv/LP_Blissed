@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5633HD7Q');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Blissed Skin</title>
+    <link rel="stylesheet" href="../tailwind_theme/tailwind.css">
+    <link rel="stylesheet" href="../src/components/main-header/main-header.css">
+</head>
+<body class="bg-gradient-main">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5633HD7Q"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <header class="w-full bg-white flex flex-col lg:flex-row items-center justify-start gap-8 px-6 lg:px-8 py-4 shadow-sm font-sans main-header sticky top-0 z-50" aria-label="Main header">
+        <!-- Logo Container -->
+        <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16">
+            <img src="../assets/logo.png" alt="Blissed Skin Logo" class="max-w-full max-h-full object-contain">
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="flex flex-wrap justify-start items-center gap-x-6 gap-y-2 my-4 lg:my-0" aria-label="Main navigation">
+            <a href="../index.html" class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap">Home</a>
+            <a href="../sections/PageAllProducts.html" class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap">Products</a>
+            <a href="#" class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap">Blogs</a>
+            <a href="../sections/HowToUsed.html" class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap">How To Used</a>
+            <a href="../index.html#reviews" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Reviews</a>
+        </nav>
+        
+        <!-- Right Section: Search -->
+        <div class="flex items-center gap-6 ml-auto">
+            <div class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors">
+                <img src="../assets/search-icon.svg" alt="Search" class="w-[8px] h-[8px]">
+                <input type="text" placeholder="Search" class="bg-transparent border-transparent outline-none text-[10px] w-full text-gray-700 placeholder-gray-400 font-light tracking-[0.12px] focus:border-transparent">
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full min-h-screen py-16 px-4">
+        <div class="max-w-[800px] mx-auto">
+            <!-- Thank You Card -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center">
+                <!-- Success Icon -->
+                <div class="mb-8">
+                    <div class="inline-flex items-center justify-center w-24 h-24 bg-green-100 rounded-full">
+                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Thank You Message -->
+                <h1 class="font-playfair font-medium text-4xl md:text-5xl text-blissed-black mb-4">
+                    Thank You for Your Purchase!
+                </h1>
+                
+                <p class="text-lg text-gray-600 mb-8" id="customerName">
+                    We appreciate your order and can't wait for you to enjoy your Blissed Skin products.
+                </p>
+
+                <!-- Order Confirmation -->
+                <div class="bg-gradient-to-r from-[#f8f5ff] to-[#fff5f8] rounded-2xl p-6 mb-8 text-left">
+                    <h2 class="font-playfair font-medium text-2xl text-blissed-black mb-4">Order Details</h2>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-gray-700">
+                            <span>Order ID:</span>
+                            <span id="orderId" class="font-medium">Loading...</span>
+                        </div>
+                        <div class="flex justify-between text-gray-700">
+                            <span>Email:</span>
+                            <span id="customerEmail" class="font-medium">Loading...</span>
+                        </div>
+                        <div class="flex justify-between text-gray-700">
+                            <span>Date:</span>
+                            <span id="orderDate" class="font-medium">Loading...</span>
+                        </div>
+                    </div>
+
+                    <!-- Purchased Items -->
+                    <div class="border-t border-gray-200 pt-4">
+                        <h3 class="font-medium text-blissed-gray mb-3">Items Purchased:</h3>
+                        <div id="purchasedItems" class="space-y-2">
+                            <!-- Items will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="border-t border-gray-200 mt-4 pt-4 flex justify-between text-xl font-playfair font-medium text-blissed-black">
+                        <span>Total:</span>
+                        <span id="orderTotal">$0.00</span>
+                    </div>
+                </div>
+
+                <!-- What's Next -->
+                <div class="text-left mb-8">
+                    <h2 class="font-playfair font-medium text-2xl text-blissed-black mb-4">What's Next?</h2>
+                    <div class="space-y-4 text-gray-700">
+                        <div class="flex items-start gap-3">
+                            <span class="text-2xl">📧</span>
+                            <div>
+                                <p class="font-medium">Order Confirmation</p>
+                                <p class="text-sm text-gray-600">You'll receive a confirmation email with your order details shortly.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-2xl">📦</span>
+                            <div>
+                                <p class="font-medium">Shipping Updates</p>
+                                <p class="text-sm text-gray-600">We'll notify you when your order ships with tracking information.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-2xl">💜</span>
+                            <div>
+                                <p class="font-medium">Enjoy Your Products</p>
+                                <p class="text-sm text-gray-600">Get ready for glowing, healthy skin with Blissed Skin!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../index.html" class="bg-gradient-cta text-white px-8 py-3 rounded-xl font-playfair text-lg font-medium transition-transform hover:scale-105 shadow-lg">
+                        Back to Home
+                    </a>
+                    <a href="../sections/PageAllProducts.html" class="bg-white border-2 border-blissed-lavender text-blissed-gray px-8 py-3 rounded-xl font-playfair text-lg font-medium transition-transform hover:scale-105">
+                        Continue Shopping
+                    </a>
+                </div>
+
+                <!-- Support -->
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <p class="text-sm text-gray-600">
+                        Questions about your order? 
+                        <a href="mailto:support@blissedskin.com" class="text-blissed-olive hover:underline">Contact Support</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Social Proof / Reviews Section -->
+            <div class="mt-12 text-center">
+                <h3 class="font-playfair font-medium text-2xl text-white mb-6">Join Thousands of Happy Customers</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white/90 rounded-2xl p-6">
+                        <div class="text-4xl mb-2">⭐⭐⭐⭐⭐</div>
+                        <p class="text-sm text-gray-700 italic">"These patches are amazing! They really work overnight."</p>
+                        <p class="text-xs text-gray-500 mt-2">- Sarah M.</p>
+                    </div>
+                    <div class="bg-white/90 rounded-2xl p-6">
+                        <div class="text-4xl mb-2">⭐⭐⭐⭐⭐</div>
+                        <p class="text-sm text-gray-700 italic">"Finally found nasal strips that actually stay on all night!"</p>
+                        <p class="text-xs text-gray-500 mt-2">- Mike R.</p>
+                    </div>
+                    <div class="bg-white/90 rounded-2xl p-6">
+                        <div class="text-4xl mb-2">⭐⭐⭐⭐⭐</div>
+                        <p class="text-sm text-gray-700 italic">"Love the quality and fast shipping. Will order again!"</p>
+                        <p class="text-xs text-gray-500 mt-2">- Jessica L.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-r from-[#a63d97] to-[#d39ecb] w-full py-12 px-6 flex flex-col items-center gap-8 mt-16">
+        <div class="w-32 flex-shrink-0">
+            <img src="../assets/logo.png" alt="Blissed Skin" class="w-full brightness-0 invert filter">
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide text-white">
+            <a href="../sections/PrivacyAndTerms.html" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Privacy Policy</a>
+            <a href="../sections/PrivacyAndTerms.html" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Terms of Service</a>
+            <a href="../sections/ReturnExchange.html" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Return & Exchanges</a>
+            <a href="../sections/Legal.html" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Legal</a>
+        </div>
+        <div class="text-xs opacity-60 text-white">© 2026 BlissedSkin. All rights reserved.</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../src/assets/js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get order data from cart
+            const cart = BlissedCart.get();
+            const customerInfo = JSON.parse(sessionStorage.getItem('customer_info') || '{}');
+            
+            // Generate order ID
+            const orderId = 'BS-' + Date.now().toString().slice(-8);
+            const orderDate = new Date().toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+
+            // Populate customer info
+            if (customerInfo.fullName) {
+                document.getElementById('customerName').textContent = 
+                    `Thank you, ${customerInfo.fullName}! We appreciate your order and can't wait for you to enjoy your Blissed Skin products.`;
+            }
+            
+            document.getElementById('orderId').textContent = orderId;
+            document.getElementById('customerEmail').textContent = customerInfo.email || 'N/A';
+            document.getElementById('orderDate').textContent = orderDate;
+
+            // Populate purchased items
+            const itemsContainer = document.getElementById('purchasedItems');
+            if (cart.length > 0) {
+                itemsContainer.innerHTML = cart.map(item => `
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-700">${item.quantity}x ${item.item_name}</span>
+                        <span class="font-medium text-blissed-gray">$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `).join('');
+
+                // Update total
+                const total = BlissedCart.getTotal();
+                document.getElementById('orderTotal').textContent = `$${total.toFixed(2)}`;
+
+                // Fire GTM purchase event
+                firePurchaseEvent(cart, total, orderId);
+
+                // Clear cart after purchase
+                setTimeout(() => {
+                    BlissedCart.clear();
+                }, 2000);
+            } else {
+                itemsContainer.innerHTML = '<p class="text-sm text-gray-500">No items found</p>';
+            }
+
+            // Clean up session storage
+            setTimeout(() => {
+                sessionStorage.removeItem('customer_info');
+            }, 5000);
+        });
+
+        function firePurchaseEvent(cart, total, transactionId) {
+            if (typeof window.dataLayer === 'undefined') {
+                console.warn('GTM dataLayer not found');
+                return;
+            }
+
+            const items = cart.map(item => ({
+                item_id: item.item_id,
+                item_name: item.item_name,
+                item_category: item.item_category,
+                item_brand: item.item_brand,
+                price: item.price,
+                quantity: item.quantity
+            }));
+
+            window.dataLayer.push({
+                event: 'purchase',
+                ecommerce: {
+                    transaction_id: transactionId,
+                    currency: 'USD',
+                    value: total,
+                    items: items
+                }
+            });
+
+            console.log('GTM purchase event fired:', transactionId);
+
+            // Fire Meta Pixel Purchase event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Purchase', {
+                    value: total,
+                    currency: 'USD',
+                    contents: items.map(item => ({
+                        id: item.item_id,
+                        quantity: item.quantity
+                    })),
+                    content_type: 'product'
+                });
+            }
+        }
+    </script>
+</body>
+</html>
