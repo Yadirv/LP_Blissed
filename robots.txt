@@ -1,0 +1,14 @@
+# robots.txt for Blissed Skin Landing Page
+# https://yadirv.github.io/LP_Blissed/
+
+# Block all search engines from indexing the entire site
+User-agent: *
+Disallow: /
+
+# If you want to allow indexing in the future, replace the above with:
+# User-agent: *
+# Disallow: /_pgbackup/
+# Disallow: /_pginfo/
+# Disallow: /docs/
+# Disallow: /node_modules/
+# Allow: /
