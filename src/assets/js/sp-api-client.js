@@ -61,10 +61,10 @@
     const { pricing, availability } = product;
 
     // --- Precio actual ---
-    const priceEl = el.querySelector(".js-product-price");
+    // Soporta .js-product-price (product-card) y .pg-price (carousel home)
+    const priceEl = el.querySelector(".js-product-price, .pg-price");
     if (priceEl && pricing.current !== null) {
       priceEl.textContent = `$${pricing.current.toFixed(2)}`;
-      // Actualizar también el data-price para que el cart use el precio real
       el.dataset.price = pricing.current.toFixed(2);
     }
 
