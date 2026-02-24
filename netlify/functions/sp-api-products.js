@@ -99,6 +99,24 @@ exports.handler = async (event, context) => {
       };
     }
 
+    // Debug: verificar env vars (enmascaradas) — remover después de diagnóstico
+    if (action === "debug") {
+      const mask = (v) => (v ? `${v.slice(0, 4)}...${v.slice(-4)} (len:${v.length})` : "NOT SET");
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          AWS_ACCESS_KEY_ID: mask(process.env.AWS_ACCESS_KEY_ID),
+          AWS_SECRET_ACCESS_KEY: mask(process.env.AWS_SECRET_ACCESS_KEY),
+          IAM_ROLE_ARN: mask(process.env.IAM_ROLE_ARN),
+          LWA_CLIENT_ID: mask(process.env.LWA_CLIENT_ID),
+          REFRESH_TOKEN: mask(process.env.REFRESH_TOKEN),
+          MARKETPLACE_ID: process.env.MARKETPLACE_ID || "NOT SET",
+          USE_SPAPI_SANDBOX: process.env.USE_SPAPI_SANDBOX || "NOT SET",
+        }),
+      };
+    }
+
     // Obtener ASINs desde query param
     const asins = params.asins ? params.asins.split(",") : [];
 
