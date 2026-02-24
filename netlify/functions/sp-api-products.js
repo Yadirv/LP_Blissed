@@ -18,16 +18,17 @@ async function getTemporaryCredentials() {
     return cached.data;
   }
 
+  // SPAPI_AWS_* evita conflicto con las vars AWS_ que Netlify inyecta internamente
   const stsClient = new STSClient({
     region: "us-east-1",
     credentials: {
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      accessKeyId: process.env.SPAPI_AWS_KEY,
+      secretAccessKey: process.env.SPAPI_AWS_SECRET,
     },
   });
 
   const command = new AssumeRoleCommand({
-    RoleArn: process.env.IAM_ROLE_ARN,
+    RoleArn: process.env.SPAPI_ROLE_ARN,
     RoleSessionName: "netlify-sp-api-session",
     DurationSeconds: 3600,
   });
@@ -106,13 +107,17 @@ exports.handler = async (event, context) => {
         statusCode: 200,
         headers,
         body: JSON.stringify({
-          AWS_ACCESS_KEY_ID: mask(process.env.AWS_ACCESS_KEY_ID),
-          AWS_SECRET_ACCESS_KEY: mask(process.env.AWS_SECRET_ACCESS_KEY),
-          IAM_ROLE_ARN: mask(process.env.IAM_ROLE_ARN),
+          SPAPI_AWS_KEY: mask(process.env.SPAPI_AWS_KEY),
+          SPAPI_AWS_SECRET: mask(process.env.SPAPI_AWS_SECRET),
+          SPAPI_ROLE_ARN: mask(process.env.SPAPI_ROLE_ARN),
           LWA_CLIENT_ID: mask(process.env.LWA_CLIENT_ID),
           REFRESH_TOKEN: mask(process.env.REFRESH_TOKEN),
           MARKETPLACE_ID: process.env.MARKETPLACE_ID || "NOT SET",
           USE_SPAPI_SANDBOX: process.env.USE_SPAPI_SANDBOX || "NOT SET",
+          // Netlify internal (should NOT be AKIA):
+          NETLIFY_AWS_KEY_prefix: process.env.AWS_ACCESS_KEY_ID
+            ? process.env.AWS_ACCESS_KEY_ID.slice(0, 4)
+            : "NOT SET",
         }),
       };
     }
