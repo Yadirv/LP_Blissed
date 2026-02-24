@@ -146,12 +146,12 @@ exports.handler = async (event, context) => {
   }
 };
 
-// Obtener información básica de productos
+// Obtener datos completos de productos: título, imágenes, precio, stock
 async function getProductsInfo(headers, asins) {
   const results = [];
+  const spClient = await getSPClient();
 
   for (const asin of asins) {
-    // Verificar caché
     const cacheKey = `product_${asin}`;
     const cached = cache.get(cacheKey);
 
@@ -161,34 +161,125 @@ async function getProductsInfo(headers, asins) {
     }
 
     try {
-      // Nota: Esta es una implementación básica
-      // El SDK amazon-sp-api 1.2.0 tiene limitaciones con endpoints específicos
-      // En producción, podrías necesitar hacer llamadas HTTP directas a SP-API
+      // Llamadas paralelas: Catalog Items + Product Pricing
+      const [catalogRes, pricingRes] = await Promise.all([
+        spClient.callAPI({
+          operation: "getCatalogItem",
+          endpoint: "catalogItems",
+          path: { asin },
+          query: {
+            marketplaceIds: [process.env.MARKETPLACE_ID],
+            includedData: ["summaries", "images", "attributes"],
+          },
+        }),
+        spClient.callAPI({
+          operation: "getItemOffers",
+          endpoint: "productPricing",
+          path: { Asin: asin },
+          query: {
+            MarketplaceId: process.env.MARKETPLACE_ID,
+            ItemCondition: "New",
+          },
+        }),
+      ]);
+
+      // --- Catalog: título, marca, descripción, imágenes ---
+      const summary =
+        catalogRes?.summaries?.find((s) => s.marketplaceId === process.env.MARKETPLACE_ID) ||
+        catalogRes?.summaries?.[0] ||
+        {};
+
+      const marketplaceImages =
+        catalogRes?.images?.find((i) => i.marketplaceId === process.env.MARKETPLACE_ID)?.images ||
+        catalogRes?.images?.[0]?.images ||
+        [];
+
+      const mainImage = marketplaceImages.find((img) => img.variant === "MAIN");
+      const galleryImages = marketplaceImages
+        .filter((img) => img.variant !== "MAIN" && img.variant !== "SWCH")
+        .slice(0, 4)
+        .map((img) => img.link);
+
+      // Descripción desde attributes
+      const bulletPoints = catalogRes?.attributes?.bullet_point?.map((b) => b.value) || [];
+
+      // --- Pricing: precio actual, precio de lista, Buy Box, stock ---
+      const pricingPayload = pricingRes?.payload || pricingRes || {};
+      const summary_pricing = pricingPayload?.Summary || {};
+
+      const buyBox =
+        summary_pricing?.BuyBoxPrices?.find((b) => b.condition?.toLowerCase() === "new") ||
+        summary_pricing?.BuyBoxPrices?.[0];
+
+      const lowestNew =
+        summary_pricing?.LowestPrices?.find(
+          (p) => p.condition?.toLowerCase() === "new" && p.fulfillmentChannel === "Amazon"
+        ) || summary_pricing?.LowestPrices?.[0];
+
+      const currentPrice =
+        buyBox?.LandedPrice?.Amount ||
+        buyBox?.ListingPrice?.Amount ||
+        lowestNew?.LandedPrice?.Amount ||
+        null;
+
+      const listPrice = summary_pricing?.ListPrice?.Amount || null;
+
+      const currency =
+        buyBox?.LandedPrice?.CurrencyCode || lowestNew?.LandedPrice?.CurrencyCode || "USD";
+
+      const savings =
+        listPrice && currentPrice && listPrice > currentPrice
+          ? parseFloat((listPrice - currentPrice).toFixed(2))
+          : null;
+
+      const savingsPct = savings && listPrice ? Math.round((savings / listPrice) * 100) : null;
+
+      const totalOffers = summary_pricing?.TotalOfferCount || 0;
 
       const productData = {
-        asin: asin,
-        status: "cached",
-        message: "Use getPrices action for real-time data",
-        // Aquí irían los datos reales del producto
-        // Por ahora retornamos estructura básica
+        asin,
+        // Catálogo
+        title: summary?.itemName || null,
+        brand: summary?.brand || null,
+        bulletPoints,
+        images: {
+          main: mainImage?.link || null,
+          gallery: galleryImages,
+        },
+        // Precios
+        pricing: {
+          current: currentPrice,
+          list: listPrice,
+          currency,
+          savings,
+          savingsPct,
+          hasBuyBox: !!buyBox,
+        },
+        // Stock
+        availability: {
+          inStock: totalOffers > 0,
+          totalOffers,
+          fulfillment: buyBox?.fulfillmentChannel || lowestNew?.fulfillmentChannel || null,
+          isPrime: buyBox?.fulfillmentChannel === "Amazon",
+        },
+        source: "sp-api",
+        fetchedAt: new Date().toISOString(),
       };
 
-      cache.set(cacheKey, {
-        data: productData,
-        timestamp: Date.now(),
-      });
-
+      cache.set(cacheKey, { data: productData, timestamp: Date.now() });
       results.push(productData);
 
-      // Rate limiting: 1 request/seg
+      // Rate limiting entre ASINs: SP-API permite ~1 req/seg en Catalog
       if (asins.indexOf(asin) < asins.length - 1) {
-        await new Promise((resolve) => setTimeout(resolve, 1100));
+        await new Promise((resolve) => setTimeout(resolve, 1200));
       }
     } catch (error) {
+      console.error(`[getProducts] Error ASIN ${asin}:`, error.message);
       results.push({
-        asin: asin,
+        asin,
         error: error.message,
-        code: error.code,
+        code: error.code || "SP_API_ERROR",
+        details: error.response?.data || null,
       });
     }
   }
@@ -198,24 +289,94 @@ async function getProductsInfo(headers, asins) {
     headers,
     body: JSON.stringify({
       products: results,
+      count: results.length,
       timestamp: new Date().toISOString(),
       mode: process.env.USE_SPAPI_SANDBOX === "true" ? "sandbox" : "production",
     }),
   };
 }
 
-// Obtener precios de productos (implementación futura)
+// Obtener solo precios (caché corta: 5 min — precios cambian frecuente)
+const PRICE_CACHE_DURATION = 5 * 60 * 1000;
+
 async function getProductPrices(headers, asins) {
-  // Esta función se implementará con llamadas reales a SP-API
-  // una vez que identifiquemos el endpoint correcto para el SDK 1.2.0
+  const results = [];
+  const spClient = await getSPClient();
+
+  for (const asin of asins) {
+    const cacheKey = `price_${asin}`;
+    const cached = cache.get(cacheKey);
+
+    if (cached && Date.now() - cached.timestamp < PRICE_CACHE_DURATION) {
+      results.push(cached.data);
+      continue;
+    }
+
+    try {
+      const pricingRes = await spClient.callAPI({
+        operation: "getItemOffers",
+        endpoint: "productPricing",
+        path: { Asin: asin },
+        query: {
+          MarketplaceId: process.env.MARKETPLACE_ID,
+          ItemCondition: "New",
+        },
+      });
+
+      const pricingPayload = pricingRes?.payload || pricingRes || {};
+      const summary = pricingPayload?.Summary || {};
+
+      const buyBox =
+        summary?.BuyBoxPrices?.find((b) => b.condition?.toLowerCase() === "new") ||
+        summary?.BuyBoxPrices?.[0];
+
+      const currentPrice = buyBox?.LandedPrice?.Amount || buyBox?.ListingPrice?.Amount || null;
+
+      const listPrice = summary?.ListPrice?.Amount || null;
+      const currency = buyBox?.LandedPrice?.CurrencyCode || "USD";
+
+      const priceData = {
+        asin,
+        current: currentPrice,
+        list: listPrice,
+        currency,
+        savings:
+          listPrice && currentPrice && listPrice > currentPrice
+            ? parseFloat((listPrice - currentPrice).toFixed(2))
+            : null,
+        savingsPct:
+          listPrice && currentPrice && listPrice > currentPrice
+            ? Math.round(((listPrice - currentPrice) / listPrice) * 100)
+            : null,
+        inStock: (summary?.TotalOfferCount || 0) > 0,
+        isPrime: buyBox?.fulfillmentChannel === "Amazon",
+        fetchedAt: new Date().toISOString(),
+      };
+
+      cache.set(cacheKey, { data: priceData, timestamp: Date.now() });
+      results.push(priceData);
+
+      if (asins.indexOf(asin) < asins.length - 1) {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+      }
+    } catch (error) {
+      console.error(`[getPrices] Error ASIN ${asin}:`, error.message);
+      results.push({
+        asin,
+        error: error.message,
+        code: error.code || "SP_API_ERROR",
+      });
+    }
+  }
 
   return {
     statusCode: 200,
     headers,
     body: JSON.stringify({
-      message: "Price fetching to be implemented",
-      asins: asins,
-      note: "This will be connected to real SP-API pricing endpoint",
+      prices: results,
+      count: results.length,
+      timestamp: new Date().toISOString(),
+      mode: process.env.USE_SPAPI_SANDBOX === "true" ? "sandbox" : "production",
     }),
   };
 }
