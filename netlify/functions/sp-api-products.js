@@ -100,28 +100,6 @@ exports.handler = async (event, context) => {
       };
     }
 
-    // Debug: verificar env vars (enmascaradas) — remover después de diagnóstico
-    if (action === "debug") {
-      const mask = (v) => (v ? `${v.slice(0, 4)}...${v.slice(-4)} (len:${v.length})` : "NOT SET");
-      return {
-        statusCode: 200,
-        headers,
-        body: JSON.stringify({
-          SPAPI_AWS_KEY: mask(process.env.SPAPI_AWS_KEY),
-          SPAPI_AWS_SECRET: mask(process.env.SPAPI_AWS_SECRET),
-          SPAPI_ROLE_ARN: mask(process.env.SPAPI_ROLE_ARN),
-          LWA_CLIENT_ID: mask(process.env.LWA_CLIENT_ID),
-          REFRESH_TOKEN: mask(process.env.REFRESH_TOKEN),
-          MARKETPLACE_ID: process.env.MARKETPLACE_ID || "NOT SET",
-          USE_SPAPI_SANDBOX: process.env.USE_SPAPI_SANDBOX || "NOT SET",
-          // Netlify internal (should NOT be AKIA):
-          NETLIFY_AWS_KEY_prefix: process.env.AWS_ACCESS_KEY_ID
-            ? process.env.AWS_ACCESS_KEY_ID.slice(0, 4)
-            : "NOT SET",
-        }),
-      };
-    }
-
     // Obtener ASINs desde query param
     const asins = params.asins ? params.asins.split(",") : [];
 
