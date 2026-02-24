@@ -8,20 +8,20 @@
 /* Prose Styling Overrides for Blissed Skin Brand */
 [data-component="blog-post"] .prose {
   max-width: none;
-  color: #3C3C3C;
+  color: #3c3c3c;
 }
 
 [data-component="blog-post"] .prose h2 {
-  font-family: 'Playfair Display', serif;
-  color: #2D2D2D;
+  font-family: "Playfair Display", serif;
+  color: #2d2d2d;
   font-weight: 700;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 
 [data-component="blog-post"] .prose h3 {
-  font-family: 'Playfair Display', serif;
-  color: #2D2D2D;
+  font-family: "Playfair Display", serif;
+  color: #2d2d2d;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -30,11 +30,11 @@
 [data-component="blog-post"] .prose p {
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  color: #4A4A4A;
+  color: #4a4a4a;
 }
 
 [data-component="blog-post"] .prose a {
-  color: #9FB686;
+  color: #9fb686;
   text-decoration: underline;
   transition: color 0.2s ease;
 }
@@ -44,7 +44,7 @@
 }
 
 [data-component="blog-post"] .prose strong {
-  color: #3C3C3C;
+  color: #3c3c3c;
   font-weight: 600;
 }
 
@@ -55,11 +55,11 @@
 }
 
 [data-component="blog-post"] .prose blockquote {
-  border-left: 4px solid #9FB686;
+  border-left: 4px solid #9fb686;
   padding-left: 1.5rem;
   font-style: italic;
-  color: #4A4A4A;
-  background: linear-gradient(to right, #EEF9E3, #E1E4DE);
+  color: #4a4a4a;
+  background: linear-gradient(to right, #eef9e3, #e1e4de);
   padding: 1.5rem;
   border-radius: 0.5rem;
   margin: 2rem 0;
@@ -68,7 +68,7 @@
 /* Image Captions */
 [data-component="blog-post"] figcaption {
   font-size: 0.875rem;
-  color: #6B7280;
+  color: #6b7280;
   font-style: italic;
   margin-top: 1rem;
 }

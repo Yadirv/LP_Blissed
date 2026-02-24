@@ -5,6 +5,9 @@ projectdb.pgml
 # Documentation folder (excluir del repo)
 docs/
 
+# Blog post-production files (templates y archivos de trabajo)
+blog/_post-production/
+
 # Node modules
 node_modules/
 

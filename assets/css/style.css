@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;                   
+@tailwind utilities;
 
-body, html {
-max-width: 1200px;   /* ancho máximo */
-margin: 0 auto;      /* centra el contenido */
+body,
+html {
+  max-width: 1200px; /* ancho máximo */
+  margin: 0 auto; /* centra el contenido */
 }

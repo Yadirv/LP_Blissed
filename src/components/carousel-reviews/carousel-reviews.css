@@ -1,54 +1,57 @@
 /* carousel-reviews.css */
 
 [data-component="carousel-reviews"] .pg-viewport {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
 [data-component="carousel-reviews"] .pg-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    /* El ancho será controlado por JS */
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  /* El ancho será controlado por JS */
 }
 
 [data-component="carousel-reviews"] .pg-slide {
-    flex-shrink: 0;
-    transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out, transform 0.5s ease-in-out;
-    /* El ancho será controlado por JS */
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
+  flex-shrink: 0;
+  transition:
+    opacity 0.5s ease-in-out,
+    filter 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+  /* El ancho será controlado por JS */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
 }
 
 /* Estado Inactivo */
 [data-component="carousel-reviews"] .pg-slide.is-inactive {
-    opacity: 0.6 !important;
-    filter: grayscale(0.2);
-    transform: scale(0.98);
+  opacity: 0.6 !important;
+  filter: grayscale(0.2);
+  transform: scale(0.98);
 }
 
 /* Estado Activo */
 [data-component="carousel-reviews"] .pg-slide.is-active {
-    opacity: 1 !important;
-    filter: none;
-    transform: scale(1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  opacity: 1 !important;
+  filter: none;
+  transform: scale(1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
 /* Dots */
 [data-component="carousel-reviews"] .pg-dot {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 [data-component="carousel-reviews"] .pg-dot.is-selected {
-    background-color: #3C3C3C; /* blissed-gray */
-    transform: scale(1.2);
+  background-color: #3c3c3c; /* blissed-gray */
+  transform: scale(1.2);
 }
 
 /* Flechas deshabilitadas */
 [data-component="carousel-reviews"] .pg-arrow.is-disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    pointer-events: none;
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
 }

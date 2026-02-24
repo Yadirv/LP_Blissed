@@ -1,389 +1,839 @@
- 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-5633HD7Q');</script>
-        <!-- End Google Tag Manager -->
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>All Products | Blissed Skin</title>
-        <link rel="stylesheet" href="../tailwind_theme/tailwind.css">
-        <link rel="stylesheet" href="../src/assets/css/base.css">
-        <link rel="stylesheet" href="../src/components/main-header/main-header.css">
-        <link rel="stylesheet" href="../src/components/main-footer/main-footer.css">
-        <link rel="stylesheet" href="../src/components/product-carousel-full/product-carousel-full.css">
-    </head>
-    <body class="flex flex-col min-h-screen bg-gradient-to-r from-[#a63d97] to-[#d39ecb]">
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5633HD7Q"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-        
-        <!-- HEADER -->
-        <header class="w-full bg-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-8 py-4 shadow-sm font-sans main-header" aria-label="Main header" data-component="main-header">
-            <!-- Logo Container -->
-            <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16">
-                <img src="../assets/logo.png" alt="Blissed Skin Logo" class="max-w-full max-h-full object-contain">
-            </div>
-            <!-- Navigation Menu -->
-            <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0" aria-label="Main navigation">
-                <a href="../index.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Home</a>
-                <a href="#" class="text-blissed-olive font-semibold text-base border-b-2 border-blissed-olive whitespace-nowrap">Products</a>
-                <a href="#" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Blogs</a>
-                <a href="HowToUsed.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">How To Used</a>
-                <a href="../index.html#reviews" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Reviews</a>
-            </nav>
-            <!-- Right Section: Search -->
-            <div class="flex items-center gap-6">
-                <div class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors">
-                    <img src="../assets/search-icon.svg" alt="Search" class="w-[8px] h-[8px]" data-pgc-edit="Search Icon[src,no_content]">
-                    <input type="text" placeholder="Search" class="bg-transparent border-transparent outline-none text-[10px] w-full text-gray-700 placeholder-gray-400 font-light tracking-[0.12px] focus:border-transparent" data-pgc-edit="Search Placeholder[placeholder,no_content]">
-                </div>
-            </div>
-        </header>
-        <!-- MAIN CONTENT -->
-        <main class="flex-grow w-full px-6 lg:px-12 py-12">
-            <!-- Breadcrumbs -->
-            <nav aria-label="Breadcrumb" class="mb-8 max-w-7xl mx-auto">
-                <p class="font-sans font-light text-[15px] text-white/80">
-                    Home &gt; Products &gt; <span class="font-semibold text-white">All Products</span> </p>
-            </nav>
-            <!-- Social Media Icons -->
-            <div class="flex items-center gap-4 mb-12 max-w-7xl mx-auto">
-                <a href="#" class="w-9 h-9 hover:opacity-70 transition-opacity" aria-label="Facebook"> <img src="../assets/fb-icon.svg" alt="Facebook" class="w-full h-full"> </a>
-                <a href="#" class="w-9 h-9 hover:opacity-70 transition-opacity" aria-label="Instagram"> <img src="../assets/ig-icon.svg" alt="Instagram" class="w-full h-full"> </a>
-                <a href="#" class="w-9 h-9 hover:opacity-70 transition-opacity" aria-label="TikTok"> <img src="../assets/tkt-icon.svg" alt="TikTok" class="w-full h-full"> </a>
-            </div>
-            <!-- Product Carousel + Description -->
-            <section data-component="product-carousel-full" class="max-w-7xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12">
-                <!-- Carousel Container -->
-                <div class="relative mb-12">
-                    <div class="flex items-center justify-center gap-8">
-                        <!-- Prev Button -->
-                        <button type="button" class="js-prev-btn shrink-0 w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-white/50" aria-label="Previous product">
-                            <svg class="w-6 h-6 text-blissed-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                            </svg>
-                        </button>
-                        <!-- Carousel Track -->
-                        <div class="js-carousel-viewport flex-1 max-w-5xl overflow-hidden">
-                            <div class="js-carousel-track flex transition-transform duration-500 ease-in-out">
-                                <!-- Product 1: 30 Patches -->
-                                <article class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8" data-product-id="acne-patch-30" data-price="8.75" data-title="30 Effective Zit Patches in Four Sizes" data-description="BLISSED SKIN Invisible Acne Patches with Tea Tree Oil. Perfect for targeting small to medium blemishes with precision." data-sizes="8mm, 10mm, 12mm, 14mm" data-features="Ultra-thin|Hydrocolloid technology|Tea tree oil infused|Suitable for all skin types">
-                                    <div class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4">
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <img src="../assets/products/Product-acne-patch-30-Front.png" alt="30 Patches Front" class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300">
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <img src="../assets/products/Product-acne-patch-30-Back.png" alt="30 Patches Back" class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300">
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <!-- Product 2: 60 Patches -->
-                                <article class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8" data-product-id="acne-patch-60" data-price="13.99" data-title="60 Effective Zit Patches in Four Sizes" data-description="BLISSED SKIN Invisible Acne Patches with Tea Tree Oil. Our best-selling pack for complete acne care with maximum value." data-sizes="8mm, 10mm, 12mm, 14mm" data-features="Ultra-thin|Hydrocolloid technology|Tea tree oil infused|Best value pack">
-                                    <div class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4">
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <img src="../assets/products/Product-acne-patch-60-Front.png" alt="60 Patches Front" class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300">
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <img src="../assets/products/Product-acne-patch-60-Back.png" alt="60 Patches Back" class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300">
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <!-- Product 3: 20 Large Patches -->
-                                <article class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8" data-product-id="acne-patch-20" data-price="8.49" data-title="20 Extra Large Effective Zit Patches" data-description="BLISSED SKIN Invisible Large Patches for Face. Specially designed for larger breakouts and problem areas." data-sizes="18mm" data-features="Extra large size|Maximum absorption|Perfect for face patches|Invisible under makeup">
-                                    <div class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4">
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <img src="../assets/products/Product-acne-patch-20-Front.png" alt="20 Large Patches Front" class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300">
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <img src="../assets/products/Product-acne-patch-20-Back.png" alt="20 Large Patches Back" class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300">
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <!-- Product 4: Nasal Strips 40 (NUEVO) -->
-                                <article class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8" data-product-id="nasal-strip-40" data-price="12.99" data-title="40 Premium Nasal Strips" data-description="BLISSED SKIN Breathe Right Nasal Strips. Improve airflow instantly for better sleep and athletic performance." data-sizes="Medium, Large" data-features="Drug-free solution|Instant relief|Reduces snoring|Improves breathing">
-                                    <div class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4">
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <img src="../assets/products/Product-Nasal-Strip-40-Front.png" alt="Nasal Strips Front" class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300">
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <img src="../assets/products/Product-Nasal-Strip-40-Back.png" alt="Nasal Strips Back" class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300">
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <!-- Product 5: Bundle Pack (ACTUALIZADO) -->
-                                <article class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8" data-product-id="combo-bundle" data-price="29.99" data-title="Complete Skin & Breath Care Bundle" data-description="Combo Pack: 40 Nasal Strips + 30 Acne Patches in Four Sizes. Everything you need for clear skin and easy breathing." data-sizes="8mm, 10mm, 12mm, 14mm, Medium, Large" data-features="Complete bundle|Save 25%|Perfect starter kit|Best for daily care">
-                                    <div class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4">
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <div class="grid grid-cols-2 gap-4 w-full h-full p-4">
-                                                <div class="flex items-center justify-center">
-                                                    <img src="../assets/products/Product-Nasal-Strip-40-Front.png" alt="Nasal Strips" class="w-full h-full object-contain drop-shadow-xl">
-                                                </div>
-                                                <div class="flex items-center justify-center">
-                                                    <img src="../assets/products/Product-acne-patch-30-Front.png" alt="30 Patches" class="w-full h-full object-contain drop-shadow-xl">
-                                                </div>
-                                            </div>
-                                            <div class="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg z-10">
-                                                Save 25%
-</div>
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                        </div>
-                                        <div class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in" onclick="openZoom(this)">
-                                            <div class="grid grid-cols-2 gap-4 w-full h-full p-4">
-                                                <div class="flex items-center justify-center">
-                                                    <img src="../assets/products/Product-Nasal-Strip-40-Back.png" alt="Nasal Strips Back" class="w-full h-full object-contain drop-shadow-xl">
-                                                </div>
-                                                <div class="flex items-center justify-center">
-                                                    <img src="../assets/products/Product-acne-patch-30-Back.png" alt="30 Patches Back" class="w-full h-full object-contain drop-shadow-xl">
-                                                </div>
-                                            </div>
-                                            <div class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"></div>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                        <!-- Next Button -->
-                        <button type="button" class="js-next-btn shrink-0 w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-white/50" aria-label="Next product">
-                            <svg class="w-6 h-6 text-blissed-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </button>
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5633HD7Q");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products | Blissed Skin</title>
+    <link rel="icon" type="image/png" href="../assets/logo.png" />
+    <link rel="stylesheet" href="../tailwind_theme/tailwind.css" />
+    <link rel="stylesheet" href="../src/assets/css/base.css" />
+    <link rel="stylesheet" href="../src/components/main-header/main-header.css" />
+    <link rel="stylesheet" href="../src/components/main-footer/main-footer.css" />
+    <link
+      rel="stylesheet"
+      href="../src/components/product-carousel-full/product-carousel-full.css"
+    />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gradient-to-r from-[#a63d97] to-[#d39ecb]">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5633HD7Q"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- HEADER -->
+    <header
+      class="w-full bg-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-8 py-4 shadow-sm font-sans main-header"
+      aria-label="Main header"
+      data-component="main-header"
+    >
+      <!-- Logo Container -->
+      <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16">
+        <img
+          src="../assets/logo.png"
+          alt="Blissed Skin Logo"
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+      <!-- Navigation Menu -->
+      <nav
+        class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0"
+        aria-label="Main navigation"
+      >
+        <a
+          href="../index.html"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="text-blissed-olive font-semibold text-base border-b-2 border-blissed-olive whitespace-nowrap"
+          >Products</a
+        >
+        <a
+          href="#"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >Blogs</a
+        >
+        <a
+          href="HowToUsed.html"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >How To Used</a
+        >
+        <a
+          href="../index.html#reviews"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >Reviews</a
+        >
+      </nav>
+      <!-- Right Section: Search -->
+      <div class="flex items-center gap-6">
+        <div
+          class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
+        >
+          <img
+            src="../assets/search-icon.svg"
+            alt="Search"
+            class="w-[8px] h-[8px]"
+            data-pgc-edit="Search Icon[src,no_content]"
+          />
+          <input
+            type="text"
+            placeholder="Search"
+            class="bg-transparent border-transparent outline-none text-[10px] w-full text-gray-700 placeholder-gray-400 font-light tracking-[0.12px] focus:border-transparent"
+            data-pgc-edit="Search Placeholder[placeholder,no_content]"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow w-full px-6 lg:px-12 py-12">
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8 max-w-7xl mx-auto">
+        <p class="font-sans font-light text-[15px] text-white/80">
+          Home &gt; Products &gt; <span class="font-semibold text-white">All Products</span>
+        </p>
+      </nav>
+      <!-- Social Media Icons -->
+      <div class="flex items-center gap-4 mb-12 max-w-7xl mx-auto">
+        <a
+          href="https://www.facebook.com/profile.php?id=61580285297427"
+          class="w-9 h-9 hover:opacity-70 transition-opacity"
+          aria-label="Facebook"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="../assets/fb-icon.svg" alt="Facebook" class="w-full h-full" />
+        </a>
+        <a
+          href="https://www.instagram.com/blissed_skincare"
+          class="w-9 h-9 hover:opacity-70 transition-opacity"
+          aria-label="Instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="../assets/ig-icon.svg" alt="Instagram" class="w-full h-full" />
+        </a>
+        <a
+          href="https://www.tiktok.com/@blissedskin"
+          class="w-9 h-9 hover:opacity-70 transition-opacity"
+          aria-label="TikTok"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="../assets/tkt-icon.svg" alt="TikTok" class="w-full h-full" />
+        </a>
+      </div>
+      <!-- Product Carousel + Description -->
+      <section
+        data-component="product-carousel-full"
+        class="max-w-7xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12"
+      >
+        <!-- Carousel Container -->
+        <div class="relative mb-12">
+          <div class="flex items-center justify-center gap-8">
+            <!-- Prev Button -->
+            <button
+              type="button"
+              class="js-prev-btn shrink-0 w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-white/50"
+              aria-label="Previous product"
+            >
+              <svg
+                class="w-6 h-6 text-blissed-gray"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <!-- Carousel Track -->
+            <div class="js-carousel-viewport flex-1 max-w-5xl overflow-hidden">
+              <div class="js-carousel-track flex transition-transform duration-500 ease-in-out">
+                <!-- Product 1: 30 Patches -->
+                <article
+                  class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8"
+                  data-product-id="acne-patch-30"
+                  data-price="8.75"
+                  data-title="30 Effective Zit Patches in Four Sizes"
+                  data-description="BLISSED SKIN Invisible Acne Patches with Tea Tree Oil. Perfect for targeting small to medium blemishes with precision."
+                  data-sizes="8mm, 10mm, 12mm, 14mm"
+                  data-features="Ultra-thin|Hydrocolloid technology|Tea tree oil infused|Suitable for all skin types"
+                >
+                  <div
+                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                  >
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <img
+                        src="../assets/products/Product-acne-patch-30-Front.png"
+                        alt="30 Patches Front"
+                        class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300"
+                      />
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                      <div
+                        class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                    <!-- Dots Navigation (Actualizado a 5 productos) -->
-                    <nav class="js-dots flex items-center justify-center gap-3 mt-8" aria-label="Product navigation">
-                        <button type="button" class="js-dot w-3 h-3 rounded-full bg-white transition-all" data-index="0" aria-label="Go to product 1"></button>
-                        <button type="button" class="js-dot w-3 h-3 rounded-full bg-white/40 transition-all" data-index="1" aria-label="Go to product 2"></button>
-                        <button type="button" class="js-dot w-3 h-3 rounded-full bg-white/40 transition-all" data-index="2" aria-label="Go to product 3"></button>
-                        <button type="button" class="js-dot w-3 h-3 rounded-full bg-white/40 transition-all" data-index="3" aria-label="Go to product 4"></button>
-                        <button type="button" class="js-dot w-3 h-3 rounded-full bg-white/40 transition-all" data-index="4" aria-label="Go to product 5"></button>
-                    </nav>
-                </div>
-                <!-- Product Description (Dynamic) -->
-                <div class="js-product-description bg-white rounded-3xl p-8 lg:p-12 shadow-2xl">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <!-- Left: Info -->
-                        <div class="flex flex-col gap-6">
-                            <h2 class="js-title font-playfair text-3xl lg:text-4xl font-bold text-blissed-gray">
-                                60 Effective Zit Patches in Four Sizes </h2>
-                            <p class="js-description text-lg text-gray-600 leading-relaxed">
-                                BLISSED SKIN Invisible Acne Patches with Tea Tree Oil. Our best-selling pack for complete acne care with maximum value. </p>
-                            <!-- Sizes -->
-                            <div class="flex items-center gap-3 flex-wrap">
-                                <span class="text-sm font-medium text-gray-500">Available Sizes:</span>
-                                <div class="js-sizes flex gap-2"></div>
-                            </div>
-                            <!-- Features -->
-                            <div class="js-features flex flex-col gap-2"></div>
-                            <!-- Price & CTA -->
-                            <div class="flex items-center gap-6 mt-4">
-                                <span class="js-price text-4xl font-bold text-blissed-gray">$13.99</span>
-                                <button type="button" class="js-add-to-cart flex-1 lg:flex-none px-8 py-4 rounded-full bg-gradient-to-r from-[#155dfc] to-[#9810fa] text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blissed-gray/50">
-                                    Add to Cart
-</button>
-                            </div>
-                        </div>
-                        <!-- Right: Benefits -->
-                        <div class="bg-gradient-to-br from-[#F3E8FF] to-white rounded-2xl p-8 flex flex-col gap-4">
-                            <h3 class="font-playfair text-2xl font-bold text-blissed-gray">Why Choose This?</h3>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                    </svg>
-                                    <span>Fast-acting hydrocolloid technology</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                    </svg>
-                                    <span>Invisible under makeup</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                    </svg>
-                                    <span>Natural tea tree oil formula</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                    </svg>
-                                    <span>Suitable for all skin types</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <img
+                        src="../assets/products/Product-acne-patch-30-Back.png"
+                        alt="30 Patches Back"
+                        class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300"
+                      />
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                      <div
+                        class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                </div>
-            </section>
-        </main>
-        <!-- FOOTER -->
-        <footer class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] py-16 px-6 text-white font-sans main-footer" data-component="main-footer">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="w-32">
-                    <img src="../assets/logo.png" alt="Blissed Skin" class="w-full brightness-0 invert filter">
-                </div>
-                <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide">
-                    <a href="#" class="hover:text-[#9aad7a] transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-[#9aad7a] transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-[#9aad7a] transition-colors">Return & Exchanges</a>
-                    <a href="#" class="hover:text-[#9aad7a] transition-colors">Legal</a>
-                </div>
-                <div class="text-xs opacity-60">
-                    © 2025 BlissedSkin, Powered Shopify
-</div>
+                  </div>
+                </article>
+                <!-- Product 2: 60 Patches -->
+                <article
+                  class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8"
+                  data-product-id="acne-patch-60"
+                  data-price="13.99"
+                  data-title="60 Effective Zit Patches in Four Sizes"
+                  data-description="BLISSED SKIN Invisible Acne Patches with Tea Tree Oil. Our best-selling pack for complete acne care with maximum value."
+                  data-sizes="8mm, 10mm, 12mm, 14mm"
+                  data-features="Ultra-thin|Hydrocolloid technology|Tea tree oil infused|Best value pack"
+                >
+                  <div
+                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                  >
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <img
+                        src="../assets/products/Product-acne-patch-60-Front.png"
+                        alt="60 Patches Front"
+                        class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300"
+                      />
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                      <div
+                        class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <img
+                        src="../assets/products/Product-acne-patch-60-Back.png"
+                        alt="60 Patches Back"
+                        class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300"
+                      />
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                      <div
+                        class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- Product 3: 20 Large Patches -->
+                <article
+                  class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8"
+                  data-product-id="acne-patch-20"
+                  data-price="8.49"
+                  data-title="20 Extra Large Effective Zit Patches"
+                  data-description="BLISSED SKIN Invisible Large Patches for Face. Specially designed for larger breakouts and problem areas."
+                  data-sizes="18mm"
+                  data-features="Extra large size|Maximum absorption|Perfect for face patches|Invisible under makeup"
+                >
+                  <div
+                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                  >
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <img
+                        src="../assets/products/Product-acne-patch-20-Front.png"
+                        alt="20 Large Patches Front"
+                        class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300"
+                      />
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                      <div
+                        class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <img
+                        src="../assets/products/Product-acne-patch-20-Back.png"
+                        alt="20 Large Patches Back"
+                        class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300"
+                      />
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                      <div
+                        class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- Product 4: Nasal Strips 40 (NUEVO) -->
+                <article
+                  class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8"
+                  data-product-id="nasal-strip-40"
+                  data-price="12.99"
+                  data-title="40 Premium Nasal Strips"
+                  data-description="BLISSED SKIN Breathe Right Nasal Strips. Improve airflow instantly for better sleep and athletic performance."
+                  data-sizes="Medium, Large"
+                  data-features="Drug-free solution|Instant relief|Reduces snoring|Improves breathing"
+                >
+                  <div
+                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                  >
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <img
+                        src="../assets/products/Product-Nasal-Strip-40-Front.png"
+                        alt="Nasal Strips Front"
+                        class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300"
+                      />
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                      <div
+                        class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <img
+                        src="../assets/products/Product-Nasal-Strip-40-Back.png"
+                        alt="Nasal Strips Back"
+                        class="w-full h-full object-contain drop-shadow-2xl transition-transform duration-300"
+                      />
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                      <div
+                        class="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- Product 5: Bundle Pack (ACTUALIZADO) -->
+                <article
+                  class="js-product-slide w-full flex-shrink-0 flex flex-col items-center justify-center py-8"
+                  data-product-id="combo-bundle"
+                  data-price="29.99"
+                  data-title="Complete Skin & Breath Care Bundle"
+                  data-description="Combo Pack: 40 Nasal Strips + 30 Acne Patches in Four Sizes. Everything you need for clear skin and easy breathing."
+                  data-sizes="8mm, 10mm, 12mm, 14mm, Medium, Large"
+                  data-features="Complete bundle|Save 25%|Perfect starter kit|Best for daily care"
+                >
+                  <div
+                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                  >
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <div class="grid grid-cols-2 gap-4 w-full h-full p-4">
+                        <div class="flex items-center justify-center">
+                          <img
+                            src="../assets/products/Product-Nasal-Strip-40-Front.png"
+                            alt="Nasal Strips"
+                            class="w-full h-full object-contain drop-shadow-xl"
+                          />
+                        </div>
+                        <div class="flex items-center justify-center">
+                          <img
+                            src="../assets/products/Product-acne-patch-30-Front.png"
+                            alt="30 Patches"
+                            class="w-full h-full object-contain drop-shadow-xl"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg z-10"
+                      >
+                        Save 25%
+                      </div>
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                    </div>
+                    <div
+                      class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
+                      onclick="openZoom(this)"
+                    >
+                      <div class="grid grid-cols-2 gap-4 w-full h-full p-4">
+                        <div class="flex items-center justify-center">
+                          <img
+                            src="../assets/products/Product-Nasal-Strip-40-Back.png"
+                            alt="Nasal Strips Back"
+                            class="w-full h-full object-contain drop-shadow-xl"
+                          />
+                        </div>
+                        <div class="flex items-center justify-center">
+                          <img
+                            src="../assets/products/Product-acne-patch-30-Back.png"
+                            alt="30 Patches Back"
+                            class="w-full h-full object-contain drop-shadow-xl"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors pointer-events-none"
+                      ></div>
+                    </div>
+                  </div>
+                </article>
+              </div>
             </div>
-        </footer>
-        <!-- Scripts -->
-        <script src="../src/assets/js/components-init.js"></script>
-        <script src="../src/components/main-header/main-header.js"></script>
-        <script src="../src/components/main-footer/main-footer.js"></script>
-        <script src="../src/components/product-carousel-full/product-carousel-full.js"></script>
-        <!-- Zoom Modal Script -->
-        <script>
-            function openZoom(element) {
-                // Buscar la primera imagen (maneja tanto imágenes directas como dentro de grids)
-                const img = element.querySelector('img');
-                if (!img) {
-                    console.error('No se encontró imagen para zoom');
-                    return;
-                }
-                
-                // Crear modal de zoom con estilo inicial visible
-                const modal = document.createElement('div');
-                modal.id = 'zoom-modal';
-                modal.style.cssText = 'position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.9); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 1rem; cursor: zoom-out; opacity: 0; transition: opacity 0.3s ease-in-out;';
-                
-                // Prevenir que clics en la imagen cierren el modal
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeZoom(e);
-                    }
-                });
-                
-                // Crear contenedor de imagen
-                const imgContainer = document.createElement('div');
-                imgContainer.style.cssText = 'position: relative; max-width: 90vw; max-height: 90vh; display: flex; align-items: center; justify-content: center;';
-                
-                // Prevenir que clics en el contenedor cierren el modal
-                imgContainer.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-                
-                // Clonar imagen
-                const zoomedImg = img.cloneNode(true);
-                zoomedImg.style.cssText = 'max-width: 100%; max-height: 90vh; width: auto; height: auto; object-fit: contain; cursor: default;';
-                
-                // Botón cerrar
-                const closeBtn = document.createElement('button');
-                closeBtn.innerHTML = `
+            <!-- Next Button -->
+            <button
+              type="button"
+              class="js-next-btn shrink-0 w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-white/50"
+              aria-label="Next product"
+            >
+              <svg
+                class="w-6 h-6 text-blissed-gray"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+          <!-- Dots Navigation (Actualizado a 5 productos) -->
+          <nav
+            class="js-dots flex items-center justify-center gap-3 mt-8"
+            aria-label="Product navigation"
+          >
+            <button
+              type="button"
+              class="js-dot w-3 h-3 rounded-full bg-white transition-all"
+              data-index="0"
+              aria-label="Go to product 1"
+            ></button>
+            <button
+              type="button"
+              class="js-dot w-3 h-3 rounded-full bg-white/40 transition-all"
+              data-index="1"
+              aria-label="Go to product 2"
+            ></button>
+            <button
+              type="button"
+              class="js-dot w-3 h-3 rounded-full bg-white/40 transition-all"
+              data-index="2"
+              aria-label="Go to product 3"
+            ></button>
+            <button
+              type="button"
+              class="js-dot w-3 h-3 rounded-full bg-white/40 transition-all"
+              data-index="3"
+              aria-label="Go to product 4"
+            ></button>
+            <button
+              type="button"
+              class="js-dot w-3 h-3 rounded-full bg-white/40 transition-all"
+              data-index="4"
+              aria-label="Go to product 5"
+            ></button>
+          </nav>
+        </div>
+        <!-- Product Description (Dynamic) -->
+        <div class="js-product-description bg-white rounded-3xl p-8 lg:p-12 shadow-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Left: Info -->
+            <div class="flex flex-col gap-6">
+              <h2 class="js-title font-playfair text-3xl lg:text-4xl font-bold text-blissed-gray">
+                60 Effective Zit Patches in Four Sizes
+              </h2>
+              <p class="js-description text-lg text-gray-600 leading-relaxed">
+                BLISSED SKIN Invisible Acne Patches with Tea Tree Oil. Our best-selling pack for
+                complete acne care with maximum value.
+              </p>
+              <!-- Sizes -->
+              <div class="flex items-center gap-3 flex-wrap">
+                <span class="text-sm font-medium text-gray-500">Available Sizes:</span>
+                <div class="js-sizes flex gap-2"></div>
+              </div>
+              <!-- Features -->
+              <div class="js-features flex flex-col gap-2"></div>
+              <!-- Price & CTA -->
+              <div class="flex items-center gap-6 mt-4">
+                <span class="js-price text-4xl font-bold text-blissed-gray">$13.99</span>
+                <button
+                  type="button"
+                  class="js-add-to-cart flex-1 lg:flex-none px-8 py-4 rounded-full bg-gradient-to-r from-[#155dfc] to-[#9810fa] text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blissed-gray/50"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <!-- Right: Benefits -->
+            <div
+              class="bg-gradient-to-br from-[#F3E8FF] to-white rounded-2xl p-8 flex flex-col gap-4"
+            >
+              <h3 class="font-playfair text-2xl font-bold text-blissed-gray">Why Choose This?</h3>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="w-6 h-6 text-green-500 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Fast-acting hydrocolloid technology</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="w-6 h-6 text-green-500 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Invisible under makeup</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="w-6 h-6 text-green-500 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Natural tea tree oil formula</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="w-6 h-6 text-green-500 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Suitable for all skin types</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer
+      class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] py-16 px-6 text-white font-sans main-footer"
+      data-component="main-footer"
+    >
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="w-32">
+          <img
+            src="../assets/logo.png"
+            alt="Blissed Skin"
+            class="w-full brightness-0 invert filter"
+          />
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide">
+          <a href="#" class="hover:text-[#9aad7a] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#9aad7a] transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-[#9aad7a] transition-colors">Return & Exchanges</a>
+          <a href="#" class="hover:text-[#9aad7a] transition-colors">Legal</a>
+        </div>
+        <div class="text-xs opacity-60">© 2025 BlissedSkin, Powered Shopify</div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../src/assets/js/components-init.js"></script>
+    <script src="../src/components/main-header/main-header.js"></script>
+    <script src="../src/components/main-footer/main-footer.js"></script>
+    <script src="../src/components/product-carousel-full/product-carousel-full.js"></script>
+    <!-- Zoom Modal Script -->
+    <script>
+      function openZoom(element) {
+        // Buscar la primera imagen (maneja tanto imágenes directas como dentro de grids)
+        const img = element.querySelector("img");
+        if (!img) {
+          console.error("No se encontró imagen para zoom");
+          return;
+        }
+
+        // Crear modal de zoom con estilo inicial visible
+        const modal = document.createElement("div");
+        modal.id = "zoom-modal";
+        modal.style.cssText =
+          "position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.9); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 1rem; cursor: zoom-out; opacity: 0; transition: opacity 0.3s ease-in-out;";
+
+        // Prevenir que clics en la imagen cierren el modal
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            closeZoom(e);
+          }
+        });
+
+        // Crear contenedor de imagen
+        const imgContainer = document.createElement("div");
+        imgContainer.style.cssText =
+          "position: relative; max-width: 90vw; max-height: 90vh; display: flex; align-items: center; justify-content: center;";
+
+        // Prevenir que clics en el contenedor cierren el modal
+        imgContainer.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+
+        // Clonar imagen
+        const zoomedImg = img.cloneNode(true);
+        zoomedImg.style.cssText =
+          "max-width: 100%; max-height: 90vh; width: auto; height: auto; object-fit: contain; cursor: default;";
+
+        // Botón cerrar
+        const closeBtn = document.createElement("button");
+        closeBtn.innerHTML = `
                     <svg style="width: 2rem; height: 2rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 `;
-                closeBtn.style.cssText = 'position: absolute; top: 1rem; right: 1rem; width: 3rem; height: 3rem; background-color: white; color: #111827; border-radius: 9999px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.2s;';
-                closeBtn.onmouseover = function() { this.style.backgroundColor = '#f3f4f6'; };
-                closeBtn.onmouseout = function() { this.style.backgroundColor = 'white'; };
-                closeBtn.onclick = function(e) {
-                    e.stopPropagation();
-                    closeZoom(e);
-                };
-                
-                // Ensamblar modal
-                imgContainer.appendChild(zoomedImg);
-                imgContainer.appendChild(closeBtn);
-                modal.appendChild(imgContainer);
-                document.body.appendChild(modal);
-                
-                // Prevenir scroll del body
-                document.body.style.overflow = 'hidden';
-                
-                // Animación de entrada (forzar reflow antes de mostrar)
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        modal.style.opacity = '1';
-                    });
-                });
-            }
-            
-            function closeZoom(e) {
-                if (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-                const modal = document.getElementById('zoom-modal');
-                if (modal) {
-                    modal.style.opacity = '0';
-                    setTimeout(() => {
-                        modal.remove();
-                        document.body.style.overflow = '';
-                    }, 300);
-                }
-            }
-            
-            // Cerrar con tecla ESC
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    closeZoom(e);
-                }
-            });
-        </script>
-        <!-- Estilos adicionales para cursor -->
-        <style>.cursor-zoom-in { cursor: zoom-in; } .cursor-zoom-in:hover { transform: scale(1.02); transition: transform 0.2s ease; }</style>
-    </body>
+        closeBtn.style.cssText =
+          "position: absolute; top: 1rem; right: 1rem; width: 3rem; height: 3rem; background-color: white; color: #111827; border-radius: 9999px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.2s;";
+        closeBtn.onmouseover = function () {
+          this.style.backgroundColor = "#f3f4f6";
+        };
+        closeBtn.onmouseout = function () {
+          this.style.backgroundColor = "white";
+        };
+        closeBtn.onclick = function (e) {
+          e.stopPropagation();
+          closeZoom(e);
+        };
+
+        // Ensamblar modal
+        imgContainer.appendChild(zoomedImg);
+        imgContainer.appendChild(closeBtn);
+        modal.appendChild(imgContainer);
+        document.body.appendChild(modal);
+
+        // Prevenir scroll del body
+        document.body.style.overflow = "hidden";
+
+        // Animación de entrada (forzar reflow antes de mostrar)
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            modal.style.opacity = "1";
+          });
+        });
+      }
+
+      function closeZoom(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        const modal = document.getElementById("zoom-modal");
+        if (modal) {
+          modal.style.opacity = "0";
+          setTimeout(() => {
+            modal.remove();
+            document.body.style.overflow = "";
+          }, 300);
+        }
+      }
+
+      // Cerrar con tecla ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeZoom(e);
+        }
+      });
+    </script>
+    <!-- Estilos adicionales para cursor -->
+    <style>
+      .cursor-zoom-in {
+        cursor: zoom-in;
+      }
+      .cursor-zoom-in:hover {
+        transform: scale(1.02);
+        transition: transform 0.2s ease;
+      }
+    </style>
+  </body>
 </html>

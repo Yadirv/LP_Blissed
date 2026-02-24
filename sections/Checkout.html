@@ -1,220 +1,313 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5633HD7Q');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5633HD7Q");
+    </script>
     <!-- End Google Tag Manager -->
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout - Blissed Skin</title>
-    <link rel="stylesheet" href="../tailwind_theme/tailwind.css">
-    <link rel="stylesheet" href="../src/components/main-header/main-header.css">
-</head>
-<body class="bg-gradient-main">
+    <link rel="stylesheet" href="../tailwind_theme/tailwind.css" />
+    <link rel="stylesheet" href="../src/components/main-header/main-header.css" />
+  </head>
+  <body class="bg-gradient-main">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5633HD7Q"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5633HD7Q"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
-    <header class="w-full bg-white flex flex-col lg:flex-row items-center justify-start gap-8 px-6 lg:px-8 py-4 shadow-sm font-sans main-header sticky top-0 z-50" aria-label="Main header">
-        <!-- Logo Container -->
-        <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16">
-            <img src="../assets/logo.png" alt="Blissed Skin Logo" class="max-w-full max-h-full object-contain">
+
+    <header
+      class="w-full bg-white flex flex-col lg:flex-row items-center justify-start gap-8 px-6 lg:px-8 py-4 shadow-sm font-sans main-header sticky top-0 z-50"
+      aria-label="Main header"
+    >
+      <!-- Logo Container -->
+      <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16">
+        <img
+          src="../assets/logo.png"
+          alt="Blissed Skin Logo"
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav
+        class="flex flex-wrap justify-start items-center gap-x-6 gap-y-2 my-4 lg:my-0"
+        aria-label="Main navigation"
+      >
+        <a
+          href="../index.html"
+          class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
+          >Home</a
+        >
+        <a
+          href="../sections/PageAllProducts.html"
+          class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
+          >Products</a
+        >
+        <a
+          href="#"
+          class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
+          >Blogs</a
+        >
+        <a
+          href="../sections/HowToUsed.html"
+          class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
+          >How To Used</a
+        >
+        <a
+          href="../index.html#reviews"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >Reviews</a
+        >
+      </nav>
+
+      <!-- Right Section: Search -->
+      <div class="flex items-center gap-6 ml-auto">
+        <div
+          class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
+        >
+          <img src="../assets/search-icon.svg" alt="Search" class="w-[8px] h-[8px]" />
+          <input
+            type="text"
+            placeholder="Search"
+            class="bg-transparent border-transparent outline-none text-[10px] w-full text-gray-700 placeholder-gray-400 font-light tracking-[0.12px] focus:border-transparent"
+          />
         </div>
-        
-        <!-- Navigation Menu -->
-        <nav class="flex flex-wrap justify-start items-center gap-x-6 gap-y-2 my-4 lg:my-0" aria-label="Main navigation">
-            <a href="../index.html" class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap">Home</a>
-            <a href="../sections/PageAllProducts.html" class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap">Products</a>
-            <a href="#" class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap">Blogs</a>
-            <a href="../sections/HowToUsed.html" class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap">How To Used</a>
-            <a href="../index.html#reviews" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Reviews</a>
-        </nav>
-        
-        <!-- Right Section: Search -->
-        <div class="flex items-center gap-6 ml-auto">
-            <div class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors">
-                <img src="../assets/search-icon.svg" alt="Search" class="w-[8px] h-[8px]">
-                <input type="text" placeholder="Search" class="bg-transparent border-transparent outline-none text-[10px] w-full text-gray-700 placeholder-gray-400 font-light tracking-[0.12px] focus:border-transparent">
-            </div>
-        </div>
+      </div>
     </header>
 
     <main class="w-full min-h-screen py-12 px-4">
-        <!-- Breadcrumb -->
-        <nav aria-label="Breadcrumb" class="max-w-[1200px] mx-auto mb-8">
-            <p class="font-light text-[15px] text-white/80">Home &gt; Cart &gt; Checkout</p>
-        </nav>
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="max-w-[1200px] mx-auto mb-8">
+        <p class="font-light text-[15px] text-white/80">Home &gt; Cart &gt; Checkout</p>
+      </nav>
 
-        <div class="max-w-[1200px] mx-auto">
-            <div class="flex flex-col lg:flex-row gap-8">
-                <!-- Left Column: Checkout Form -->
-                <div class="flex-1">
-                    <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-                        <h1 class="font-playfair font-medium text-4xl md:text-5xl text-blissed-black mb-8">Complete Your Order</h1>
-                        
-                        <form id="checkoutForm" class="space-y-6">
-                            <!-- Email -->
-                            <div>
-                                <label for="email" class="block text-lg font-medium text-blissed-gray mb-2">
-                                    Email Address <span class="text-red-500">*</span>
-                                </label>
-                                <input 
-                                    type="email" 
-                                    id="email" 
-                                    name="email" 
-                                    required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blissed-lavender focus:border-transparent outline-none transition-all"
-                                    placeholder="you@example.com"
-                                >
-                                <p class="text-sm text-gray-500 mt-1">We'll send your order confirmation here</p>
-                            </div>
+      <div class="max-w-[1200px] mx-auto">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Left Column: Checkout Form -->
+          <div class="flex-1">
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+              <h1 class="font-playfair font-medium text-4xl md:text-5xl text-blissed-black mb-8">
+                Complete Your Order
+              </h1>
 
-                            <!-- Full Name -->
-                            <div>
-                                <label for="fullName" class="block text-lg font-medium text-blissed-gray mb-2">
-                                    Full Name <span class="text-red-500">*</span>
-                                </label>
-                                <input 
-                                    type="text" 
-                                    id="fullName" 
-                                    name="fullName" 
-                                    required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blissed-lavender focus:border-transparent outline-none transition-all"
-                                    placeholder="John Doe"
-                                >
-                            </div>
-
-                            <!-- Phone (Optional) -->
-                            <div>
-                                <label for="phone" class="block text-lg font-medium text-blissed-gray mb-2">
-                                    Phone Number <span class="text-gray-400 text-sm">(Optional)</span>
-                                </label>
-                                <input 
-                                    type="tel" 
-                                    id="phone" 
-                                    name="phone" 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blissed-lavender focus:border-transparent outline-none transition-all"
-                                    placeholder="+1 (555) 000-0000"
-                                >
-                            </div>
-
-                            <!-- Terms & Conditions -->
-                            <div class="flex items-start gap-3 pt-4">
-                                <input 
-                                    type="checkbox" 
-                                    id="terms" 
-                                    name="terms" 
-                                    required 
-                                    class="mt-1 w-5 h-5 text-blissed-lavender border-gray-300 rounded focus:ring-blissed-lavender"
-                                >
-                                <label for="terms" class="text-sm text-gray-700">
-                                    I agree to the <a href="../sections/PrivacyAndTerms.html" class="text-blissed-olive hover:underline">Terms of Service</a> and <a href="../sections/PrivacyAndTerms.html" class="text-blissed-olive hover:underline">Privacy Policy</a>
-                                </label>
-                            </div>
-
-                            <!-- Error Message -->
-                            <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"></div>
-
-                            <!-- Submit Button -->
-                            <button 
-                                type="submit" 
-                                id="submitBtn"
-                                class="w-full bg-gradient-cta text-white py-4 rounded-xl font-playfair text-xl font-medium transition-transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                Continue to Payment
-                            </button>
-
-                            <p class="text-xs text-center text-gray-500 mt-4">
-                                You will be redirected to Amazon to complete your purchase securely
-                            </p>
-                        </form>
-                    </div>
+              <form id="checkoutForm" class="space-y-6">
+                <!-- Email -->
+                <div>
+                  <label for="email" class="block text-lg font-medium text-blissed-gray mb-2">
+                    Email Address <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blissed-lavender focus:border-transparent outline-none transition-all"
+                    placeholder="you@example.com"
+                  />
+                  <p class="text-sm text-gray-500 mt-1">We'll send your order confirmation here</p>
                 </div>
 
-                <!-- Right Column: Order Summary -->
-                <div class="lg:w-[400px]">
-                    <div class="bg-white rounded-3xl shadow-2xl p-8 sticky top-24">
-                        <h2 class="font-playfair font-medium text-2xl text-blissed-black mb-6">Order Summary</h2>
-                        
-                        <!-- Cart Items -->
-                        <div id="cartItems" class="space-y-4 mb-6 max-h-[400px] overflow-y-auto">
-                            <!-- Items will be populated by JavaScript -->
-                        </div>
-
-                        <!-- Totals -->
-                        <div class="border-t border-gray-200 pt-4 space-y-3">
-                            <div class="flex justify-between text-gray-700">
-                                <span>Subtotal</span>
-                                <span id="subtotal" class="font-medium">$0.00</span>
-                            </div>
-                            <div class="flex justify-between text-gray-700">
-                                <span>Shipping</span>
-                                <span class="text-green-600 font-medium">Calculated at checkout</span>
-                            </div>
-                            <div class="flex justify-between text-xl font-playfair font-medium text-blissed-black border-t border-gray-200 pt-3">
-                                <span>Total</span>
-                                <span id="total">$0.00</span>
-                            </div>
-                        </div>
-
-                        <!-- Trust Badges -->
-                        <div class="mt-6 pt-6 border-t border-gray-200">
-                            <p class="text-xs text-center text-gray-500 mb-3">Secure Checkout</p>
-                            <div class="flex items-center justify-center gap-4 opacity-60">
-                                <span class="text-2xl">🔒</span>
-                                <span class="text-2xl">💳</span>
-                                <span class="text-2xl">✓</span>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Full Name -->
+                <div>
+                  <label for="fullName" class="block text-lg font-medium text-blissed-gray mb-2">
+                    Full Name <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blissed-lavender focus:border-transparent outline-none transition-all"
+                    placeholder="John Doe"
+                  />
                 </div>
+
+                <!-- Phone (Optional) -->
+                <div>
+                  <label for="phone" class="block text-lg font-medium text-blissed-gray mb-2">
+                    Phone Number <span class="text-gray-400 text-sm">(Optional)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blissed-lavender focus:border-transparent outline-none transition-all"
+                    placeholder="+1 (555) 000-0000"
+                  />
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="flex items-start gap-3 pt-4">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    name="terms"
+                    required
+                    class="mt-1 w-5 h-5 text-blissed-lavender border-gray-300 rounded focus:ring-blissed-lavender"
+                  />
+                  <label for="terms" class="text-sm text-gray-700">
+                    I agree to the
+                    <a
+                      href="../sections/PrivacyAndTerms.html"
+                      class="text-blissed-olive hover:underline"
+                      >Terms of Service</a
+                    >
+                    and
+                    <a
+                      href="../sections/PrivacyAndTerms.html"
+                      class="text-blissed-olive hover:underline"
+                      >Privacy Policy</a
+                    >
+                  </label>
+                </div>
+
+                <!-- Error Message -->
+                <div
+                  id="errorMessage"
+                  class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"
+                ></div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="w-full bg-gradient-cta text-white py-4 rounded-xl font-playfair text-xl font-medium transition-transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Continue to Payment
+                </button>
+
+                <p class="text-xs text-center text-gray-500 mt-4">
+                  You will be redirected to Amazon to complete your purchase securely
+                </p>
+              </form>
             </div>
+          </div>
+
+          <!-- Right Column: Order Summary -->
+          <div class="lg:w-[400px]">
+            <div class="bg-white rounded-3xl shadow-2xl p-8 sticky top-24">
+              <h2 class="font-playfair font-medium text-2xl text-blissed-black mb-6">
+                Order Summary
+              </h2>
+
+              <!-- Cart Items -->
+              <div id="cartItems" class="space-y-4 mb-6 max-h-[400px] overflow-y-auto">
+                <!-- Items will be populated by JavaScript -->
+              </div>
+
+              <!-- Totals -->
+              <div class="border-t border-gray-200 pt-4 space-y-3">
+                <div class="flex justify-between text-gray-700">
+                  <span>Subtotal</span>
+                  <span id="subtotal" class="font-medium">$0.00</span>
+                </div>
+                <div class="flex justify-between text-gray-700">
+                  <span>Shipping</span>
+                  <span class="text-green-600 font-medium">Calculated at checkout</span>
+                </div>
+                <div
+                  class="flex justify-between text-xl font-playfair font-medium text-blissed-black border-t border-gray-200 pt-3"
+                >
+                  <span>Total</span>
+                  <span id="total">$0.00</span>
+                </div>
+              </div>
+
+              <!-- Trust Badges -->
+              <div class="mt-6 pt-6 border-t border-gray-200">
+                <p class="text-xs text-center text-gray-500 mb-3">Secure Checkout</p>
+                <div class="flex items-center justify-center gap-4 opacity-60">
+                  <span class="text-2xl">🔒</span>
+                  <span class="text-2xl">💳</span>
+                  <span class="text-2xl">✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
-    <footer class="bg-gradient-to-r from-[#a63d97] to-[#d39ecb] w-full py-12 px-6 flex flex-col items-center gap-8 mt-16">
-        <div class="w-32 flex-shrink-0">
-            <img src="../assets/logo.png" alt="Blissed Skin" class="w-full brightness-0 invert filter">
-        </div>
-        <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide text-white">
-            <a href="../sections/PrivacyAndTerms.html" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Privacy Policy</a>
-            <a href="../sections/PrivacyAndTerms.html" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Terms of Service</a>
-            <a href="../sections/ReturnExchange.html" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Return & Exchanges</a>
-            <a href="../sections/Legal.html" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Legal</a>
-        </div>
-        <div class="text-xs opacity-60 text-white">© 2026 BlissedSkin. All rights reserved.</div>
+    <footer
+      class="bg-gradient-to-r from-[#a63d97] to-[#d39ecb] w-full py-12 px-6 flex flex-col items-center gap-8 mt-16"
+    >
+      <div class="w-32 flex-shrink-0">
+        <img
+          src="../assets/logo.png"
+          alt="Blissed Skin"
+          class="w-full brightness-0 invert filter"
+        />
+      </div>
+      <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide text-white">
+        <a
+          href="../sections/PrivacyAndTerms.html"
+          class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap"
+          >Privacy Policy</a
+        >
+        <a
+          href="../sections/PrivacyAndTerms.html"
+          class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap"
+          >Terms of Service</a
+        >
+        <a
+          href="../sections/ReturnExchange.html"
+          class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap"
+          >Return & Exchanges</a
+        >
+        <a
+          href="../sections/Legal.html"
+          class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap"
+          >Legal</a
+        >
+      </div>
+      <div class="text-xs opacity-60 text-white">© 2026 BlissedSkin. All rights reserved.</div>
     </footer>
 
     <!-- Scripts -->
     <script src="../src/assets/js/cart.js"></script>
     <script>
-        // Populate cart items on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const cart = BlissedCart.get();
-            const cartItemsContainer = document.getElementById('cartItems');
-            const subtotalElement = document.getElementById('subtotal');
-            const totalElement = document.getElementById('total');
+      // Populate cart items on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const cart = BlissedCart.get();
+        const cartItemsContainer = document.getElementById("cartItems");
+        const subtotalElement = document.getElementById("subtotal");
+        const totalElement = document.getElementById("total");
 
-            // Check if cart is empty
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
+        // Check if cart is empty
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = `
                     <div class="text-center py-8">
                         <p class="text-gray-500 mb-4">Your cart is empty</p>
                         <a href="../sections/PageAllProducts.html" class="text-blissed-olive hover:underline">Continue Shopping</a>
                     </div>
                 `;
-                document.getElementById('submitBtn').disabled = true;
-                return;
-            }
+          document.getElementById("submitBtn").disabled = true;
+          return;
+        }
 
-            // Populate cart items
-            cartItemsContainer.innerHTML = cart.map(item => `
+        // Populate cart items
+        cartItemsContainer.innerHTML = cart
+          .map(
+            (item) => `
                 <div class="flex gap-3 pb-4 border-b border-gray-100">
                     <div class="w-16 h-16 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden">
                         <img src="${item.image}" alt="${item.item_name}" class="w-full h-full object-contain">
@@ -225,87 +318,92 @@
                         <p class="text-sm font-medium text-blissed-gray mt-1">$${(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                 </div>
-            `).join('');
+            `
+          )
+          .join("");
 
-            // Update totals
-            const total = BlissedCart.getTotal();
-            subtotalElement.textContent = `$${total.toFixed(2)}`;
-            totalElement.textContent = `$${total.toFixed(2)}`;
+        // Update totals
+        const total = BlissedCart.getTotal();
+        subtotalElement.textContent = `$${total.toFixed(2)}`;
+        totalElement.textContent = `$${total.toFixed(2)}`;
 
-            // Fire begin_checkout event
-            BlissedCart.beginCheckout();
-        });
+        // Fire begin_checkout event
+        BlissedCart.beginCheckout();
+      });
 
-        // Handle form submission
-        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const fullName = document.getElementById('fullName').value;
-            const phone = document.getElementById('phone').value;
-            const terms = document.getElementById('terms').checked;
-            
-            if (!terms) {
-                showError('Please accept the Terms of Service and Privacy Policy');
-                return;
-            }
+      // Handle form submission
+      document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-            // Disable submit button
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Processing...';
+        const email = document.getElementById("email").value;
+        const fullName = document.getElementById("fullName").value;
+        const phone = document.getElementById("phone").value;
+        const terms = document.getElementById("terms").checked;
 
-            // Store customer info for thank you page
-            sessionStorage.setItem('customer_info', JSON.stringify({
-                email: email,
-                fullName: fullName,
-                phone: phone
-            }));
-
-            // TODO: Send to Netlify Function (Mailchimp/Google Sheets)
-            // For now, redirect to external payment (Amazon)
-            
-            // Simulate API call
-            setTimeout(() => {
-                // Generate Amazon cart URL
-                const amazonURL = generateAmazonCartURL();
-                
-                // Open Amazon in new tab
-                window.open(amazonURL, '_blank');
-                
-                // Show instructions
-                showSuccessMessage();
-                
-                // Redirect to thank you page after 3 seconds
-                setTimeout(() => {
-                    window.location.href = '../sections/ThankYou.html';
-                }, 3000);
-            }, 1000);
-        });
-
-        function generateAmazonCartURL() {
-            const cart = BlissedCart.get();
-            const partnerTag = 'blissedskin-20'; // Replace with your Amazon Associates Tag
-            
-            // For demo purposes, redirect to Amazon homepage
-            // In production, use proper Amazon cart API
-            return `https://www.amazon.com/?tag=${partnerTag}`;
+        if (!terms) {
+          showError("Please accept the Terms of Service and Privacy Policy");
+          return;
         }
 
-        function showError(message) {
-            const errorDiv = document.getElementById('errorMessage');
-            errorDiv.textContent = message;
-            errorDiv.classList.remove('hidden');
-            
-            setTimeout(() => {
-                errorDiv.classList.add('hidden');
-            }, 5000);
-        }
+        // Disable submit button
+        const submitBtn = document.getElementById("submitBtn");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Processing...";
 
-        function showSuccessMessage() {
-            const notification = document.createElement('div');
-            notification.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
-            notification.innerHTML = `
+        // Store customer info for thank you page
+        sessionStorage.setItem(
+          "customer_info",
+          JSON.stringify({
+            email: email,
+            fullName: fullName,
+            phone: phone,
+          })
+        );
+
+        // TODO: Send to Netlify Function (Mailchimp/Google Sheets)
+        // For now, redirect to external payment (Amazon)
+
+        // Simulate API call
+        setTimeout(() => {
+          // Generate Amazon cart URL
+          const amazonURL = generateAmazonCartURL();
+
+          // Open Amazon in new tab
+          window.open(amazonURL, "_blank");
+
+          // Show instructions
+          showSuccessMessage();
+
+          // Redirect to thank you page after 3 seconds
+          setTimeout(() => {
+            window.location.href = "../sections/ThankYou.html";
+          }, 3000);
+        }, 1000);
+      });
+
+      function generateAmazonCartURL() {
+        const cart = BlissedCart.get();
+        const partnerTag = "blissedskin-20"; // Replace with your Amazon Associates Tag
+
+        // For demo purposes, redirect to Amazon homepage
+        // In production, use proper Amazon cart API
+        return `https://www.amazon.com/?tag=${partnerTag}`;
+      }
+
+      function showError(message) {
+        const errorDiv = document.getElementById("errorMessage");
+        errorDiv.textContent = message;
+        errorDiv.classList.remove("hidden");
+
+        setTimeout(() => {
+          errorDiv.classList.add("hidden");
+        }, 5000);
+      }
+
+      function showSuccessMessage() {
+        const notification = document.createElement("div");
+        notification.className = "fixed inset-0 bg-black/50 flex items-center justify-center z-50";
+        notification.innerHTML = `
                 <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center">
                     <div class="text-6xl mb-4">✓</div>
                     <h3 class="text-2xl font-playfair font-medium mb-2">Opening Amazon Checkout</h3>
@@ -313,8 +411,8 @@
                     <p class="text-sm text-gray-500">Redirecting in 3 seconds...</p>
                 </div>
             `;
-            document.body.appendChild(notification);
-        }
+        document.body.appendChild(notification);
+      }
     </script>
-</body>
+  </body>
 </html>

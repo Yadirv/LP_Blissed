@@ -1,90 +1,257 @@
- 
-<!DOCTYPE html> 
-<html lang="en"> 
-    <head> 
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Blissed Skin - Anti-Acne Routine</title>         
-        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css"> 
-    </head>     
-    <body class="antialiased bg-gradient-to-r from-[#a63d97] to-[#d39ecb]"> 
-        <!-- HEADER -->
-        <header class="w-full bg-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-8 py-4 shadow-md font-sans sticky top-0 z-50" aria-label="Main header"> 
-            <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16"> 
-                <img src="../assets/logo.png" alt="Blissed Skin Logo" class="max-w-full max-h-full object-contain"> 
-            </div>
-            <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0" aria-label="Main navigation"><a href="../index.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Home</a><a href="PageAllProducts.html" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Products</a><a href="#" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Blogs</a><a href="#" class="text-blissed-gray font-semibold text-base border-b-2 border-blissed-olive whitespace-nowrap">How To Used</a><a href="../index.html#reviews" class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap">Reviews</a>
-            </nav>
-            <div class="flex items-center gap-6"> 
-                <div class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"> 
-                    <img src="../assets/search-icon.svg" alt="Search" class="w-[8px] h-[8px]" data-pgc-edit="Search Icon[src,no_content]"> 
-                    <input type="text" placeholder="Search" class="bg-transparent border-transparent outline-none text-[10px] w-full text-gray-700 placeholder-gray-400 font-light tracking-[0.12px] focus:border-transparent" data-pgc-edit="Search Placeholder[placeholder,no_content]"> 
-                </div>
-                <div class="flex items-center gap-4"><a href="#" class="w-6 h-6 hover:opacity-70 transition-opacity duration-200" aria-label="Facebook"> <img src="../assets/fb-icon.svg" alt="Facebook" class="w-full h-full text-[#3C3C3C]"> </a><a href="#" class="w-6 h-6 hover:opacity-70 transition-opacity duration-200" aria-label="Instagram"> <img src="../assets/ig-icon.svg" alt="Instagram" class="w-full h-full text-[#3C3C3C]"> </a><a href="#" class="w-6 h-6 hover:opacity-70 transition-opacity duration-200" aria-label="TikTok"> <img src="../assets/tkt-icon.svg" alt="TikTok" class="w-full h-full text-[#3C3C3C]"> </a>
-                </div>
-            </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blissed Skin - Anti-Acne Routine</title>
+    <link rel="icon" type="image/png" href="../assets/logo.png" />
+    <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="antialiased bg-gradient-to-r from-[#a63d97] to-[#d39ecb]">
+    <!-- HEADER -->
+    <header
+      class="w-full bg-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-8 py-4 shadow-md font-sans sticky top-0 z-50"
+      aria-label="Main header"
+    >
+      <div class="flex-shrink-0 w-[150px] flex items-center justify-center h-16">
+        <img
+          src="../assets/logo.png"
+          alt="Blissed Skin Logo"
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+      <nav
+        class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0"
+        aria-label="Main navigation"
+      >
+        <a
+          href="../index.html"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >Home</a
+        ><a
+          href="PageAllProducts.html"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >Products</a
+        ><a
+          href="#"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >Blogs</a
+        ><a
+          href="#"
+          class="text-blissed-gray font-semibold text-base border-b-2 border-blissed-olive whitespace-nowrap"
+          >How To Used</a
+        ><a
+          href="../index.html#reviews"
+          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          >Reviews</a
+        >
+      </nav>
+      <div class="flex items-center gap-6">
+        <div
+          class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
+        >
+          <img
+            src="../assets/search-icon.svg"
+            alt="Search"
+            class="w-[8px] h-[8px]"
+            data-pgc-edit="Search Icon[src,no_content]"
+          />
+          <input
+            type="text"
+            placeholder="Search"
+            class="bg-transparent border-transparent outline-none text-[10px] w-full text-gray-700 placeholder-gray-400 font-light tracking-[0.12px] focus:border-transparent"
+            data-pgc-edit="Search Placeholder[placeholder,no_content]"
+          />
+        </div>
+        <div class="flex items-center gap-4">
+          <a
+            href="https://www.facebook.com/profile.php?id=61580285297427"
+            class="w-6 h-6 hover:opacity-70 transition-opacity duration-200"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/fb-icon.svg"
+              alt="Facebook"
+              class="w-full h-full text-[#3C3C3C]"
+            /> </a
+          ><a
+            href="https://www.instagram.com/blissed_skincare"
+            class="w-6 h-6 hover:opacity-70 transition-opacity duration-200"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/ig-icon.svg"
+              alt="Instagram"
+              class="w-full h-full text-[#3C3C3C]"
+            /> </a
+          ><a
+            href="https://www.tiktok.com/@blissedskin"
+            class="w-6 h-6 hover:opacity-70 transition-opacity duration-200"
+            aria-label="TikTok"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="../assets/tkt-icon.svg" alt="TikTok" class="w-full h-full text-[#3C3C3C]" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main class="w-full min-h-screen flex flex-col py-12 px-6 lg:px-12">
+      <div class="w-full max-w-7xl mx-auto mb-12">
+        <nav class="text-white/80 font-sans font-medium text-sm md:text-base">
+          Home &gt; Products &gt; <span class="text-white font-semibold">How to Use</span>
+        </nav>
+      </div>
+      <div class="w-full max-w-6xl mx-auto flex-grow flex flex-col items-center">
+        <header class="text-center mb-16 text-white">
+          <h1 class="font-playfair text-4xl md:text-5xl font-bold mb-4">
+            Your Magical Anti-Acne Routine in 4 Easy Steps
+          </h1>
+          <p class="font-sans text-lg md:text-xl opacity-90 italic">
+            Wake up with flawless skin in just a few hours with BLISSED SKIN.
+          </p>
         </header>
-        <!-- MAIN CONTENT -->
-        <main class="w-full min-h-screen flex flex-col py-12 px-6 lg:px-12">
-            <div class="w-full max-w-7xl mx-auto mb-12"> 
-                <nav class="text-white/80 font-sans font-medium text-sm md:text-base"> 
-                    Home &gt; Products &gt; <span class="text-white font-semibold">How to Use</span>
-                </nav>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 w-full">
+          <div
+            class="bg-white rounded-3xl shadow-xl p-8 flex flex-col gap-4 border-t-8 border-blissed-lavender transform hover:-translate-y-1 transition-transform"
+          >
+            <span class="font-sans text-xs uppercase tracking-widest text-blissed-olive font-bold"
+              >Step 01</span
+            >
+            <div class="w-full flex justify-center py-4">
+              <img
+                src="../assets/HowToUsed/How_Used_Patches2.png"
+                alt="Cleanse"
+                class="h-48 object-contain"
+              />
             </div>
-            <div class="w-full max-w-6xl mx-auto flex-grow flex flex-col items-center">
-                <header class="text-center mb-16 text-white"> 
-                    <h1 class="font-playfair text-4xl md:text-5xl font-bold mb-4">Your Magical Anti-Acne Routine in 4 Easy Steps</h1> 
-                    <p class="font-sans text-lg md:text-xl opacity-90 italic">Wake up with flawless skin in just a few hours with BLISSED SKIN.</p> 
-                </header>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 w-full"> 
-                    <div class="bg-white rounded-3xl shadow-xl p-8 flex flex-col gap-4 border-t-8 border-blissed-lavender transform hover:-translate-y-1 transition-transform"><span class="font-sans text-xs uppercase tracking-widest text-blissed-olive font-bold">Step 01</span> 
-                        <div class="w-full flex justify-center py-4"> 
-                            <img src="../assets/HowToUsed/How_Used_Patches2.png" alt="Cleanse" class="h-48 object-contain"> 
-                        </div>
-                        <h2 class="font-playfair text-xl font-bold text-blissed-gray">Cleanse & Dry the Area</h2> 
-                        <p class="font-sans text-sm text-blissed-text-dark">Remove dirt and oils so the patch adheres perfectly. Your skin needs to be clean for the magic to happen!</p> 
-                    </div>
-                    <div class="bg-white rounded-3xl shadow-xl p-8 flex flex-col gap-4 border-t-8 border-blissed-lavender transform hover:-translate-y-1 transition-transform"><span class="font-sans text-xs uppercase tracking-widest text-blissed-olive font-bold">Step 02</span> 
-                        <div class="w-full flex justify-center py-4"> 
-                            <img src="../assets/HowToUsed/How_Used_Patches4.png" alt="Apply" class="h-48 object-contain"> 
-                        </div>
-                        <h2 class="font-playfair text-xl font-bold text-blissed-gray">Apply the Invisible Patch</h2> 
-                        <p class="font-sans text-sm text-blissed-text-dark">Use tweezers or clean fingers to place it right on the blemish. It blends in perfectly and starts working instantly.</p> 
-                    </div>
-                    <div class="bg-white rounded-3xl shadow-xl p-8 flex flex-col gap-4 border-t-8 border-blissed-lavender transform hover:-translate-y-1 transition-transform"><span class="font-sans text-xs uppercase tracking-widest text-blissed-olive font-bold">Step 03</span> 
-                        <div class="w-full flex justify-center py-4"> 
-                            <img src="../assets/HowToUsed/How_Used_Patches3.png" alt="Change" class="h-48 object-contain"> 
-                        </div>
-                        <h2 class="font-playfair text-xl font-bold text-blissed-gray">Change When It Turns White</h2> 
-                        <p class="font-sans text-sm text-blissed-text-dark">When the patch absorbs impurities and turns opaque (white), swap it for a new one. That means it's working!</p> 
-                    </div>
-                    <div class="bg-white rounded-3xl shadow-xl p-8 flex flex-col gap-4 border-t-8 border-blissed-lavender transform hover:-translate-y-1 transition-transform"><span class="font-sans text-xs uppercase tracking-widest text-blissed-olive font-bold">Step 04</span> 
-                        <div class="w-full flex justify-center py-4"> 
-                            <img src="../assets/HowToUsed/How_Used_Patches5.png" alt="Ingredients" class="h-48 object-contain"> 
-                        </div>
-                        <h2 class="font-playfair text-xl font-bold text-blissed-gray">The Natural Power Inside</h2> 
-                        <p class="font-sans text-sm text-blissed-text-dark"><span class="font-bold">Hydrocolloid + Tea Tree Oil:</span> Absorbs gunk, calms inflammation, and soothes redness without harsh chemicals.</p> 
-                    </div>
-                </div>
-                <div class="w-full bg-white rounded-3xl shadow-2xl p-10 flex flex-col md:flex-row items-center gap-8 mb-16"> 
-                    <div class="w-full md:w-1/2 flex justify-center"> 
-                        <img src="../assets/HowToUsed/How_Used_Patches6.png" alt="Radiant skin" class="max-w-full h-auto rounded-2xl"> 
-                    </div>
-                    <div class="w-full md:w-1/2 text-center md:text-left"> 
-                        <h2 class="font-playfair text-3xl font-bold text-blissed-gray mb-4">Wake Up to Radiant Skin!</h2> 
-                        <p class="font-sans text-base text-blissed-text-dark mb-6">Use day or night. See the difference in just a few hours. Your skin deserves this magic touch.</p><a href="https://www.amazon.com" class="inline-block rounded-full px-10 py-4 bg-blissed-gray text-white font-bold hover:scale-105 transition-transform shadow-lg">Shop on Amazon</a> 
-                    </div>
-                </div>
+            <h2 class="font-playfair text-xl font-bold text-blissed-gray">
+              Cleanse & Dry the Area
+            </h2>
+            <p class="font-sans text-sm text-blissed-text-dark">
+              Remove dirt and oils so the patch adheres perfectly. Your skin needs to be clean for
+              the magic to happen!
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-3xl shadow-xl p-8 flex flex-col gap-4 border-t-8 border-blissed-lavender transform hover:-translate-y-1 transition-transform"
+          >
+            <span class="font-sans text-xs uppercase tracking-widest text-blissed-olive font-bold"
+              >Step 02</span
+            >
+            <div class="w-full flex justify-center py-4">
+              <img
+                src="../assets/HowToUsed/How_Used_Patches4.png"
+                alt="Apply"
+                class="h-48 object-contain"
+              />
             </div>
-        </main>
-        <!-- FOOTER -->
-        <footer class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] border-t border-white/20 flex flex-col lg:flex-row items-center justify-between gap-8 px-6 lg:px-12 py-12 font-sans"> 
-            <div class="w-32 flex-shrink-0"> 
-                <img src="../assets/logo.png" alt="Blissed Skin" class="w-full brightness-0 invert filter"> 
+            <h2 class="font-playfair text-xl font-bold text-blissed-gray">
+              Apply the Invisible Patch
+            </h2>
+            <p class="font-sans text-sm text-blissed-text-dark">
+              Use tweezers or clean fingers to place it right on the blemish. It blends in perfectly
+              and starts working instantly.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-3xl shadow-xl p-8 flex flex-col gap-4 border-t-8 border-blissed-lavender transform hover:-translate-y-1 transition-transform"
+          >
+            <span class="font-sans text-xs uppercase tracking-widest text-blissed-olive font-bold"
+              >Step 03</span
+            >
+            <div class="w-full flex justify-center py-4">
+              <img
+                src="../assets/HowToUsed/How_Used_Patches3.png"
+                alt="Change"
+                class="h-48 object-contain"
+              />
             </div>
-            <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide text-white"><a href="#" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Privacy Policy</a><a href="#" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Terms of Service</a><a href="#" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Return & Exchanges</a><a href="#" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap">Legal</a>
+            <h2 class="font-playfair text-xl font-bold text-blissed-gray">
+              Change When It Turns White
+            </h2>
+            <p class="font-sans text-sm text-blissed-text-dark">
+              When the patch absorbs impurities and turns opaque (white), swap it for a new one.
+              That means it's working!
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-3xl shadow-xl p-8 flex flex-col gap-4 border-t-8 border-blissed-lavender transform hover:-translate-y-1 transition-transform"
+          >
+            <span class="font-sans text-xs uppercase tracking-widest text-blissed-olive font-bold"
+              >Step 04</span
+            >
+            <div class="w-full flex justify-center py-4">
+              <img
+                src="../assets/HowToUsed/How_Used_Patches5.png"
+                alt="Ingredients"
+                class="h-48 object-contain"
+              />
             </div>
-            <div class="text-xs opacity-60 text-white">© 2025 BlissedSkin, Powered Shopify</div>
-        </footer>
-    </body>     
+            <h2 class="font-playfair text-xl font-bold text-blissed-gray">
+              The Natural Power Inside
+            </h2>
+            <p class="font-sans text-sm text-blissed-text-dark">
+              <span class="font-bold">Hydrocolloid + Tea Tree Oil:</span> Absorbs gunk, calms
+              inflammation, and soothes redness without harsh chemicals.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full bg-white rounded-3xl shadow-2xl p-10 flex flex-col md:flex-row items-center gap-8 mb-16"
+        >
+          <div class="w-full md:w-1/2 flex justify-center">
+            <img
+              src="../assets/HowToUsed/How_Used_Patches6.png"
+              alt="Radiant skin"
+              class="max-w-full h-auto rounded-2xl"
+            />
+          </div>
+          <div class="w-full md:w-1/2 text-center md:text-left">
+            <h2 class="font-playfair text-3xl font-bold text-blissed-gray mb-4">
+              Wake Up to Radiant Skin!
+            </h2>
+            <p class="font-sans text-base text-blissed-text-dark mb-6">
+              Use day or night. See the difference in just a few hours. Your skin deserves this
+              magic touch.
+            </p>
+            <a
+              href="https://www.amazon.com"
+              class="inline-block rounded-full px-10 py-4 bg-blissed-gray text-white font-bold hover:scale-105 transition-transform shadow-lg"
+              >Shop on Amazon</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <footer
+      class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] border-t border-white/20 flex flex-col lg:flex-row items-center justify-between gap-8 px-6 lg:px-12 py-12 font-sans"
+    >
+      <div class="w-32 flex-shrink-0">
+        <img
+          src="../assets/logo.png"
+          alt="Blissed Skin"
+          class="w-full brightness-0 invert filter"
+        />
+      </div>
+      <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide text-white">
+        <a href="#" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap"
+          >Privacy Policy</a
+        ><a href="#" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap"
+          >Terms of Service</a
+        ><a href="#" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap"
+          >Return & Exchanges</a
+        ><a href="#" class="text-white hover:text-[#9aad7a] transition-colors whitespace-nowrap"
+          >Legal</a
+        >
+      </div>
+      <div class="text-xs opacity-60 text-white">© 2025 BlissedSkin, Powered Shopify</div>
+    </footer>
+  </body>
 </html>

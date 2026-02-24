@@ -1,38 +1,38 @@
 /* main-footer.css */
 
 .main-footer {
-    /* Aseguramos que el footer siempre tenga un contraste adecuado */
-    transition: background-color 0.3s ease;
+  /* Aseguramos que el footer siempre tenga un contraste adecuado */
+  transition: background-color 0.3s ease;
 }
 
 .main-footer a {
-    position: relative;
-    text-decoration: none;
+  position: relative;
+  text-decoration: none;
 }
 
 /* Efecto de subrayado sutil al hacer hover */
 .main-footer a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -2px;
-    left: 0;
-    background-color: currentColor;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
 }
 
 .main-footer a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* Ajuste para scroll horizontal en móviles si los links son muchos */
 @media (max-width: 1024px) {
-    .main-footer .flex-nowrap {
-        padding-bottom: 1rem;
-        scrollbar-width: none; /* Firefox */
-    }
-    .main-footer .flex-nowrap::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
-    }
+  .main-footer .flex-nowrap {
+    padding-bottom: 1rem;
+    scrollbar-width: none; /* Firefox */
+  }
+  .main-footer .flex-nowrap::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
 }

@@ -1,6 +1,48 @@
 {
   "posts": [
     {
+      "id": "acne-science-modulation-2026",
+      "title": "Acne Treatment 2026: Why Scrubbing Doesn't Stop Breakouts",
+      "slug": "acne-science-modulation-2026",
+      "excerpt": "New research shows acne starts 8 weeks before it's visible. Discover why biological modulation works better than cleansing to stop breakouts at the source.",
+      "author": "Blissed Skin Editorial Team",
+      "date": "2026-02-15",
+      "category": "skincare-science",
+      "tags": [
+        "acne treatment 2026",
+        "biological modulation acne",
+        "microcomedone formation",
+        "linoleic acid deficiency",
+        "C. acnes bacteria"
+      ],
+      "featured_image": "/assets/blog/featured/acne-science-modulation-2026.jpg",
+      "thumbnail": "/assets/blog/thumbnails/acne-science-modulation-2026-thumb.jpg",
+      "read_time": "12 min",
+      "url": "/blog/posts/2026/02/acne-science-modulation-2026.html",
+      "schema_type": ["Article", "FAQ"]
+    },
+    {
+      "id": "is-acne-genetic-dna-bacteria-treatment-2026",
+      "title": "Is Your Acne Genetic? Revolutionizing Treatment Through DNA & Bacteria",
+      "slug": "is-acne-genetic-dna-bacteria-treatment-2026",
+      "excerpt": "Acne isn't just about hygiene. Discover how genetics, C. acnes strains, and the 'invisible' microcomedone phase drive breakouts in 2025.",
+      "author": "Blissed Skin Editorial Team",
+      "date": "2026-02-15",
+      "category": "skincare-science",
+      "tags": [
+        "is acne genetic",
+        "acne genetic causes",
+        "C. acnes bacteria strains",
+        "CLR pathway acne",
+        "linoleic acid deficiency"
+      ],
+      "featured_image": "/assets/blog/featured/is-acne-genetic-dna-bacteria-treatment-2026.jpg",
+      "thumbnail": "/assets/blog/thumbnails/is-acne-genetic-dna-bacteria-treatment-2026-thumb.jpg",
+      "read_time": "10 min",
+      "url": "/blog/posts/2026/02/is-acne-genetic-dna-bacteria-treatment-2026.html",
+      "schema_type": ["Article", "FAQ"]
+    },
+    {
       "id": "beneficios-pimple-patches",
       "title": "5 Beneficios de los Pimple Patches que Debes Conocer",
       "slug": "beneficios-pimple-patches",
@@ -17,6 +59,12 @@
     }
   ],
   "categories": {
+    "skincare-science": {
+      "name": "Skincare Science",
+      "slug": "skincare-science",
+      "description": "Scientific research and evidence-based skincare insights",
+      "color": "#a63d97"
+    },
     "skincare-tips": {
       "name": "Skincare Tips",
       "slug": "skincare-tips",

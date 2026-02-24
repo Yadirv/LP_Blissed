@@ -1,0 +1,28 @@
+# Dependencias
+node_modules/
+
+# Archivos de Pinegrow (no formatear automáticamente)
+_pgbackup/
+_pginfo/
+*.pgml
+pinegrow.json
+components/pinegrow.json
+sections/pinegrow.json
+
+# Build outputs
+tailwind_theme/
+dist/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración que no deben formatearse
+*.toml

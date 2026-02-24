@@ -1,50 +1,50 @@
 /* carousel-products.css */
 
 [data-component="carousel-products"] .pg-slides {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 [data-component="carousel-products"] .pg-slide {
-    transition: all 0.5s ease-in-out;
-    display: flex !important; /* Siempre visible pero controlado por clases */
+  transition: all 0.5s ease-in-out;
+  display: flex !important; /* Siempre visible pero controlado por clases */
 }
 
 /* Estado Inactivo (slides laterales) */
 [data-component="carousel-products"] .pg-slide.is-inactive {
-    opacity: 0.6 !important;
-    transform: scale(0.9) !important;
-    filter: blur(0.5px);
-    /* Los estilos de Tailwind se mantienen pero con ajustes */
+  opacity: 0.6 !important;
+  transform: scale(0.9) !important;
+  filter: blur(0.5px);
+  /* Los estilos de Tailwind se mantienen pero con ajustes */
 }
 
 /* Estado Activo (slide central) */
 [data-component="carousel-products"] .pg-slide.is-active {
-    opacity: 1 !important;
-    transform: scale(1) !important;
-    filter: blur(0);
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  filter: blur(0);
 }
 
 /* Asegurar que los slides laterales se oculten en mobile */
 @media (max-width: 640px) {
-    [data-component="carousel-products"] .pg-slide.is-inactive {
-        display: none !important;
-    }
-    
-    [data-component="carousel-products"] .pg-slide.is-active {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
+  [data-component="carousel-products"] .pg-slide.is-inactive {
+    display: none !important;
+  }
+
+  [data-component="carousel-products"] .pg-slide.is-active {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 
 /* Estados de los Dots */
 [data-component="carousel-products"] .pg-dot {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 [data-component="carousel-products"] .pg-dot.is-selected {
-    background-color: #3C3C3C;
-    transform: scale(1.2);
+  background-color: #3c3c3c;
+  transform: scale(1.2);
 }

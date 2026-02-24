@@ -1,136 +1,389 @@
-﻿<!DOCTYPE html> 
-<html lang="en"> 
-    <head> 
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Carousel Reviews Section</title>         
-        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css"> 
-    </head>     
-    <body class="bg-white"> 
-        <section aria-labelledby="reviews-heading" role="region" class="mx-auto flex flex-col items-center gap-12 py-16 px-6 lg:px-12 bg-[rgba(255,255,255,0.6)] rounded-[20px] max-w-[896px] relative" data-component="carousel-reviews" data-pgc-define="reviews_carousel" data-pgc-define-name="Reviews Carousel" data-pgc-define-description="A testimonial section with a rotating customer review carousel."> 
-            <header class="flex flex-col items-center gap-4 text-center"> 
-                <h2 id="reviews-heading" class="font-playfair text-[24px] font-bold text-[#101828]" data-pgc-edit="Heading">What Our Customers Say</h2> 
-                <p class="font-sans text-body text-[#4a5565] max-w-[617px]" data-pgc-edit="Description"> 
-                    Discover why thousands of people trust BLISSED SKIN Invisible Pimple Patches for clear, confident skin every single day. </p> 
-            </header>             
-            <div class="w-full flex flex-col gap-8 items-center"> 
-                <div class="flex items-center justify-center w-full gap-4"> 
-                    <button type="button" aria-label="Previous review" data-action="prev" class="pg-arrow flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none"> 
-                        <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blissed-gray" version="1.1">
-                            <path d="M12 2L2 12L12 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                         
-                    </button>                     
-                    <div class="pg-viewport relative flex-1 max-w-[736px] overflow-hidden"> 
-                        <div class="pg-track flex items-stretch transition-transform duration-500 ease-in-out" aria-live="polite"> 
-                            <!-- Slide 1: Sarah M. -->
-                            <article class="pg-slide w-full shrink-0 flex flex-row items-center gap-[24px] rounded-[24px] bg-white px-[32px] py-6 shadow-md transition-all duration-500" aria-label="Review from Sarah M."> 
-                                <img src="../assets/imguser/ImageWithFallback.png" alt="Portrait of Sarah M." class="h-[96px] w-[96px] rounded-full border-4 border-[#FEF3C6] object-cover shrink-0 shadow-[0_0_0_4px_#fef3c6]" data-pgc-edit="Reviewer Image 1[src,no_content]"> 
-                                <div class="flex flex-col gap-[12px] items-start text-left"> 
-                                    <div class="flex items-center gap-[12px]"> 
-                                        <p class="font-sans text-body font-semibold text-blissed-gray" data-pgc-edit="Reviewer Name 1">Sarah M.</p> 
-                                        <div class="flex items-center gap-[2px]" aria-label="5 out of 5 stars">
-                                            <div class="flex gap-1 text-[#FE9A00]"> 
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                            </div>                                             
-                                        </div>                                         
-                                    </div>                                     
-                                    <p class="font-sans text-body text-blissed-text-dark max-w-[551px] leading-[26px]" data-pgc-edit="Review Text 1"> 
-                                        These patches are absolute game-changers! Woke up to visibly flatter pimples and zero redness. The tea tree oil is so soothing, and I love how invisible they are under makeup. </p> 
-                                </div>                                 
-                            </article>                             
-                            <!-- Slide 2: James K. (Active) -->
-                            <article class="pg-slide w-full shrink-0 flex flex-row items-center gap-[24px] rounded-[24px] bg-white px-[32px] py-6 shadow-xl transition-all duration-500 md:p-8" aria-label="Review from James K."> 
-                                <img src="../assets/imguser/ImageWithFallback (1).png" alt="Portrait of James K." class="h-[96px] w-[96px] rounded-full border-4 border-[#FEF3C6] object-cover shrink-0 shadow-[0_0_0_4px_#fef3c6]" data-pgc-edit="Reviewer Image 2[src,no_content]"> 
-                                <div class="flex flex-col gap-[12px] items-start text-left"> 
-                                    <div class="flex items-center gap-[12px]"> 
-                                        <p class="font-sans text-body font-semibold text-blissed-gray" data-pgc-edit="Reviewer Name 2">James K.</p> 
-                                        <div class="flex items-center gap-[2px]" aria-label="5 out of 5 stars">
-                                            <div class="flex gap-1 text-[#FE9A00]"> 
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                            </div>                                             
-                                        </div>                                         
-                                    </div>                                     
-                                    <p class="font-sans text-body text-blissed-text-dark leading-[26px]" data-pgc-edit="Review Text 2"> 
-                                        Finally found acne patches that actually work! They draw out impurities overnight without irritating my sensitive skin. Ultra-thin design means I can wear them all day without anyone noticing. </p> 
-                                </div>                                 
-                            </article>                             
-                            <!-- Slide 3: Emma L. -->
-                            <article class="pg-slide w-full shrink-0 flex flex-row items-center gap-[24px] rounded-[24px] bg-white px-[32px] py-6 shadow-md transition-all duration-500" aria-label="Review from Emma L."> 
-                                <img src="../assets/imguser/ImageWithFallback (2).png" alt="Portrait of Emma L." class="h-[96px] w-[96px] rounded-full border-4 border-[#FEF3C6] object-cover shrink-0 shadow-[0_0_0_4px_#fef3c6]" data-pgc-edit="Reviewer Image 3[src,no_content]"> 
-                                <div class="flex flex-col gap-[12px] items-start text-left"> 
-                                    <div class="flex items-center gap-[12px]"> 
-                                        <p class="font-sans text-body font-semibold text-blissed-gray" data-pgc-edit="Reviewer Name 3">Emma L.</p> 
-                                        <div class="flex items-center gap-[2px]" aria-label="5 out of 5 stars">
-                                            <div class="flex gap-1 text-[#FE9A00]"> 
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                    <path d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"></path>
-                                                </svg>
-                                            </div>                                             
-                                        </div>                                         
-                                    </div>                                     
-                                    <p class="font-sans text-body text-blissed-text-dark max-w-[551px] leading-[26px]" data-pgc-edit="Review Text 3"> 
-                                        Best investment for my skin! The hydrocolloid technology is amazing at pulling out oil and bacteria. My breakouts heal twice as fast, and the natural ingredients keep inflammation at bay. </p> 
-                                </div>                                 
-                            </article>                             
-                        </div>                         
-                    </div>                     
-                    <button type="button" aria-label="Next review" data-action="next" class="pg-arrow flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none"> 
-                        <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blissed-gray" version="1.1">
-                            <path d="M2 2L12 12L2 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                         
-                    </button>                     
-                </div>                 
-                <nav aria-label="Reviews pagination" class="pg-dots flex items-center justify-center gap-3"> 
-                    <button type="button" class="pg-dot h-3 w-3 rounded-full bg-[#D9D9D9] transition-all" data-index="0" aria-label="Go to review 1"></button>                     
-                    <button type="button" class="pg-dot h-3 w-3 rounded-full bg-blissed-gray transition-all" data-index="1" aria-label="Go to review 2" aria-current="true"></button>                     
-                    <button type="button" class="pg-dot h-3 w-3 rounded-full bg-[#D9D9D9] transition-all" data-index="2" aria-label="Go to review 3"></button>                     
-                </nav>                 
-                <div class="mt-4"> 
-                    <button class="h-[56px] w-[200px] rounded-[32px] bg-blissed-gray text-white font-bold hover:opacity-90 transition-all" data-pgc-edit="CTA Button Text"> 
-                        Shop Now
-</button>                     
-                </div>                 
-            </div>             
-        </section>         
-    </body>     
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Reviews Section</title>
+    <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="bg-white">
+    <section
+      aria-labelledby="reviews-heading"
+      role="region"
+      class="mx-auto flex flex-col items-center gap-12 py-16 px-6 lg:px-12 bg-[rgba(255,255,255,0.6)] rounded-[20px] max-w-[896px] relative"
+      data-component="carousel-reviews"
+      data-pgc-define="reviews_carousel"
+      data-pgc-define-name="Reviews Carousel"
+      data-pgc-define-description="A testimonial section with a rotating customer review carousel."
+    >
+      <header class="flex flex-col items-center gap-4 text-center">
+        <h2
+          id="reviews-heading"
+          class="font-playfair text-[24px] font-bold text-[#101828]"
+          data-pgc-edit="Heading"
+        >
+          What Our Customers Say
+        </h2>
+        <p class="font-sans text-body text-[#4a5565] max-w-[617px]" data-pgc-edit="Description">
+          Discover why thousands of people trust BLISSED SKIN Invisible Pimple Patches for clear,
+          confident skin every single day.
+        </p>
+      </header>
+      <div class="w-full flex flex-col gap-8 items-center">
+        <div class="flex items-center justify-center w-full gap-4">
+          <button
+            type="button"
+            aria-label="Previous review"
+            data-action="prev"
+            class="pg-arrow flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none"
+          >
+            <svg
+              width="14"
+              height="24"
+              viewBox="0 0 14 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-blissed-gray"
+              version="1.1"
+            >
+              <path
+                d="M12 2L2 12L12 22"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="pg-viewport relative flex-1 max-w-[736px] overflow-hidden">
+            <div
+              class="pg-track flex items-stretch transition-transform duration-500 ease-in-out"
+              aria-live="polite"
+            >
+              <!-- Slide 1: Sarah M. -->
+              <article
+                class="pg-slide w-full shrink-0 flex flex-row items-center gap-[24px] rounded-[24px] bg-white px-[32px] py-6 shadow-md transition-all duration-500"
+                aria-label="Review from Sarah M."
+              >
+                <img
+                  src="../assets/imguser/ImageWithFallback.png"
+                  alt="Portrait of Sarah M."
+                  class="h-[96px] w-[96px] rounded-full border-4 border-[#FEF3C6] object-cover shrink-0 shadow-[0_0_0_4px_#fef3c6]"
+                  data-pgc-edit="Reviewer Image 1[src,no_content]"
+                />
+                <div class="flex flex-col gap-[12px] items-start text-left">
+                  <div class="flex items-center gap-[12px]">
+                    <p
+                      class="font-sans text-body font-semibold text-blissed-gray"
+                      data-pgc-edit="Reviewer Name 1"
+                    >
+                      Sarah M.
+                    </p>
+                    <div class="flex items-center gap-[2px]" aria-label="5 out of 5 stars">
+                      <div class="flex gap-1 text-[#FE9A00]">
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <p
+                    class="font-sans text-body text-blissed-text-dark max-w-[551px] leading-[26px]"
+                    data-pgc-edit="Review Text 1"
+                  >
+                    These patches are absolute game-changers! Woke up to visibly flatter pimples and
+                    zero redness. The tea tree oil is so soothing, and I love how invisible they are
+                    under makeup.
+                  </p>
+                </div>
+              </article>
+              <!-- Slide 2: James K. (Active) -->
+              <article
+                class="pg-slide w-full shrink-0 flex flex-row items-center gap-[24px] rounded-[24px] bg-white px-[32px] py-6 shadow-xl transition-all duration-500 md:p-8"
+                aria-label="Review from James K."
+              >
+                <img
+                  src="../assets/imguser/ImageWithFallback (1).png"
+                  alt="Portrait of James K."
+                  class="h-[96px] w-[96px] rounded-full border-4 border-[#FEF3C6] object-cover shrink-0 shadow-[0_0_0_4px_#fef3c6]"
+                  data-pgc-edit="Reviewer Image 2[src,no_content]"
+                />
+                <div class="flex flex-col gap-[12px] items-start text-left">
+                  <div class="flex items-center gap-[12px]">
+                    <p
+                      class="font-sans text-body font-semibold text-blissed-gray"
+                      data-pgc-edit="Reviewer Name 2"
+                    >
+                      James K.
+                    </p>
+                    <div class="flex items-center gap-[2px]" aria-label="5 out of 5 stars">
+                      <div class="flex gap-1 text-[#FE9A00]">
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <p
+                    class="font-sans text-body text-blissed-text-dark leading-[26px]"
+                    data-pgc-edit="Review Text 2"
+                  >
+                    Finally found acne patches that actually work! They draw out impurities
+                    overnight without irritating my sensitive skin. Ultra-thin design means I can
+                    wear them all day without anyone noticing.
+                  </p>
+                </div>
+              </article>
+              <!-- Slide 3: Emma L. -->
+              <article
+                class="pg-slide w-full shrink-0 flex flex-row items-center gap-[24px] rounded-[24px] bg-white px-[32px] py-6 shadow-md transition-all duration-500"
+                aria-label="Review from Emma L."
+              >
+                <img
+                  src="../assets/imguser/ImageWithFallback (2).png"
+                  alt="Portrait of Emma L."
+                  class="h-[96px] w-[96px] rounded-full border-4 border-[#FEF3C6] object-cover shrink-0 shadow-[0_0_0_4px_#fef3c6]"
+                  data-pgc-edit="Reviewer Image 3[src,no_content]"
+                />
+                <div class="flex flex-col gap-[12px] items-start text-left">
+                  <div class="flex items-center gap-[12px]">
+                    <p
+                      class="font-sans text-body font-semibold text-blissed-gray"
+                      data-pgc-edit="Reviewer Name 3"
+                    >
+                      Emma L.
+                    </p>
+                    <div class="flex items-center gap-[2px]" aria-label="5 out of 5 stars">
+                      <div class="flex gap-1 text-[#FE9A00]">
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                        <svg
+                          class="h-4 w-4"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                        >
+                          <path
+                            d="M10 2.5l1.902 5.53h5.812l-4.702 3.417 1.903 5.53L10 13.56l-4.915 3.417 1.903-5.53L2.286 8.03h5.812L10 2.5z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <p
+                    class="font-sans text-body text-blissed-text-dark max-w-[551px] leading-[26px]"
+                    data-pgc-edit="Review Text 3"
+                  >
+                    Best investment for my skin! The hydrocolloid technology is amazing at pulling
+                    out oil and bacteria. My breakouts heal twice as fast, and the natural
+                    ingredients keep inflammation at bay.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button
+            type="button"
+            aria-label="Next review"
+            data-action="next"
+            class="pg-arrow flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-transform hover:scale-110 focus:outline-none"
+          >
+            <svg
+              width="14"
+              height="24"
+              viewBox="0 0 14 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-blissed-gray"
+              version="1.1"
+            >
+              <path
+                d="M2 2L12 12L2 22"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav aria-label="Reviews pagination" class="pg-dots flex items-center justify-center gap-3">
+          <button
+            type="button"
+            class="pg-dot h-3 w-3 rounded-full bg-[#D9D9D9] transition-all"
+            data-index="0"
+            aria-label="Go to review 1"
+          ></button>
+          <button
+            type="button"
+            class="pg-dot h-3 w-3 rounded-full bg-blissed-gray transition-all"
+            data-index="1"
+            aria-label="Go to review 2"
+            aria-current="true"
+          ></button>
+          <button
+            type="button"
+            class="pg-dot h-3 w-3 rounded-full bg-[#D9D9D9] transition-all"
+            data-index="2"
+            aria-label="Go to review 3"
+          ></button>
+        </nav>
+        <div class="mt-4">
+          <button
+            class="h-[56px] w-[200px] rounded-[32px] bg-blissed-gray text-white font-bold hover:opacity-90 transition-all"
+            data-pgc-edit="CTA Button Text"
+          >
+            Shop Now
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
