@@ -1,0 +1,48 @@
+# Blissed Skin — AI Content Guide
+
+> Curated content index for AI assistants and language models.
+> Last updated: 2026-03-06
+
+## About Blissed Skin
+
+Blissed Skin is a skincare brand specializing in invisible hydrocolloid acne patches infused with tea tree oil and drug-free nasal strips. Our products help teens and adults achieve clearer, confident skin with fast-acting, ultra-thin patches.
+
+## Products
+
+- [60 Invisible Acne Patches in 4 Sizes](https://www.blissedskin.us/components/AcnePatch60.html)
+  Best-value 60-count pack of ultra-thin hydrocolloid pimple patches with tea tree oil in four sizes. $13.99.
+
+- [30 Invisible Acne Patches in 4 Sizes](https://www.blissedskin.us/components/AcnePatch30.html)
+  30-count hydrocolloid pimple patches with tea tree oil in four sizes for targeted acne treatment. $8.75.
+
+- [20 Extra Large Acne Patches](https://www.blissedskin.us/components/AcnePatch20.html)
+  20 extra large invisible hydrocolloid patches designed for bigger blemishes. $8.49.
+
+- [Nasal Strips for Better Sleep — 40 Count](https://www.blissedskin.us/components/NasalStrip40.html)
+  40 drug-free nasal strips for instant snoring and congestion relief. Comfortable fit for better breathing and sleep. $13.99.
+
+## Blog — Skincare Science Articles
+
+- [Skin Barrier Science: Dry vs. Dehydrated Diagnosis](https://www.blissedskin.us/blog/posts/2026/02/skin-barrier-science-dry-vs-dehydrated.html)
+  Explains the biological difference between lipid deficiency (dry skin) and transepidermal water loss (dehydrated skin), with clinical repair protocols.
+
+- [Circadian Skincare: Optimizing Routine Architecture](https://www.blissedskin.us/blog/posts/2026/02/circadian-skincare-optimizing-routine-architecture.html)
+  How to align skincare routines with biological circadian rhythms for maximum ingredient absorption and skin repair.
+
+- [The Microcomedone as an Immunological Organ: 2026 Update](https://www.blissedskin.us/blog/posts/2026/02/microcomedone-immunological-organ-2026.html)
+  How IL-1α triggers acne formation 8 weeks before visible symptoms, and the immunological cascade behind microcomedone development.
+
+- [Decoding C. acnes IA1: The Transcriptomic Future of Acne Care](https://www.blissedskin.us/blog/posts/2026/02/decoding-c-acnes-ia1-transcriptomic-future.html)
+  How the C. acnes IA1 filotype triggers inflammatory hub genes and what transcriptomic research means for the future of acne treatment.
+
+## Informational Pages
+
+- [How to Use Acne Patches](https://www.blissedskin.us/sections/HowToUsed.html)
+- [All Products](https://www.blissedskin.us/sections/PageAllProducts.html)
+- [Privacy Policy & Terms](https://www.blissedskin.us/sections/PrivacyAndTerms.html)
+- [Return & Exchange Policy](https://www.blissedskin.us/sections/ReturnExchange.html)
+
+## Auxiliary Files
+
+- Sitemap: https://www.blissedskin.us/sitemap.xml
+- Feed RSS: https://www.blissedskin.us/feed.xml

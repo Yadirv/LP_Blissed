@@ -1,7 +1,6 @@
 /* main-footer.css */
 
 .main-footer {
-  /* Aseguramos que el footer siempre tenga un contraste adecuado */
   transition: background-color 0.3s ease;
 }
 
@@ -10,7 +9,7 @@
   text-decoration: none;
 }
 
-/* Efecto de subrayado sutil al hacer hover */
+/* Underline hover effect on footer links */
 .main-footer a::after {
   content: "";
   position: absolute;
@@ -26,13 +25,57 @@
   width: 100%;
 }
 
-/* Ajuste para scroll horizontal en móviles si los links son muchos */
+/* ── Newsletter Form states ──────────────────────────────────────────── */
+
+/* Loading: disable button */
+.main-footer .footer-newsletter-form[data-state="loading"] .footer-submit-btn {
+  opacity: 0.65;
+  pointer-events: none;
+  cursor: not-allowed;
+  transform: none;
+}
+.main-footer .footer-newsletter-form[data-state="loading"] .footer-btn-text {
+  display: none;
+}
+.main-footer .footer-newsletter-form[data-state="loading"] .footer-btn-spinner {
+  display: inline;
+}
+
+/* Success: hide form fields, show success message */
+.main-footer .footer-newsletter-form[data-state="success"] .footer-submit-btn,
+.main-footer .footer-newsletter-form[data-state="success"] .footer-input,
+.main-footer .footer-newsletter-form[data-state="success"] .footer-field-label {
+  display: none;
+}
+.main-footer .footer-newsletter-form[data-state="success"] .footer-form-success {
+  display: block;
+}
+
+/* Error: show error message, keep form visible */
+.main-footer .footer-newsletter-form[data-state="error"] .footer-form-error {
+  display: block;
+}
+
+/* Input placeholder color on dark background */
+.main-footer .footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Override browser autofill background (Chrome injects blue/yellow) */
+.main-footer .footer-input:-webkit-autofill,
+.main-footer .footer-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 40px rgba(166, 61, 151, 0.5) inset !important;
+  -webkit-text-fill-color: white !important;
+  caret-color: white;
+}
+
+/* Scroll fix for many links on mobile */
 @media (max-width: 1024px) {
   .main-footer .flex-nowrap {
     padding-bottom: 1rem;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
   }
   .main-footer .flex-nowrap::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
   }
 }

@@ -1,8 +1,44 @@
-# Blissed Skin - Landing Page Project
+﻿# Blissed Skin - Landing Page Project
 
 ## 📋 Descripción General
 
 Este proyecto es una landing page de e-commerce para **Blissed Skin**, desarrollada mediante un flujo de trabajo moderno que integra diseño en Figma, generación de código con IA, y edición visual con Pinegrow. El proyecto utiliza **TailwindCSS** para estilos y una arquitectura de **Smart Components** con JavaScript modular.
+
+---
+
+## 📑 Tabla de Contenidos
+
+- [Descripción General](#descripción-general)
+- [Configuración Inicial Recomendada](#configuración-inicial-recomendada)
+- [Flujo de Trabajo del Proyecto](#flujo-de-trabajo-del-proyecto)
+- [Arquitectura del Proyecto](#arquitectura-del-proyecto)
+- [Sistema de Smart Components](#sistema-de-smart-components)
+- [Sistema de Estilos](#sistema-de-estilos)
+- [Carga de Scripts en HTML](#carga-de-scripts-en-html)
+- [Guía para Agentes IA](#guía-para-agentes-ia)
+- [Flujo de Desarrollo Típico](#flujo-de-desarrollo-típico)
+- [Proceso de Despliegue](#proceso-de-despliegue)
+  - [1. GitHub Pages (Deprecated)](#1-configuración-inicial-de-github-pages-fase-1---deprecated)
+  - [2. Amazon SP-API](#2-configuración-de-amazon-sp-api-selling-partner-api)
+  - [3. Netlify (Despliegue Actual)](#3-configuración-de-netlify-despliegue-actual)
+  - [4. Verificación en Producción](#4-verificación-de-deploy-en-producción-)
+  - [4.1 Variables de Entorno](#41-variables-de-entorno--configuración-correcta-en-netlify)
+  - [4.2 Datos Disponibles por SP-API](#42-datos-disponibles-por-sp-api)
+  - [4.3 Test del Endpoint](#43-test-del-endpoint-con-datos-reales)
+  - [4.4 Conectar con el Frontend](#44-conectar-el-endpoint-con-el-frontend)
+  - [4.5 Netlify Forms](#45-netlify-forms-newsletter--formularios)
+  - [4.6 Pagefind — Búsqueda del Sitio](#46-pagefind--búsqueda-del-sitio)
+  - [5. Workflow de Despliegue Continuo](#5-workflow-de-despliegue-continuo)
+  - [6. Comandos Útiles](#6-comandos-útiles)
+  - [7. Troubleshooting Común](#7-troubleshooting-común)
+  - [8. Recursos y Documentación](#8-recursos-y-documentación)
+- [Recursos Adicionales](#recursos-adicionales)
+- [Checklist Post-Edición](#checklist-post-edición-validación-automática-obligatoria)
+- [Design Tokens](#design-tokens-sistema-de-colores)
+- [Git + Webhooks con Netlify](#git--webhooks-automáticos-con-netlify)
+- [Notas Importantes](#notas-importantes)
+- [Contribución y Mantenimiento](#contribución-y-mantenimiento)
+- [Contacto y Recursos](#contacto-y-recursos)
 
 ---
 
@@ -1171,6 +1207,371 @@ window.SPAPIClient.refresh(); // llamada manual para refrescar precios
 > la configuración inicial para verificar las env vars en Netlify. Fue eliminado
 > del código una vez confirmadas las variables. No debe re-añadirse en producción.
 
+---
+
+### 4.5 Netlify Forms — Newsletter & Formularios
+
+Netlify Forms permite capturar envíos de formularios HTML **sin backend propio**. Netlify los detecta automáticamente en tiempo de build, almacena las respuestas en su dashboard y puede enviar notificaciones por email o webhook.
+
+#### ¿Por qué usarlo en este proyecto?
+
+- El footer de todas las páginas incluye un formulario de suscripción al newsletter
+- No requiere función serverless adicional ni servicio externo de email
+- Las respuestas quedan en `app.netlify.com → Forms` con historial y exportación CSV
+- Compatible con envío AJAX (sin redirección)
+
+---
+
+#### Paso 1 — Agregar atributos Netlify al `<form>`
+
+Netlify detecta formularios en el HTML estático durante el build. **Requisitos mínimos:**
+
+```html
+<!-- Footer newsletter form -->
+<form
+  name="newsletter"
+  method="POST"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  id="newsletter-form"
+  class="..."
+>
+  <!-- Campo honeypot oculto (anti-spam automático) -->
+  <input type="hidden" name="form-name" value="newsletter" />
+  <p class="hidden">
+    <label>No llenar: <input name="bot-field" /></label>
+  </p>
+
+  <input type="text" name="firstName" placeholder="First Name" required />
+  <input type="email" name="email" placeholder="Email Address" required />
+  <button type="submit">Subscribe</button>
+</form>
+```
+
+**Atributos clave:**
+
+| Atributo                    | Valor          | Descripción                                               |
+| --------------------------- | -------------- | --------------------------------------------------------- |
+| `name`                      | `"newsletter"` | Nombre del formulario en Netlify Dashboard                |
+| `method`                    | `"POST"`       | Método obligatorio                                        |
+| `data-netlify`              | `"true"`       | Activa la detección de Netlify Forms                      |
+| `data-netlify-honeypot`     | `"bot-field"`  | Campo trampa para bots (anti-spam)                        |
+| `name="form-name"` (hidden) | `"newsletter"` | **Obligatorio para AJAX** — identifica el form en el POST |
+
+> **⚠️ IMPORTANTE:** El campo oculto `<input type="hidden" name="form-name" value="newsletter" />` es obligatorio cuando se envía el formulario via `fetch()`. Sin él, Netlify rechaza el envío con 404.
+
+---
+
+#### Paso 2 — Envío AJAX sin redirección
+
+El footer usa JavaScript para enviar sin recargar la página y mostrar mensajes de éxito/error inline:
+
+```javascript
+// src/components/main-footer/main-footer.js
+window.ComponentLoader.registerComponent("main-footer", (root) => {
+  const form = root.querySelector("#newsletter-form");
+  const successMsg = root.querySelector("#subscribe-success");
+  const errorMsg = root.querySelector("#subscribe-error");
+
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Serializar campos del formulario
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (res.ok) {
+        form.reset();
+        successMsg?.classList.remove("hidden");
+        errorMsg?.classList.add("hidden");
+      } else {
+        throw new Error(`HTTP ${res.status}`);
+      }
+    } catch (err) {
+      console.error("[Newsletter] Submit error:", err);
+      errorMsg?.classList.remove("hidden");
+      successMsg?.classList.add("hidden");
+    }
+  });
+});
+```
+
+> **Nota:** El endpoint del POST es `"/"` (la raíz del sitio), no una URL de función. Netlify intercepta internamente cualquier POST a una página que contenga el formulario con `data-netlify="true"`.
+
+---
+
+#### Paso 3 — Páginas con formulario (detección en build)
+
+Netlify escanea el HTML estático en build para registrar formularios. Como el footer está **incrustado en cada página individualmente** (sin iframes ni carga dinámica), Netlify lo detecta automáticamente en cada deploy.
+
+Páginas con formulario newsletter activo:
+
+| Archivo                                    | Form name    |
+| ------------------------------------------ | ------------ |
+| `index.html`                               | `newsletter` |
+| `blog/index.html`                          | `newsletter` |
+| `sections/PageAllProducts.html`            | `newsletter` |
+| `blog/_post-production/template-blog.html` | `newsletter` |
+| `blog/posts/2026/02/*.html` (4 posts)      | `newsletter` |
+
+> Si en el futuro se carga el footer dinámicamente (p. ej. via `fetch` + `innerHTML`), Netlify **no lo detectará** en build. En ese caso se debe agregar un formulario HTML estático oculto en el `<body>` de cada página como referencia de detección.
+
+---
+
+#### Paso 4 — Configurar notificaciones en Netlify Dashboard
+
+1. Ir a `app.netlify.com` → sitio `blissed-skin-lp` → **Forms**
+2. Confirmar que el formulario `newsletter` aparece listado (aparece tras el primer deploy exitoso)
+3. Click en **Form notifications** → **Add notification**
+4. Opciones disponibles:
+
+| Tipo                   | Cuándo usarlo                                   |
+| ---------------------- | ----------------------------------------------- |
+| **Email notification** | Recibir un email por cada suscriptor nuevo      |
+| **Slack notification** | Alertas al canal de marketing                   |
+| **Webhook (POST)**     | Conectar con Mailchimp, ConvertKit, Loops, etc. |
+
+**Configuración típica para email:**
+
+```
+Notification type: Email
+Email to notify: hola@blissedskin.us
+Subject: New newsletter subscriber
+Form: newsletter
+```
+
+**Webhook hacia Loops.so (email marketing recomendado):**
+
+```
+Notification type: Outgoing webhook
+Method: POST
+URL: https://app.loops.so/api/v1/contacts/create  (o el endpoint de tu ESP)
+Headers: Authorization: Bearer <LOOPS_API_KEY>
+```
+
+> Las API keys de servicios externos **no se configuran en Netlify Forms** — se gestionan en el webhook del dashboard o en una Netlify Function separada si se requiere lógica adicional (doble opt-in, segmentación, etc.).
+
+---
+
+#### Paso 5 — Spam protection
+
+Netlify Forms incluye dos capas de protección anti-spam:
+
+**1. Honeypot field** (ya configurado en el HTML):
+
+- Campo `bot-field` invisible para humanos pero visible para bots
+- Si un bot lo rellena, Netlify descarta el envío silenciosamente
+- **No requiere aprobación del usuario** → mejor UX que reCAPTCHA
+
+**2. Netlify reCAPTCHA v2** (opcional, solo si el honeypot no es suficiente):
+
+```html
+<!-- Agregar al form si se detecta spam masivo -->
+<div data-netlify-recaptcha="true"></div>
+```
+
+> Activar reCAPTCHA v2 requiere que el usuario resuelva un challenge visual. Usar solo como último recurso: el honeypot es transparente y más amigable para conversiones.
+
+---
+
+#### Verificar que funciona
+
+```powershell
+# 1. Tras deploy, enviar un submit de prueba desde el sitio en producción
+# 2. Verificar en:
+#    app.netlify.com → blissed-skin-lp → Forms → newsletter → Verified submissions
+
+# 3. Verificar que el email de notificación se recibió
+
+# Si el submit retorna 404:
+#   - Revisar que form-name hidden input existe y su value coincide con el atributo name del form
+#   - Confirmar que data-netlify="true" está presente
+#   - Re-deploy (Netlify escanea en build, no en runtime)
+```
+
+---
+
+### 4.6 Pagefind — Búsqueda del Sitio
+
+Pagefind es una librería de búsqueda **100% estática** que indexa el sitio en build time y sirve los resultados desde archivos comprimidos sin necesidad de servidor ni API externa. Se integra nativamente con el build de Netlify.
+
+#### ¿Por qué Pagefind sobre Fuse.js?
+
+|               | Pagefind                                   | Fuse.js                            |
+| ------------- | ------------------------------------------ | ---------------------------------- |
+| Cobertura     | Todo el sitio (blog, productos, secciones) | Solo JSON pre-cargado (solo blog)  |
+| Indexación    | Automática en cada build                   | Manual al agregar posts            |
+| Búsqueda      | Índice comprimido en disco (~50KB)         | Carga todo en memoria              |
+| Mantenimiento | Cero — corre con `npm run build`           | Requiere mantener JSON actualizado |
+
+---
+
+#### Arquitectura implementada
+
+```
+npm run build
+  ↓
+ tailwindcss --minify          → tailwind_theme/tailwind.css
+  ↓
+ pagefind --site . --output-path ./pagefind
+  ↓
+  Escanea todos los <*> con data-pagefind-body
+  Excluye <*> con data-pagefind-ignore="all" (headers, footers)
+  Genera índice en pagefind/  (en .gitignore — se regenera en cada deploy)
+```
+
+**Páginas indexadas (al momento del último build):**
+
+| Página                          | Contenido indexado                              |
+| ------------------------------- | ----------------------------------------------- |
+| `index.html`                    | Hero, sección de productos, How To Use, reseñas |
+| `blog/index.html`               | Títulos y excerpts de artículos                 |
+| `sections/PageAllProducts.html` | Catálogo completo de productos                  |
+| `blog/posts/2026/02/*.html`     | 4 artículos completos (texto + FAQs)            |
+
+> Headers (`data-component="main-header"`) y footers (`data-component="main-footer"`) están marcados con `data-pagefind-ignore="all"` para excluir navegación, newsletter y links legales de los resultados.
+
+---
+
+#### Smart Component `site-search`
+
+El Search Bar del header está implementado como Smart Component siguiendo la misma arquitectura del proyecto.
+
+**Archivos:**
+
+| Archivo                                      | Propósito                             |
+| -------------------------------------------- | ------------------------------------- |
+| `src/components/site-search/site-search.js`  | Lógica de búsqueda, dropdown, teclado |
+| `src/components/site-search/site-search.css` | Estilos del dropdown (scoped)         |
+
+**HTML en el header** (igual en todas las páginas):
+
+```html
+<!-- Search Bar — activar el componente con data-component -->
+<div
+  data-component="site-search"
+  class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] ..."
+>
+  <img src="assets/search-icon.svg" alt="Search" class="w-[8px] h-[8px]" />
+  <input type="text" placeholder="Search" class="..." />
+</div>
+```
+
+**Carga del script** (al final del `<body>`, después de `components-init.js`):
+
+```html
+<script src="src/assets/js/components-init.js"></script>
+<!-- ... otros componentes ... -->
+<script src="src/components/site-search/site-search.js"></script>
+```
+
+> El CSS del componente se **auto-inyecta** — `site-search.js` crea el `<link>` dinámicamente derivando la ruta de su propio `src`. No se necesita un `<link rel="stylesheet">` adicional en el HTML.
+
+**Comportamiento del componente:**
+
+| Evento               | Acción                                      |
+| -------------------- | ------------------------------------------- |
+| `focus` en input     | Pre-carga el WASM de Pagefind (warm-up)     |
+| Escritura (>0 chars) | Búsqueda con debounce de 300ms              |
+| ↑ / ↓                | Navega entre resultados                     |
+| `Enter`              | Navega al resultado enfocado (o al primero) |
+| `Escape`             | Cierra el dropdown                          |
+| Click fuera del root | Cierra el dropdown                          |
+
+**Estructura del dropdown de resultados:**
+
+```html
+<div class="ss-dropdown is-open">
+  <div class="ss-results">
+    <a href="/blog/posts/.../post.html" class="ss-result">
+      <span class="ss-result__section">Blog</span>
+      <!-- meta.section de pagefind -->
+      <span class="ss-result__title">Título del post</span>
+      <span class="ss-result__excerpt">...extracto con <mark>palabra</mark> destacada...</span>
+    </a>
+    <!-- hasta 6 resultados -->
+  </div>
+</div>
+```
+
+---
+
+#### Control de secciones con `data-pagefind-filter`
+
+Para limitar búsquedas a una sección específica (p. ej. buscar solo en el blog), añadir el meta atributo en el `<body>` o en `data-pagefind-body`:
+
+```html
+<!-- En cada blog post -->
+<main data-pagefind-body data-pagefind-filter="section:Blog">
+  <!-- En PageAllProducts.html -->
+  <main data-pagefind-body data-pagefind-filter="section:Products"></main>
+</main>
+```
+
+Luego en el componente, filtrar con:
+
+```javascript
+const result = await state.pagefind.search(query, {
+  filters: { section: "Blog" }, // solo devuelve resultados del blog
+});
+```
+
+> Esta configuración **no está activa por defecto** — el componente actual busca en todo el sitio. Activar si se añade un buscador contextual (p. ej. un campo de búsqueda dedicado en `blog/index.html`).
+
+---
+
+#### Comandos
+
+```bash
+# Regenerar el índice de búsqueda localmente
+npm run build
+# → Tailwind CSS compilado + índice Pagefind en pagefind/
+
+# Solo Pagefind (sin recompilar Tailwind)
+npx pagefind --site . --output-path ./pagefind
+
+# Verificar páginas indexadas y palabras
+npx pagefind --site . --output-path ./pagefind --verbose
+```
+
+**Netlify:** el build command en `netlify.toml` ya incluye Pagefind. Cada deploy regenera el índice automáticamente — no requiere configuración adicional.
+
+---
+
+#### Troubleshooting
+
+**Buscador no muestra resultados en local (`localhost:xxxx` / abrir HTML como archivo):**
+
+Pagefind carga el índice vía `import()` dinámico desde `/pagefind/pagefind.js` — requiere un servidor HTTP. Usar:
+
+```bash
+# Opción 1: VS Code Live Server extension
+# Opción 2:
+npx serve .
+# Luego abrir http://localhost:3000
+```
+
+**Página nueva no aparece en resultados:**
+
+1. Verificar que la página tiene `data-pagefind-body` en su `<main>` o elemento contenedor
+2. Verificar que NO tiene `data-pagefind-ignore="all"` en el body
+3. Correr `npm run build` de nuevo — el índice es estático, no se actualiza al guardar
+
+**Error `Failed to import /pagefind/pagefind.js`:**
+
+- El índice no fue generado — correr `npm run build`
+- En desarrollo, el componente captura el error silenciosamente con `console.warn`
+
+---
+
 ### 5. Workflow de Despliegue Continuo
 
 **Flujo completo:**
@@ -1406,90 +1807,7 @@ git push origin main
 
 ---
 
-## 🤝 Contribución y Mantenimiento
-
-### Cuando agregues nuevas funcionalidades:
-
-1. Mantener la arquitectura de componentes
-
-**Acceso SSH/SFTP:**
-
-- Acceso root o sudo para configuraciones avanzadas
-- Capacidad de instalar software personalizado
-- Modificar configuraciones de servidor web (Nginx/Apache)
-- Acceso a archivos de configuración (.htaccess, nginx.conf)
-
-**¿Por qué es crítico?**
-
-- Configurar redirects personalizados por cliente
-- Instalar herramientas de optimización (ImageMagick, WebP converters)
-- Implementar headers de seguridad personalizados
-- Ajustar límites de memoria y tiempo de ejecución
-
-**Preguntas para proveedores:**
-
-```
-1. ¿Proporcionan acceso SSH completo?
-2. ¿Puedo instalar dependencias/librerías personalizadas?
-3. ¿Tengo acceso a logs del servidor en tiempo real?
-4. ¿Puedo modificar configuraciones de Nginx/Apache?
-5. ¿Hay restricciones en comandos o permisos sudo?
-```
-
----
-
-### 2. **Gestión Multi-Sitio y Aislamiento de Clientes**
-
-#### ✅ Requisitos Mínimos:
-
-**Opciones de Arquitectura:**
-
-**Opción A: VPS con Virtual Hosts**
-
-- 1 servidor VPS
-- Múltiples dominios apuntando a la misma IP
-- Configuración de virtual hosts para separar sitios
-- Cada cliente en su propio directorio
-- **Ventaja**: Económico, fácil de gestionar
-- **Desventaja**: Recursos compartidos entre clientes
-
-**Opción B: Cuentas cPanel/Plesk Independientes**
-
-- Panel de control que permite crear "cuentas" separadas
-- Cada cliente = 1 cuenta con su propio espacio
-- Límites de recursos configurables por cuenta
-- **Ventaja**: Aislamiento mejor, fácil facturación por cliente
-- **Desventaja**: Requiere panel de control (costo adicional)
-
-**Opción C: Contenedores Docker**
-
-- Cada sitio en su propio contenedor aislado
-- Orquestación con Docker Compose o Kubernetes
-- **Ventaja**: Máximo aislamiento, portabilidad
-- **Desventaja**: Requiere conocimientos técnicos avanzados
-
-**¿Qué buscar?**
-
-- Capacidad de crear subdominios ilimitados o múltiples dominios
-- Aislamiento de recursos (un sitio caído no afecta a otros)
-- Gestión independiente de certificados SSL por dominio
-- Logs separados por sitio
-- Posibilidad de asignar límites de ancho de banda por sitio
-
-**Preguntas para proveedores:**
-
-```
-1. ¿Cuántos dominios/subdominios puedo alojar?
-2. ¿Ofrecen cPanel/Plesk para gestión multi-sitio?
-3. ¿Puedo crear cuentas FTP/SSH independientes por cliente?
-4. ¿Cómo aíslan recursos entre sitios? (cgroups, LVE, etc.)
-5. ¿Puedo configurar límites de CPU/RAM por sitio?
-6. ¿Los logs están separados por dominio?
-```
-
----
-
-### 3. **Git + Webhooks Automáticos con Netlify**
+## 🌐 Git + Webhooks Automáticos con Netlify
 
 #### ✅ Sistema Actual de Despliegue
 
@@ -1540,720 +1858,6 @@ git push origin main
 
 > **Ver sección "🚀 PROCESO DE DESPLIEGUE"** para la guía completa de configuración de
 > Netlify, variables de entorno SP-API y verificación en producción.
-
----
-
-### 4. **Seguridad y Actualizaciones Automáticas**
-
-#### ✅ Requisitos Mínimos:
-
-**Certificados SSL:**
-
-- **Let's Encrypt gratuito incluido** (renovación automática)
-- Instalación con 1-click o automatizada
-- Soporte para múltiples dominios (SNI)
-- Wildcard SSL disponible (para subdominios)
-
-**Firewall y Protección:**
-
-- **Firewall de aplicación web (WAF)** incluido o integrable (Cloudflare, Sucuri)
-- Protección contra DDoS básica
-- Bloqueo automático de IPs maliciosas (Fail2Ban)
-- Escaneo de malware periódico
-
-**Actualizaciones del Sistema:**
-
-- **Actualizaciones de seguridad automáticas** del SO (Ubuntu, CentOS)
-- Parches de servidor web (Nginx/Apache) aplicados automáticamente
-- Notificaciones de actualizaciones críticas
-- Opción de programar mantenimiento
-
-**Backups:**
-
-- **Backups automáticos diarios** incluidos
-- Retención mínima: 7-30 días
-- Restauración con 1-click
-- Posibilidad de descargar backups (offsite storage)
-
-**Preguntas para proveedores:**
-
-```
-1. ¿SSL Let's Encrypt incluido y auto-renovable?
-2. ¿Qué tipo de firewall ofrecen? (iptables, CSF, hardware WAF)
-3. ¿Actualizaciones de seguridad son automáticas o manuales?
-4. ¿Con qué frecuencia hacen backups? ¿Dónde los almacenan?
-5. ¿Cuánto tarda restaurar un backup completo?
-6. ¿Ofrecen escaneo de malware? ¿Costo adicional?
-7. ¿Tienen protección DDoS? ¿Qué tamaño de ataques mitigan?
-```
-
----
-
-### 5. **Soporte Técnico de Calidad**
-
-#### ✅ Requisitos Mínimos:
-
-**Disponibilidad:**
-
-- **24/7/365** (crítico para e-commerce)
-- Múltiples canales: Chat en vivo, tickets, teléfono
-- Tiempo de respuesta: < 15 minutos (urgente), < 2 horas (normal)
-
-**Expertise Técnico:**
-
-- Soporte en **español e inglés**
-- Personal capacitado en:
-  - Configuración de servidores Linux
-  - Nginx/Apache
-  - DNS y dominios
-  - SSL/TLS
-  - Optimización de rendimiento
-
-**Documentación:**
-
-- Base de conocimientos extensa
-- Tutoriales en video
-- Guías de migración
-- API documentation (si aplica)
-
-**Preguntas para proveedores:**
-
-```
-1. ¿Horarios de soporte? ¿24/7 o limitado?
-2. ¿Idiomas disponibles? (Español, Inglés)
-3. ¿Tiempo promedio de primera respuesta?
-4. ¿Nivel de soporte incluido? (básico, administrado, premium)
-5. ¿Ayudan con migraciones desde otro proveedor?
-6. ¿Tienen documentación técnica detallada?
-7. ¿Ofrecen soporte administrado? (gestionan servidor por ti)
-```
-
----
-
-## 🎖️ REQUISITOS RECOMENDADOS (Nice to Have)
-
-### 6. **Panel de Control Intuitivo**
-
-**Opciones Populares:**
-
-- **cPanel/WHM**: Estándar de la industria, interfaz gráfica completa
-- **Plesk**: Alternativa moderna, mejor para Windows también
-- **Webmin/Virtualmin**: Open source, más técnico
-- **Panel propietario**: Custom del proveedor
-
-**Funcionalidades deseadas:**
-
-- Gestión de dominios y subdominios
-- Configuración de emails por dominio
-- File Manager web (editar archivos sin FTP)
-- Instalador de aplicaciones (Softaculous, Installatron)
-- Métricas y analytics integrados
-- Gestión de bases de datos (MySQL/PostgreSQL) si planeas expandir
-
----
-
-### 7. **Optimización de Rendimiento**
-
-**CDN Integrado:**
-
-- **Cloudflare** integración con 1-click
-- O CDN propio del proveedor
-- Caché global en múltiples ubicaciones
-- Reduce latencia para visitantes internacionales
-
-**Caché del Servidor:**
-
-- **Redis o Memcached** disponible
-- Caché de página completa (Varnish, Nginx FastCGI)
-- Compresión Gzip/Brotli habilitada
-- HTTP/2 o HTTP/3 soportado
-
-**Optimización de Assets:**
-
-- Compresión automática de imágenes (WebP, AVIF)
-- Minificación de CSS/JS
-- Lazy loading de imágenes
-
----
-
-### 8. **Escalabilidad y Flexibilidad**
-
-**Upgrade Path Claro:**
-
-- Migrar de plan compartido → VPS → Servidor Dedicado sin downtime
-- Añadir recursos (CPU, RAM, disco) sin re-configurar
-- Load balancing disponible para tráfico alto
-
-**Múltiples Ubicaciones de Data Centers:**
-
-- Servidores en **USA** (preferencia para este proyecto)
-- Europa, Asia (para expansión futura)
-- Baja latencia para audiencia objetivo
-
----
-
-### 9. **Herramientas de Desarrollo**
-
-**Git Integration:**
-
-- Despliegue automático desde GitHub/GitLab/Bitbucket
-- Webhooks para deploy continuo
-- Ambientes staging/production
-
-**CI/CD Pipeline:**
-
-- GitHub Actions compatible
-- Deploy automático al hacer `git push`
-
-**CLI y API:**
-
-- API RESTful para automatizaciones
-- CLI para gestión desde terminal
-
----
-
-## 📊 COMPARATIVA DE PLANES: CRITERIOS DE EVALUACIÓN
-
-### Tabla de Comparación (Para Llenar al Investigar Proveedores)
-
-| Criterio                          | Prioridad       | Proveedor A | Proveedor B | Proveedor C |
-| --------------------------------- | --------------- | ----------- | ----------- | ----------- |
-| **REQUISITOS OBLIGATORIOS**       |                 |             |             |             |
-| Acceso SSH completo               | 🔴 Crítico      | ✅/❌       | ✅/❌       | ✅/❌       |
-| Control de configuración servidor | 🔴 Crítico      | ✅/❌       | ✅/❌       | ✅/❌       |
-| Multi-dominio/Multi-sitio         | 🔴 Crítico      | # Límite    | # Límite    | # Límite    |
-| Aislamiento de clientes           | 🔴 Crítico      | Método      | Método      | Método      |
-| vCPU cores                        | 🔴 Crítico      | # cores     | # cores     | # cores     |
-| RAM                               | 🔴 Crítico      | # GB        | # GB        | # GB        |
-| Almacenamiento SSD                | 🔴 Crítico      | # GB        | # GB        | # GB        |
-| Ancho de banda                    | 🔴 Crítico      | # TB o ∞    | # TB o ∞    | # TB o ∞    |
-| SSL Let's Encrypt gratuito        | 🔴 Crítico      | ✅/❌       | ✅/❌       | ✅/❌       |
-| Firewall / WAF                    | 🔴 Crítico      | Tipo        | Tipo        | Tipo        |
-| Backups automáticos               | 🔴 Crítico      | Frecuencia  | Frecuencia  | Frecuencia  |
-| Actualizaciones seguridad auto    | 🔴 Crítico      | ✅/❌       | ✅/❌       | ✅/❌       |
-| Soporte 24/7                      | 🔴 Crítico      | ✅/❌       | ✅/❌       | ✅/❌       |
-| Soporte en español                | 🔴 Crítico      | ✅/❌       | ✅/❌       | ✅/❌       |
-| **REQUISITOS RECOMENDADOS**       |                 |             |             |             |
-| Panel de control (cPanel/Plesk)   | 🟡 Importante   | Tipo        | Tipo        | Tipo        |
-| CDN integrado                     | 🟡 Importante   | ✅/❌       | ✅/❌       | ✅/❌       |
-| Redis/Memcached                   | 🟡 Importante   | ✅/❌       | ✅/❌       | ✅/❌       |
-| HTTP/2 o HTTP/3                   | 🟡 Importante   | ✅/❌       | ✅/❌       | ✅/❌       |
-| Git integration                   | 🟢 Nice to have | ✅/❌       | ✅/❌       | ✅/❌       |
-| Staging environments              | 🟢 Nice to have | ✅/❌       | ✅/❌       | ✅/❌       |
-| API/CLI                           | 🟢 Nice to have | ✅/❌       | ✅/❌       | ✅/❌       |
-| **COSTOS**                        |                 |             |             |             |
-| Precio mensual (anual)            | -               | $XX/mes     | $XX/mes     | $XX/mes     |
-| Setup fee                         | -               | $XX         | $XX         | $XX         |
-| Costo por sitio adicional         | -               | $XX         | $XX         | $XX         |
-| Costo de panel control            | -               | $XX/mes     | $XX/mes     | $XX/mes     |
-| Costo backups adicionales         | -               | $XX/mes     | $XX/mes     | $XX/mes     |
-| **TOTAL ESTIMADO (10 sitios)**    | -               | $XX/mes     | $XX/mes     | $XX/mes     |
-
----
-
-## 💡 PREGUNTAS CLAVE AL CONTACTAR PROVEEDORES
-
-### 📞 Script de Consulta Recomendado
-
-```
-Asunto: Consulta para Agencia - Hosting Multi-Sitio con Control de Servidor
-
-Hola [Proveedor],
-
-Somos una agencia que maneja sitios web estáticos (HTML/CSS/JS) para múltiples
-clientes y buscamos un proveedor de hosting que cumpla con los siguientes requisitos:
-
-CONTEXTO:
-- 5-20 sitios estáticos simultáneos
-- Cada sitio: ~100-500 MB, 5,000-50,000 visitas/mes
-- Stack: HTML5, TailwindCSS, JavaScript vanilla (sin backend)
-- Necesitamos independencia entre proyectos de clientes
-
-REQUISITOS CRÍTICOS:
-1. Acceso SSH completo y control de configuración del servidor
-2. Capacidad de alojar múltiples dominios/subdominios con aislamiento
-3. Servidor: Mínimo 4GB RAM, 2 vCPU, 50GB SSD, 1TB ancho de banda
-4. SSL Let's Encrypt gratuito con renovación automática
-5. Backups automáticos diarios
-6. Actualizaciones de seguridad automáticas
-7. Soporte 24/7 en español
-
-PREGUNTAS ESPECÍFICAS:
-1. ¿Qué plan recomiendan para nuestro caso de uso?
-2. ¿Incluyen panel de control (cPanel/Plesk)?
-3. ¿Cómo manejan el aislamiento entre sitios de diferentes clientes?
-4. ¿Ofrecen migración gratuita desde nuestro proveedor actual?
-5. ¿Cuál es el proceso de escalamiento si crecemos a 50+ sitios?
-6. ¿Tienen contratos anuales con descuento vs. mensual?
-7. ¿Ofrecen período de prueba o garantía de devolución?
-
-Favor enviar:
-- Cotización detallada con costos desglosados
-- SLA (uptime garantizado)
-- Documentación técnica o guías de configuración
-
-Gracias,
-[Tu nombre]
-[Agencia]
-```
-
----
-
-## 🏆 MODALIDADES DE HOSTING RECOMENDADAS PARA AGENCIAS
-
-### Comparativa de Opciones
-
-| Modalidad                         | Mejor Para                               | Ventajas                                | Desventajas                              | Costo Aproximado |
-| --------------------------------- | ---------------------------------------- | --------------------------------------- | ---------------------------------------- | ---------------- |
-| **Shared Hosting**                | 1-3 sitios pequeños                      | Económico, fácil setup                  | Sin control servidor, recursos limitados | $5-15/mes        |
-| **VPS Administrado**              | 5-20 sitios, agencia pequeña             | Balance costo/control, soporte incluido | Menos flexible que VPS no administrado   | $30-80/mes       |
-| **VPS No Administrado**           | Agencia con conocimientos técnicos       | Control total, mejor precio/rendimiento | Requiere mantenimiento manual            | $15-50/mes       |
-| **Cloud VPS** (AWS, DigitalOcean) | Escalabilidad extrema, 20+ sitios        | Pago por uso, máxima flexibilidad       | Complejidad técnica, costos variables    | $20-200/mes      |
-| **Servidor Dedicado**             | 50+ sitios, alto tráfico                 | Recursos exclusivos, máximo control     | Alto costo, requiere expertise           | $100-500/mes     |
-| **Hosting Reseller**              | Agencias que facturan hosting a clientes | Marca blanca, cuentas independientes    | Menos control técnico                    | $25-100/mes      |
-
-### ✅ Recomendación para este Proyecto:
-
-**VPS Administrado con cPanel/Plesk**
-
-**Por qué:**
-
-- Control suficiente para personalizar cada sitio
-- Soporte administrado reduce carga técnica
-- cPanel facilita gestión multi-cliente
-- Escalable hasta 20-30 sitios sin problemas
-- Balance ideal entre costo, control y soporte
-
-**Especificaciones Recomendadas:**
-
-```
-Plan: VPS Managed
-CPU: 4 vCPU cores
-RAM: 8 GB
-Disco: 100 GB SSD NVMe
-Ancho de banda: Ilimitado o 3 TB/mes
-Panel: cPanel/WHM incluido
-SSL: Let's Encrypt gratuito
-Backups: Diarios automáticos (retención 30 días)
-Ubicación: USA (Este u Oeste según audiencia)
-Costo esperado: $50-80/mes
-```
-
----
-
-## 📝 CHECKLIST FINAL ANTES DE CONTRATAR
-
-### ✅ Lista de Verificación
-
-- [ ] **Probé el soporte** (hice preguntas pre-venta, tiempo de respuesta < 2 horas)
-- [ ] **Leí los términos de servicio** (especialmente políticas de reembolso y cancelación)
-- [ ] **Verifiqué el uptime garantizado** (mínimo 99.9%)
-- [ ] **Confirmé que puedo migrar fácilmente** (sin lock-in)
-- [ ] **Obtuve cotización por escrito** con todos los costos desglosados
-- [ ] **Busqué reviews independientes** (TrustPilot, Reddit, WebHostingTalk)
-- [ ] **Probé su panel de control** (solicité demo o trial)
-- [ ] **Confirmé ubicación de data center** (latencia a USA)
-- [ ] **Verifiqué política de backups** (frecuencia, retención, restauración)
-- [ ] **Entendí el proceso de escalamiento** (upgrade sin downtime)
-- [ ] **Revisé límites y restricciones** (inodes, procesos concurrentes, etc.)
-- [ ] **Obtuve referencias** (casos de uso similares)
-
----
-
-## 🚀 PROCESO DE DESPLIEGUE RECOMENDADO
-
-### Workflow Post-Contratación
-
-1. **DNS y Dominio** (Día 1)
-   - Apuntar dominio a IP del servidor
-   - Configurar registros A, CNAME, MX
-   - Esperar propagación (24-48 horas)
-
-2. **Configuración Inicial del Servidor** (Día 1-2)
-   - Acceder vía SSH
-   - Actualizar sistema operativo
-   - Instalar Nginx o Apache
-   - Configurar firewall (UFW, CSF)
-   - Crear usuarios y permisos
-
-3. **Setup de Panel de Control** (Día 2)
-   - Instalar cPanel/Plesk
-   - Configurar cuentas por cliente
-   - Establecer límites de recursos
-
-4. **Despliegue del Código** (Día 3)
-   - Compilar TailwindCSS (`npm run build`)
-   - Comprimir imágenes (ImageOptim, TinyPNG)
-   - Subir archivos vía SFTP o rsync
-   - Configurar permisos (chmod 755 directorios, 644 archivos)
-
-5. **Optimización** (Día 3-4)
-   - Habilitar compresión Gzip/Brotli
-   - Configurar caché headers (Cache-Control)
-   - Integrar CDN (Cloudflare)
-   - Configurar HTTP/2
-
-6. **Testing y QA** (Día 4-5)
-   - PageSpeed Insights (score > 90)
-   - GTmetrix (grado A)
-   - Pruebas cross-browser (BrowserStack)
-   - Pruebas mobile (responsive)
-   - Verificar analytics (Google Analytics)
-
-7. **Monitoreo y Mantenimiento** (Ongoing)
-   - Configurar uptime monitoring (UptimeRobot, Pingdom)
-   - Revisar logs semanalmente
-   - Actualizar dependencias mensualmente
-   - Auditoría de seguridad trimestral
-
----
-
-## � SINCRONIZACIÓN Y WORKFLOW DE ACTUALIZACIÓN
-
-### ❓ Preguntas Frecuentes sobre Despliegue
-
-#### 1. **¿Cómo sincronizar cambios entre Pinegrow y el Hosting?**
-
-**Respuesta Corta:** No hay sincronización automática directa entre Pinegrow y el hosting. Necesitas un paso intermedio (Git o SFTP manual).
-
-**Respuesta Detallada:**
-
-Pinegrow es un **editor local** que modifica archivos en tu computadora. El hosting es el **servidor en producción**. Para que los cambios lleguen al hosting, debes transferirlos manualmente o configurar un sistema automatizado.
-
----
-
-### 📋 OPCIONES DE SINCRONIZACIÓN (De Manual a Totalmente Automatizada)
-
-#### **Opción 1: SFTP/FTP Manual** ⚠️ _No Recomendado para Agencias_
-
-**Cómo funciona:**
-
-1. Editas archivos en Pinegrow (local)
-2. Guardas cambios
-3. Abres cliente SFTP (FileZilla, WinSCP, Cyberduck)
-4. Subes archivos modificados al servidor
-5. Reemplazas archivos antiguos
-
-**Ventajas:**
-
-- Simple, sin configuración técnica
-- Control total sobre qué subes
-- Inmediato (minutos después de editar)
-
-**Desventajas:**
-
-- ❌ Propenso a errores humanos (olvidar subir archivos)
-- ❌ Sin historial de versiones
-- ❌ No puedes revertir cambios fácilmente
-- ❌ Riesgo de sobrescribir archivos incorrectos
-- ❌ Tedioso para actualizaciones frecuentes
-
-**Cuándo usar:**
-
-- Proyecto muy pequeño (1-2 páginas)
-- Cambios muy esporádicos (1 vez al mes)
-- Sin equipo colaborativo
-
----
-
-#### **Opción 2: Git + Deploy Manual** ✅ _Recomendado para Equipos Pequeños_
-
-**Cómo funciona:**
-
-1. Editas en Pinegrow (local)
-2. Guardas cambios
-3. Haces `git commit` con mensaje descriptivo
-4. Haces `git push` a repositorio (GitHub/GitLab)
-5. **MANUALMENTE** te conectas por SSH al servidor
-6. Ejecutas `git pull` en el servidor para traer cambios
-
-**Ventajas:**
-
-- ✅ Historial completo de cambios (Git log)
-- ✅ Puedes revertir a versiones anteriores
-- ✅ Múltiples personas pueden colaborar
-- ✅ Backups automáticos en GitHub
-- ✅ Branches para desarrollo/producción
-
-**Desventajas:**
-
-- ❌ Requiere SSH al servidor cada vez
-- ❌ Paso manual de `git pull` en servidor
-- ❌ Riesgo de olvidar hacer pull
-
-**Configuración Inicial:**
-
-```bash
-# 1. En tu computadora (local) - Inicializar Git
-cd C:\proyectos\Figma-Local\Dev-Mode\LP_Blissed
-git init
-git add .
-git commit -m "Initial commit: Blissed Skin landing page"
-
-# 2. Crear repositorio en GitHub
-# (hazlo desde github.com/new)
-
-# 3. Conectar local con GitHub
-git remote add origin https://github.com/tu-usuario/blissed-skin.git
-git branch -M main
-git push -u origin main
-
-# 4. En el servidor (vía SSH)
-cd /var/www/blissedskin.com
-git clone https://github.com/tu-usuario/blissed-skin.git .
-```
-
-**Workflow de Actualización:**
-
-```bash
-# En tu computadora (después de editar en Pinegrow)
-git add sections/HowToUsed.html  # O el archivo que modificaste
-git commit -m "Update: HowToUsed section - Added new product instructions"
-git push origin main
-
-# En el servidor (vía SSH)
-cd /var/www/blissedskin.com
-git pull origin main
-```
-
-**Cuándo usar:**
-
-- Agencia con 2-5 personas
-- Actualizaciones frecuentes (semanal)
-- Necesitas historial de versiones
-- Quieres colaboración en equipo
-
----
-
-#### **Opción 3: Git + Webhooks Automáticos** 🌟 _Ideal para Agencias Profesionales_
-
-**Cómo funciona:**
-
-1. Editas en Pinegrow (local)
-2. Guardas cambios
-3. Haces `git commit` y `git push`
-4. **GitHub envía webhook automático al servidor**
-5. **Servidor ejecuta `git pull` automáticamente**
-6. ✅ Cambios en producción en 30 segundos
-
-**Ventajas:**
-
-- ✅✅ Completamente automatizado
-- ✅ Sin intervención manual en servidor
-- ✅ Deploy en segundos después de push
-- ✅ Historial completo de Git
-- ✅ Fácil rollback si algo falla
-- ✅ Staging + Production environments
-
-**Desventajas:**
-
-- ❌ Requiere configuración técnica inicial
-- ❌ Necesitas acceso SSH y permisos en servidor
-
-**Configuración Paso a Paso:**
-
-**Paso 1: Script de Deploy en el Servidor**
-
-```bash
-# Conectar por SSH al servidor
-ssh user@tuservidor.com
-
-# Crear script de deploy
-nano /var/www/deploy.sh
-```
-
-Contenido del script:
-
-```bash
-#!/bin/bash
-# deploy.sh - Script para auto-deploy desde GitHub
-
-# Variables
-REPO_DIR="/var/www/blissedskin.com"
-LOG_FILE="/var/log/deploy.log"
-BRANCH="main"
-
-# Logging
-echo "$(date '+%Y-%m-%d %H:%M:%S') - Starting deploy" >> $LOG_FILE
-
-# Ir al directorio del repositorio
-cd $REPO_DIR
-
-# Verificar que estamos en la rama correcta
-git checkout $BRANCH
-
-# Hacer pull de los cambios
-git pull origin $BRANCH >> $LOG_FILE 2>&1
-
-# Compilar TailwindCSS si es necesario
-# npm run build:css >> $LOG_FILE 2>&1
-
-# Limpiar caché si usas CDN
-# curl -X POST "https://api.cloudflare.com/client/v4/zones/YOUR_ZONE/purge_cache" ...
-
-echo "$(date '+%Y-%m-%d %H:%M:%S') - Deploy completed" >> $LOG_FILE
-```
-
-```bash
-# Dar permisos de ejecución
-chmod +x /var/www/deploy.sh
-
-# Probar manualmente
-/var/www/deploy.sh
-```
-
-**Paso 2: Configurar Webhook en GitHub**
-
-1. Ve a tu repositorio en GitHub
-2. Settings → Webhooks → Add webhook
-3. Payload URL: `https://tuservidor.com/webhook-deploy.php`
-4. Content type: `application/json`
-5. Secret: `tu-secreto-super-seguro-123`
-6. Events: `Just the push event`
-7. Active: ✅
-
-**Paso 3: Endpoint PHP en el Servidor**
-
-```bash
-nano /var/www/blissedskin.com/webhook-deploy.php
-```
-
-Contenido:
-
-```php
-<?php
-// webhook-deploy.php - Recibe webhook de GitHub y ejecuta deploy
-
-// Configuración
-$secret = 'tu-secreto-super-seguro-123';
-$deploy_script = '/var/www/deploy.sh';
-
-// Verificar firma de GitHub
-$headers = getallheaders();
-$signature = $headers['X-Hub-Signature-256'] ?? '';
-$payload = file_get_contents('php://input');
-
-$expected_signature = 'sha256=' . hash_hmac('sha256', $payload, $secret);
-
-if (!hash_equals($expected_signature, $signature)) {
-    http_response_code(403);
-    die('Invalid signature');
-}
-
-// Ejecutar script de deploy en background
-exec("$deploy_script > /dev/null 2>&1 &");
-
-// Responder a GitHub
-http_response_code(200);
-echo json_encode(['status' => 'Deploy initiated']);
-?>
-```
-
-**Workflow Automatizado:**
-
-```bash
-# En tu computadora (después de editar)
-git add .
-git commit -m "Update: Added new blog post - Skincare Tips 2026"
-git push origin main
-
-# ✅ AUTOMÁTICO: GitHub webhook → Servidor ejecuta deploy.sh
-# ✅ Cambios live en 30 segundos
-```
-
-**Cuándo usar:**
-
-- Agencia profesional con 5+ clientes
-- Actualizaciones diarias/semanales
-- Equipo distribuido colaborando
-- Necesitas CI/CD profesional
-
----
-
-#### **Opción 4: CI/CD Completo (GitHub Actions)** 🚀 _Nivel Profesional Avanzado_
-
-**Cómo funciona:**
-
-1. Editas en Pinegrow
-2. `git push` a GitHub
-3. **GitHub Actions ejecuta pipeline automático:**
-   - Valida HTML (html-validate)
-   - Compila TailwindCSS
-   - Optimiza imágenes
-   - Ejecuta tests
-   - Deploya a staging (rama `develop`)
-   - Deploya a producción (rama `main`) solo si pasa tests
-
-**Configuración:**
-
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy to Production
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Validate HTML
-        run: npx html-validate sections/*.html
-
-      - name: Build TailwindCSS
-        run: npm run build:css
-
-      - name: Deploy to server
-        uses: easingthemes/ssh-deploy@v2.1.5
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: /var/www/blissedskin.com
-```
-
-**Cuándo usar:**
-
-- Agencia grande (10+ clientes)
-- Equipos de desarrollo completos
-- Necesitas testing automatizado
-- Ambientes staging/producción separados
-
----
-
-## �📚 RECURSOS ADICIONALES
-
-### Herramientas de Benchmarking
-
-- **GTmetrix**: https://gtmetrix.com (velocidad y optimización)
-- **PageSpeed Insights**: https://pagespeed.web.dev (rendimiento)
-- **WebPageTest**: https://www.webpagetest.org (testing avanzado)
-- **SSL Labs**: https://www.ssllabs.com/ssltest/ (seguridad SSL)
-
-### Comunidades para Research
-
-- **WebHostingTalk**: https://www.webhostingtalk.com (reviews de proveedores)
-- **Reddit r/webhosting**: https://reddit.com/r/webhosting (recomendaciones)
-- **LowEndBox**: https://lowendbox.com (ofertas de VPS)
-
-### Documentación Útil
-
-- **DigitalOcean Tutorials**: https://www.digitalocean.com/community/tutorials
-- **Linode Guides**: https://www.linode.com/docs/guides/
-- **Nginx Documentation**: https://nginx.org/en/docs/
 
 ---
 

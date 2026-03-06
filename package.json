@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./tailwind_theme/tailwind.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./tailwind_theme/tailwind.css --minify",
+    "build": "npx tailwindcss -i ./src/input.css -o ./tailwind_theme/tailwind.css --minify && npx pagefind --site . --output-path ./pagefind",
     "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
     "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +28,7 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
+    "pagefind": "^1.4.0",
     "prettier": "^3.8.1"
   }
 }

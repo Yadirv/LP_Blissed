@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blissed Skin Blog — Skincare Science &amp; Expert Advice</title>
+    <link>https://www.blissedskin.us/blog/</link>
+    <description>Expert articles on skincare science, acne treatment, and skin barrier health from the Blissed Skin science team.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 25 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.blissedskin.us/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Skin Barrier Science: Dry vs. Dehydrated Diagnosis</title>
+      <link>https://www.blissedskin.us/blog/posts/2026/02/skin-barrier-science-dry-vs-dehydrated.html</link>
+      <guid isPermaLink="true">https://www.blissedskin.us/blog/posts/2026/02/skin-barrier-science-dry-vs-dehydrated.html</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Learn the biological difference between lipid deficiency and water loss. Clinical protocols for barrier repair based on ISDIN and Hashizume research.]]></description>
+    </item>
+
+    <item>
+      <title>Circadian Skincare: Optimizing Routine Architecture</title>
+      <link>https://www.blissedskin.us/blog/posts/2026/02/circadian-skincare-optimizing-routine-architecture.html</link>
+      <guid isPermaLink="true">https://www.blissedskin.us/blog/posts/2026/02/circadian-skincare-optimizing-routine-architecture.html</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Learn how to align your skincare routine with biological circadian rhythms for maximum ingredient absorption and skin repair.]]></description>
+    </item>
+
+    <item>
+      <title>The Microcomedone as an Immunological Organ: 2026 Update</title>
+      <link>https://www.blissedskin.us/blog/posts/2026/02/microcomedone-immunological-organ-2026.html</link>
+      <guid isPermaLink="true">https://www.blissedskin.us/blog/posts/2026/02/microcomedone-immunological-organ-2026.html</guid>
+      <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Discover how IL-1α triggers acne 8 weeks before it's visible and the immunological cascade behind microcomedone development.]]></description>
+    </item>
+
+    <item>
+      <title>Decoding C. acnes IA1: The Transcriptomic Future of Acne Care</title>
+      <link>https://www.blissedskin.us/blog/posts/2026/02/decoding-c-acnes-ia1-transcriptomic-future.html</link>
+      <guid isPermaLink="true">https://www.blissedskin.us/blog/posts/2026/02/decoding-c-acnes-ia1-transcriptomic-future.html</guid>
+      <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Explore how the C. acnes IA1 filotype triggers inflammatory hub genes and what transcriptomic research means for acne treatment.]]></description>
+    </item>
+  </channel>
+</rss>

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
@@ -18,7 +18,12 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thank You - Blissed Skin</title>
+    <title>Thank You | Blissed Skin</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Thank you for your Blissed Skin purchase. Your order has been confirmed."
+    />
     <link rel="stylesheet" href="../tailwind_theme/tailwind.css" />
     <link rel="stylesheet" href="../src/components/main-header/main-header.css" />
   </head>
@@ -82,6 +87,7 @@
       <!-- Right Section: Search -->
       <div class="flex items-center gap-6 ml-auto">
         <div
+          data-component="site-search"
           class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
         >
           <img src="../assets/search-icon.svg" alt="Search" class="w-[8px] h-[8px]" />
@@ -396,5 +402,7 @@
         }
       }
     </script>
+    <script src="../src/assets/js/components-init.js"></script>
+    <script src="../src/components/site-search/site-search.js"></script>
   </body>
 </html>

@@ -1,45 +1,47 @@
 {
   "posts": [
     {
-      "id": "acne-science-modulation-2026",
-      "title": "Acne Treatment 2026: Why Scrubbing Doesn't Stop Breakouts",
-      "slug": "acne-science-modulation-2026",
-      "excerpt": "New research shows acne starts 8 weeks before it's visible. Discover why biological modulation works better than cleansing to stop breakouts at the source.",
-      "author": "Blissed Skin Editorial Team",
+      "id": "decoding-c-acnes-ia1-transcriptomic-future",
+      "title": "Decoding C. acnes IA1: The Transcriptomic Future of Acne Care",
+      "slug": "decoding-c-acnes-ia1-transcriptomic-future",
+      "excerpt": "Learn how C. acnes IA1 activates inflammatory pathways. Transcriptomic insights for next-generation acne care based on Dréno and Bhatt research.",
+      "author": "BlissedSkin Science Team",
       "date": "2026-02-15",
+      "updated": "2026-03-04",
       "category": "skincare-science",
+      "lang": "en",
       "tags": [
-        "acne treatment 2026",
-        "biological modulation acne",
-        "microcomedone formation",
-        "linoleic acid deficiency",
-        "C. acnes bacteria"
+        "transcriptomic-profiling",
+        "clr-pathway-acne",
+        "inflammatory-hub-genes",
+        "acne-microbiome-2025"
       ],
-      "featured_image": "/assets/blog/featured/acne-science-modulation-2026.jpg",
-      "thumbnail": "/assets/blog/thumbnails/acne-science-modulation-2026-thumb.jpg",
-      "read_time": "12 min",
-      "url": "/blog/posts/2026/02/acne-science-modulation-2026.html",
+      "featured_image": "/assets/blog/featured/Decoding-C-acnes-IA1/THE INVISIBLE DIALOGUE HOW BACTERIA REPROGRAM YOUR SKIN.webp",
+      "thumbnail": "/assets/blog/thumbnails/Decoding-C-acnes-IA1/THE-INVISIBLE-DIALOGUE-HOW-BACTERIA-REPROGRAM-YOUR-SKIN.webp",
+      "read_time": "5 min",
+      "url": "/blog/posts/2026/02/decoding-c-acnes-ia1-transcriptomic-future.html",
       "schema_type": ["Article", "FAQ"]
     },
     {
-      "id": "is-acne-genetic-dna-bacteria-treatment-2026",
-      "title": "Is Your Acne Genetic? Revolutionizing Treatment Through DNA & Bacteria",
-      "slug": "is-acne-genetic-dna-bacteria-treatment-2026",
-      "excerpt": "Acne isn't just about hygiene. Discover how genetics, C. acnes strains, and the 'invisible' microcomedone phase drive breakouts in 2025.",
-      "author": "Blissed Skin Editorial Team",
+      "id": "microcomedone-immunological-organ-2025",
+      "title": "The Microcomedone as an Immunological Organ: 2025 Update",
+      "slug": "microcomedone-immunological-organ-2025",
+      "excerpt": "Discover how microcomedones trigger IL-1α cascades before acne is visible. Evidence-based microcomedone biology from Dréno and Bhatt research.",
+      "author": "BlissedSkin Science Team",
       "date": "2026-02-15",
+      "updated": "2026-03-04",
       "category": "skincare-science",
+      "lang": "en",
       "tags": [
-        "is acne genetic",
-        "acne genetic causes",
-        "C. acnes bacteria strains",
-        "CLR pathway acne",
-        "linoleic acid deficiency"
+        "il-1-alpha-acne",
+        "subclinical-acne-timeline",
+        "linoleic-acid-deficiency-sebum",
+        "proactive-skin-barrier"
       ],
-      "featured_image": "/assets/blog/featured/is-acne-genetic-dna-bacteria-treatment-2026.jpg",
-      "thumbnail": "/assets/blog/thumbnails/is-acne-genetic-dna-bacteria-treatment-2026-thumb.jpg",
-      "read_time": "10 min",
-      "url": "/blog/posts/2026/02/is-acne-genetic-dna-bacteria-treatment-2026.html",
+      "featured_image": "/assets/blog/featured/The Microcomedone as an Immunological Organ/The-Invisible-Acne-Phase-320%-More-Inflammation.webp",
+      "thumbnail": "/assets/blog/thumbnails/The Microcomedone as an Immunological Organ/The-Invisible-Acne-Phase-320%-More-Inflammation.webp",
+      "read_time": "5 min",
+      "url": "/blog/posts/2026/02/microcomedone-immunological-organ-2025.html",
       "schema_type": ["Article", "FAQ"]
     },
     {
@@ -50,12 +52,57 @@
       "author": "Blissed Skin",
       "date": "2026-01-15",
       "category": "skincare-tips",
+      "lang": "es",
       "tags": ["pimple patches", "acné", "cuidado facial"],
       "featured_image": "/assets/blog/featured/beneficios-patches.jpg",
       "thumbnail": "/assets/blog/thumbnails/beneficios-patches-thumb.jpg",
       "read_time": "5 min",
       "url": "/blog/posts/2026/01/beneficios-pimple-patches.html",
       "schema_type": "BlogPosting"
+    },
+    {
+      "id": "skin-barrier-science-dry-vs-dehydrated",
+      "title": "Skin Barrier Science: Dry vs. Dehydrated Diagnosis",
+      "slug": "skin-barrier-science-dry-vs-dehydrated",
+      "excerpt": "Learn the biological difference between lipid deficiency and water loss. Clinical protocols for barrier repair based on ISDIN and Hashizume research.",
+      "author": "BlissedSkin Science Team",
+      "date": "2026-02-25",
+      "updated": "2026-02-25",
+      "category": "skincare-science",
+      "lang": "en",
+      "tags": [
+        "skin-barrier-repair",
+        "transepidermal-water-loss",
+        "ceramides-for-dry-skin",
+        "natural-moisturizing-factor"
+      ],
+      "featured_image": "/assets/blog/featured/Skin Barrier Science Dry vs Dehydrated Diagnosis/Hydration-is-Water---Nutrition-is-Lipids.webp",
+      "thumbnail": "/assets/blog/thumbnails/Skin Barrier Science Dry vs Dehydrated Diagnosis/Hydration-is-Water---Nutrition-is-Lipids.webp",
+      "read_time": "4 min",
+      "url": "/blog/posts/2026/02/skin-barrier-science-dry-vs-dehydrated.html",
+      "schema_type": ["Article", "FAQ"]
+    },
+    {
+      "id": "circadian-skincare-optimizing-routine-architecture",
+      "title": "Circadian Skincare: Optimizing Routine Architecture",
+      "slug": "circadian-skincare-optimizing-routine-architecture",
+      "excerpt": "Learn how to align your skincare with biological rhythms. Clinical protocols for AM protection and PM repair based on AAD and Cleveland Clinic.",
+      "author": "BlissedSkin Science Team",
+      "date": "2026-02-25",
+      "updated": "2026-02-25",
+      "category": "skincare-science",
+      "lang": "en",
+      "tags": [
+        "vitamin-c-timing",
+        "retinol-application",
+        "nighttime-skin-repair",
+        "morning-skin-defense"
+      ],
+      "featured_image": "/assets/blog/featured/Circadian Skincare Optimizing Routine Architecture/Circadian-Skincare-The-24-Hour-Cycle.webp",
+      "thumbnail": "/assets/blog/thumbnails/Circadian Skincare Optimizing Routine Architecture/Circadian-Skincare-The-24-Hour-Cycle.webp",
+      "read_time": "4 min",
+      "url": "/blog/posts/2026/02/circadian-skincare-optimizing-routine-architecture.html",
+      "schema_type": ["Article", "FAQ"]
     }
   ],
   "categories": {

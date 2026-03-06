@@ -14,7 +14,6 @@ window.ComponentLoader.registerComponent("main-header", (root) => {
   };
 
   // 3. Referencias relativas al root
-  const searchInput = root.querySelector('input[type="text"]');
   const navLinks = root.querySelectorAll("nav a");
 
   /**
@@ -36,18 +35,7 @@ window.ComponentLoader.registerComponent("main-header", (root) => {
   // Listener de scroll (global pero afecta al root localmente)
   window.addEventListener("scroll", handleScroll, { passive: true });
 
-  // Manejo del buscador
-  if (searchInput) {
-    searchInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        console.log(`[Search] Buscando: ${searchInput.value}`);
-        // Aquí iría la lógica de redirección o filtrado
-      }
-    });
-  }
-
   // Delegación de clicks en navegación
-  root.addEventListener("click", (e) => {
     const link = e.target.closest("nav a");
     if (link && root.contains(link)) {
       // Ejemplo: marcar como activo el link clickeado

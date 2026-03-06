@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
@@ -18,7 +18,39 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Products | Blissed Skin</title>
+    <title>All Products — Acne Patches & Nasal Strips | Blissed Skin</title>
+    <meta
+      name="description"
+      content="Shop all Blissed Skin products: invisible hydrocolloid acne patches with tea tree oil and drug-free nasal strips. Fast-acting skincare solutions."
+    />
+    <link rel="canonical" href="https://www.blissedskin.us/sections/PageAllProducts.html" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.blissedskin.us/sections/PageAllProducts.html" />
+    <meta property="og:title" content="All Products — Acne Patches & Nasal Strips | Blissed Skin" />
+    <meta
+      property="og:description"
+      content="Shop all Blissed Skin products: invisible hydrocolloid acne patches and drug-free nasal strips."
+    />
+    <meta
+      property="og:image"
+      content="https://www.blissedskin.us/assets/products/Product-acne-patch-60-Front.png"
+    />
+    <meta property="og:site_name" content="Blissed Skin" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="All Products — Acne Patches & Nasal Strips | Blissed Skin"
+    />
+    <meta
+      name="twitter:description"
+      content="Shop all Blissed Skin products: invisible hydrocolloid acne patches and drug-free nasal strips."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.blissedskin.us/assets/products/Product-acne-patch-60-Front.png"
+    />
     <link rel="icon" type="image/png" href="../assets/logo.png" />
     <link rel="stylesheet" href="../tailwind_theme/tailwind.css" />
     <link rel="stylesheet" href="../src/assets/css/base.css" />
@@ -89,6 +121,7 @@
       <!-- Right Section: Search -->
       <div class="flex items-center gap-6">
         <div
+          data-component="site-search"
           class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
         >
           <img
@@ -107,7 +140,7 @@
       </div>
     </header>
     <!-- MAIN CONTENT -->
-    <main class="flex-grow w-full px-6 lg:px-12 py-12">
+    <main class="flex-grow w-full px-6 lg:px-12 py-12" data-pagefind-body>
       <!-- Breadcrumbs -->
       <nav aria-label="Breadcrumb" class="mb-8 max-w-7xl mx-auto">
         <p class="font-sans font-light text-[15px] text-white/80">
@@ -707,24 +740,178 @@
     </main>
     <!-- FOOTER -->
     <footer
-      class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] py-16 px-6 text-white font-sans main-footer"
+      class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] font-sans main-footer"
       data-component="main-footer"
     >
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="w-32">
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-12 py-12 flex flex-col md:flex-row md:items-start gap-10 md:gap-0"
+      >
+        <div class="md:w-32 md:shrink-0 md:mr-6 flex md:flex-col items-start">
           <img
             src="../assets/logo.png"
             alt="Blissed Skin"
-            class="w-full brightness-0 invert filter"
+            class="w-28 brightness-0 invert filter"
           />
         </div>
-        <div class="flex flex-wrap justify-center gap-8 text-sm font-medium tracking-wide">
-          <a href="#" class="hover:text-[#9aad7a] transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-[#9aad7a] transition-colors">Terms of Service</a>
-          <a href="#" class="hover:text-[#9aad7a] transition-colors">Return & Exchanges</a>
-          <a href="#" class="hover:text-[#9aad7a] transition-colors">Legal</a>
+        <div class="flex-1 flex flex-col md:flex-row gap-10 md:justify-between md:items-start">
+          <div>
+            <h2 class="font-playfair text-xl font-bold text-white mb-3 tracking-wide">
+              Newsletter
+            </h2>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">
+              Subscribe to receive updates, access to exclusive deals, and more.
+            </p>
+            <form
+              class="footer-newsletter-form flex flex-col gap-4"
+              data-action="newsletter-subscribe"
+              data-state="idle"
+              novalidate
+            >
+              <input
+                name="bot-field"
+                type="text"
+                tabindex="-1"
+                aria-hidden="true"
+                class="absolute opacity-0 h-0 w-0 pointer-events-none"
+                autocomplete="off"
+              />
+              <div class="flex flex-col gap-1.5">
+                <label
+                  for="footer-name"
+                  class="footer-field-label text-white/70 text-xs font-semibold uppercase tracking-widest"
+                  >Name</label
+                >
+                <input
+                  id="footer-name"
+                  name="name"
+                  type="text"
+                  pattern="[A-Za-z\u00C0-\u00FF\s']*"
+                  required
+                  class="footer-input bg-white/10 border border-white/30 rounded-lg px-4 py-2.5 text-white text-sm placeholder-white/40 focus:outline-none focus:border-white focus:bg-white/20 transition-all duration-200"
+                  placeholder="Your name"
+                  autocomplete="given-name"
+                />
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label
+                  for="footer-email"
+                  class="footer-field-label text-white/70 text-xs font-semibold uppercase tracking-widest"
+                  >E-Mail</label
+                >
+                <input
+                  id="footer-email"
+                  name="email"
+                  type="email"
+                  required
+                  class="footer-input bg-white/10 border border-white/30 rounded-lg px-4 py-2.5 text-white text-sm placeholder-white/40 focus:outline-none focus:border-white focus:bg-white/20 transition-all duration-200"
+                  placeholder="your@email.com"
+                  autocomplete="email"
+                />
+              </div>
+              <button
+                type="submit"
+                class="footer-submit-btn mt-2 px-6 py-3 bg-gradient-to-r from-[#155DFC] to-[#9810FA] text-white text-sm font-bold rounded-full hover:scale-105 hover:shadow-xl transition-all duration-300 no-underline focus:ring-4 focus:ring-white/30 self-start"
+                aria-label="Subscribe to Blissed Skin newsletter"
+              >
+                <span class="footer-btn-text">Subscribe</span>
+                <span class="footer-btn-spinner hidden" aria-hidden="true"
+                  ><svg class="inline w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v8z"
+                    ></path></svg
+                ></span>
+              </button>
+              <p class="text-xs text-white/60 mt-1">© 2026 BlissedSkin, Powered by Shopify</p>
+              <p
+                class="footer-form-success hidden text-white/90 text-sm font-medium bg-white/10 rounded-lg px-4 py-3"
+              >
+                ✓ You're subscribed! Welcome to the Blissed Skin community.
+              </p>
+              <p
+                class="footer-form-error hidden text-red-200 text-sm bg-white/10 rounded-lg px-4 py-3"
+              >
+                Something went wrong. Please try again or contact support@blissedskin.us.
+              </p>
+            </form>
+          </div>
+          <div>
+            <h2 class="font-playfair text-xl font-bold text-white mb-4 tracking-wide">Shop</h2>
+            <ul class="flex flex-col gap-3 text-white/80 text-sm font-medium">
+              <li>
+                <a
+                  href="../sections/PageAllProducts.html"
+                  class="hover:text-white transition-colors"
+                  >Shop All</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../sections/PageAllProducts.html"
+                  class="hover:text-white transition-colors"
+                  >Acne Patch</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../sections/PageAllProducts.html"
+                  class="hover:text-white transition-colors"
+                  >Skincare</a
+                >
+              </li>
+              <li>
+                <a href="../index.html#about" class="hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="../blog/index.html" class="hover:text-white transition-colors">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-playfair text-xl font-bold text-white mb-4 tracking-wide">Help</h2>
+            <ul class="flex flex-col gap-3 text-white/80 text-sm font-medium">
+              <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+              <li>
+                <a href="mailto:support@blissedskin.us" class="hover:text-white transition-colors"
+                  >support@blissedskin.us</a
+                >
+              </li>
+            </ul>
+            <div class="mt-8 flex flex-col gap-3">
+              <a
+                href="../sections/PrivacyAndTerms.html"
+                class="text-white/80 text-sm font-medium hover:text-white transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="../sections/PrivacyAndTerms.html"
+                class="text-white/80 text-sm font-medium hover:text-white transition-colors"
+                >Terms of Service</a
+              >
+              <a
+                href="../sections/ReturnExchange.html"
+                class="text-white/80 text-sm font-medium hover:text-white transition-colors"
+                >Return &amp; Exchanges</a
+              >
+              <a
+                href="../sections/Legal.html"
+                class="text-white/80 text-sm font-medium hover:text-white transition-colors"
+                >Legal</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="text-xs opacity-60">© 2025 BlissedSkin, Powered Shopify</div>
       </div>
     </footer>
     <!-- Scripts -->
@@ -840,5 +1027,6 @@
         transition: transform 0.2s ease;
       }
     </style>
+    <script src="../src/components/site-search/site-search.js"></script>
   </body>
 </html>

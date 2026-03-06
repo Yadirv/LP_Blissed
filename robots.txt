@@ -1,14 +1,45 @@
-# robots.txt for Blissed Skin Landing Page
-# https://yadirv.github.io/LP_Blissed/
+# robots.txt — Blissed Skin (www.blissedskin.us)
+# Last updated: 2026-03-06
 
-# Block all search engines from indexing the entire site
 User-agent: *
+Allow: /
+Disallow: /_pgbackup/
+Disallow: /_pginfo/
+Disallow: /docs/
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /pagefind/
+Disallow: /sections/Checkout.html
+Disallow: /sections/ThankYou.html
+Disallow: /sections/Hero.html
+Disallow: /sections/HomeRegistration.html
+
+# AI Crawlers — Selective Policy (allow editorial + public content)
+User-agent: GPTBot
+Allow: /blog/
+Allow: /
+Disallow: /_pgbackup/
+Disallow: /_pginfo/
+Disallow: /docs/
+Disallow: /src/
+
+User-agent: Google-Extended
+Allow: /blog/
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /blog/
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /blog/
+Allow: /
+
+User-agent: Bytespider
 Disallow: /
 
-# If you want to allow indexing in the future, replace the above with:
-# User-agent: *
-# Disallow: /_pgbackup/
-# Disallow: /_pginfo/
-# Disallow: /docs/
-# Disallow: /node_modules/
-# Allow: /
+User-agent: CCBot
+Disallow: /
+
+# Sitemaps
+Sitemap: https://www.blissedskin.us/sitemap.xml
