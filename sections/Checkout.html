@@ -19,6 +19,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout | Blissed Skin</title>
+    <link rel="icon" type="image/png" href="../assets/logo.png" />
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
@@ -293,45 +294,71 @@
     <script>
       // Populate cart items on page load
       document.addEventListener("DOMContentLoaded", function () {
-        const cart = BlissedCart.get();
         const cartItemsContainer = document.getElementById("cartItems");
         const subtotalElement = document.getElementById("subtotal");
         const totalElement = document.getElementById("total");
 
-        // Check if cart is empty
-        if (cart.length === 0) {
-          cartItemsContainer.innerHTML = `
-                    <div class="text-center py-8">
-                        <p class="text-gray-500 mb-4">Your cart is empty</p>
-                        <a href="../sections/PageAllProducts.html" class="text-blissed-olive hover:underline">Continue Shopping</a>
-                    </div>
-                `;
-          document.getElementById("submitBtn").disabled = true;
-          return;
+        function renderCart() {
+          const currentCart = BlissedCart.get();
+          if (currentCart.length === 0) {
+            cartItemsContainer.innerHTML = `
+              <div class="text-center py-8">
+                <p class="text-gray-500 mb-4">Your cart is empty</p>
+                <a href="../sections/PageAllProducts.html" class="text-blissed-olive hover:underline">Continue Shopping</a>
+              </div>
+            `;
+            document.getElementById("submitBtn").disabled = true;
+            subtotalElement.textContent = "$0.00";
+            totalElement.textContent = "$0.00";
+            return;
+          }
+          cartItemsContainer.innerHTML = currentCart
+            .map(
+              (item) => `
+                <div class="flex gap-3 pb-4 border-b border-gray-100">
+                  <div class="w-16 h-16 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden">
+                    <img src="${item.image}" alt="${item.item_name}" class="w-full h-full object-contain">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-medium text-sm text-gray-800 truncate">${item.item_name}</p>
+                    <p class="text-xs text-gray-500">Qty: ${item.quantity}</p>
+                    <p class="text-sm font-medium text-blissed-gray mt-1">$${(item.price * item.quantity).toFixed(2)}</p>
+                  </div>
+                  <button
+                    data-remove-id="${item.item_id}"
+                    class="text-gray-400 hover:text-red-500 transition-colors self-start mt-1 flex-shrink-0"
+                    aria-label="Remove ${item.item_name}"
+                    title="Remove item"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              `
+            )
+            .join("");
+
+          // Attach remove listeners
+          cartItemsContainer.querySelectorAll("[data-remove-id]").forEach((btn) => {
+            btn.addEventListener("click", function () {
+              BlissedCart.remove(this.dataset.removeId);
+              renderCart();
+              const newTotal = BlissedCart.getTotal();
+              subtotalElement.textContent = `$${newTotal.toFixed(2)}`;
+              totalElement.textContent = `$${newTotal.toFixed(2)}`;
+            });
+          });
+
+          // Update totals
+          const total = BlissedCart.getTotal();
+          subtotalElement.textContent = `$${total.toFixed(2)}`;
+          totalElement.textContent = `$${total.toFixed(2)}`;
+
+          document.getElementById("submitBtn").disabled = false;
         }
 
-        // Populate cart items
-        cartItemsContainer.innerHTML = cart
-          .map(
-            (item) => `
-                <div class="flex gap-3 pb-4 border-b border-gray-100">
-                    <div class="w-16 h-16 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden">
-                        <img src="${item.image}" alt="${item.item_name}" class="w-full h-full object-contain">
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <p class="font-medium text-sm text-gray-800 truncate">${item.item_name}</p>
-                        <p class="text-xs text-gray-500">Qty: ${item.quantity}</p>
-                        <p class="text-sm font-medium text-blissed-gray mt-1">$${(item.price * item.quantity).toFixed(2)}</p>
-                    </div>
-                </div>
-            `
-          )
-          .join("");
-
-        // Update totals
-        const total = BlissedCart.getTotal();
-        subtotalElement.textContent = `$${total.toFixed(2)}`;
-        totalElement.textContent = `$${total.toFixed(2)}`;
+        renderCart();
 
         // Fire begin_checkout event
         BlissedCart.beginCheckout();

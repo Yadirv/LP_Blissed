@@ -15,7 +15,6 @@
       })(window, document, "script", "dataLayer", "GTM-5633HD7Q");
     </script>
     <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog | Blissed Skin - Skincare Tips &amp; Expert Advice</title>
@@ -27,7 +26,6 @@
       name="keywords"
       content="blog skincare, skin care tips, acne advice, facial routines, natural ingredients"
     />
-
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.blissedskin.us/blog/" />
@@ -37,10 +35,10 @@
       content="Expert articles and advice for your skincare journey"
     />
     <meta property="og:image" content="https://www.blissedskin.us/assets/blog-cover.jpg" />
-
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/logo.png" />
     <!-- Canonical -->
     <link rel="canonical" href="https://www.blissedskin.us/blog/" />
-
     <!-- Styles -->
     <link rel="stylesheet" href="../tailwind_theme/tailwind.css" />
     <link rel="stylesheet" href="../src/assets/css/base.css" />
@@ -50,16 +48,15 @@
   </head>
   <body class="flex flex-col min-h-screen bg-white font-sans">
     <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
+    <noscript>
+      <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-5633HD7Q"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+      ></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
-
     <!-- HEADER -->
     <header
       class="w-full bg-white flex flex-col lg:flex-row items-center justify-between px-6 lg:px-8 py-4 shadow-sm font-sans main-header sticky top-0 z-50"
@@ -76,7 +73,6 @@
           />
         </a>
       </div>
-
       <nav
         class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0"
         aria-label="Main navigation"
@@ -86,11 +82,73 @@
           class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
           >Home</a
         >
-        <a
-          href="../sections/PageAllProducts.html"
-          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
-          >Products</a
-        >
+        <!-- Products Dropdown -->
+        <div class="nav-dropdown">
+          <button
+            type="button"
+            class="nav-dropdown-toggle"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Products
+            <svg
+              class="nav-dropdown-chevron"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="../sections/PageAllProducts.html" class="nav-dropdown-item" role="menuitem"
+              >All Products</a
+            >
+            <div class="nav-subdropdown">
+              <button
+                type="button"
+                class="nav-dropdown-item nav-subdropdown-toggle"
+                aria-haspopup="true"
+              >
+                Acne Patches
+                <svg
+                  class="nav-subdropdown-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+              <div class="nav-subdropdown-menu" role="menu">
+                <a href="../components/AcnePatch20.html" class="nav-dropdown-item" role="menuitem"
+                  >Acne Patches &times; 20</a
+                >
+                <a href="../components/AcnePatch30.html" class="nav-dropdown-item" role="menuitem"
+                  >Acne Patches &times; 30</a
+                >
+                <a href="../components/AcnePatch60.html" class="nav-dropdown-item" role="menuitem"
+                  >Acne Patches &times; 60</a
+                >
+              </div>
+            </div>
+            <a href="../components/NasalStrip40.html" class="nav-dropdown-item" role="menuitem"
+              >Nasal Strip &times; 40</a
+            >
+          </div>
+        </div>
         <a
           href="index.html"
           class="text-blissed-olive font-semibold text-base border-b-2 border-blissed-olive whitespace-nowrap"
@@ -107,26 +165,68 @@
           >Reviews</a
         >
       </nav>
-
       <div class="flex items-center gap-6">
         <div
           data-component="site-search"
-          class="hidden md:flex items-center bg-white border border-blissed-olive rounded-lg px-3 py-1.5 w-48 hover:border-[#8a9b6d] transition-colors"
+          class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
         >
-          <img
-            src="../assets/search-icon.svg"
-            alt="Search"
-            class="w-4 h-4 mr-2 text-blissed-gray"
-          />
+          <img src="../assets/search-icon.svg" alt="Search" class="w-[8px] h-[8px]" />
           <input
             type="text"
             placeholder="Search"
-            class="bg-transparent outline-none text-xs w-full text-blissed-gray placeholder-gray-400"
+            class="bg-transparent border-transparent outline-none text-[10px] w-full text-gray-700 placeholder-gray-400 font-light tracking-[0.12px] focus:border-transparent"
           />
+        </div>
+        <!-- Cart Icon -->
+        <a
+          href="../sections/Checkout.html"
+          class="relative inline-flex items-center"
+          aria-label="Shopping cart"
+        >
+          <img src="../assets/icons/cart.svg" alt="Cart" class="w-6 h-6" />
+          <span
+            class="cart-count absolute -top-2 -right-2 bg-[#9AAD7A] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center"
+            style="display: none"
+            >0</span
+          >
+        </a>
+        <div class="flex items-center gap-4">
+          <a
+            href="https://www.facebook.com/profile.php?id=61580285297427"
+            class="w-6 h-6 hover:opacity-70 transition-opacity duration-200"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/fb-icon.svg"
+              alt="Facebook"
+              class="w-full h-full text-[#3C3C3C]"
+            /> </a
+          ><a
+            href="https://www.instagram.com/blissed_skincare"
+            class="w-6 h-6 hover:opacity-70 transition-opacity duration-200"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../assets/ig-icon.svg"
+              alt="Instagram"
+              class="w-full h-full text-[#3C3C3C]"
+            /> </a
+          ><a
+            href="https://www.tiktok.com/@blissedskin"
+            class="w-6 h-6 hover:opacity-70 transition-opacity duration-200"
+            aria-label="TikTok"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="../assets/tkt-icon.svg" alt="TikTok" class="w-full h-full text-[#3C3C3C]" />
+          </a>
         </div>
       </div>
     </header>
-
     <!-- MAIN CONTENT -->
     <main class="flex-grow" data-pagefind-body>
       <!-- HERO SECTION -->
@@ -141,9 +241,8 @@
           </p>
         </div>
       </section>
-
-      <!-- CATEGORIES SECTION -->
-      <section class="py-12 px-6 bg-gray-50">
+      <!-- CATEGORIES SECTION â€” hidden until more content depth is available -->
+      <section class="py-12 px-6 bg-gray-50" style="display: none" aria-hidden="true">
         <div class="container mx-auto max-w-7xl">
           <h2 class="text-center text-3xl font-playfair font-bold text-blissed-text-dark mb-8">
             Explore by Category
@@ -178,7 +277,6 @@
                 </svg>
               </span>
             </a>
-
             <!-- Category 2 -->
             <a
               href="categories/ingredientes.html"
@@ -210,7 +308,6 @@
                 </svg>
               </span>
             </a>
-
             <!-- Category 3 -->
             <a
               href="categories/rutinas.html"
@@ -243,7 +340,6 @@
           </div>
         </div>
       </section>
-
       <!-- LATEST POSTS SECTION -->
       <section class="py-20 px-6">
         <div class="container mx-auto max-w-7xl">
@@ -252,111 +348,230 @@
               Latest Articles
             </h2>
             <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-              Stay up to date with our latest skincare tips and trends
+              Science-backed skincare knowledge from the Blissed Skin research team
             </p>
           </div>
-
           <!-- Blog Cards Grid -->
-          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <!-- Blog Card 1 - Example -->
+          <div class="grid gap-8 md:grid-cols-2">
+            <!-- Article 1: Skin Barrier Science -->
             <article
-              data-component="blog-card"
-              data-post-id="beneficios-pimple-patches"
-              class="bg-white rounded-2xl shadow-lg overflow-hidden group"
+              class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div class="blog-card__image">
+              <a
+                href="posts/2026/02/skin-barrier-science-dry-vs-dehydrated.html"
+                class="block overflow-hidden aspect-video"
+              >
                 <img
-                  src="../assets/blog/thumbnails/beneficios-patches-thumb.jpg"
-                  alt="5 Benefits of Pimple Patches"
+                  src="../assets/blog/thumbnails/Skin Barrier Science Dry vs Dehydrated Diagnosis/Hydration-is-Water---Nutrition-is-Lipids.webp"
+                  alt="Skin Barrier Science: Dry vs Dehydrated Diagnosis"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-              </div>
-
+              </a>
               <div class="p-6">
-                <span class="blog-card__category bg-blissed-lavender/20 text-blissed-gray">
-                  Skincare Tips
-                </span>
-
-                <h3 class="blog-card__title mt-3 text-xl font-playfair font-bold">
-                  <a href="posts/2026/01/beneficios-pimple-patches.html">
-                    5 Benefits of Pimple Patches You Need to Know
+                <span
+                  class="inline-block text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full mb-3"
+                  >Skincare Science</span
+                >
+                <h3 class="text-xl font-playfair font-bold text-blissed-gray mb-3 leading-snug">
+                  <a
+                    href="posts/2026/02/skin-barrier-science-dry-vs-dehydrated.html"
+                    class="hover:text-blissed-olive transition-colors"
+                  >
+                    Skin Barrier Science: Dry vs. Dehydrated Diagnosis
                   </a>
                 </h3>
-
-                <p class="blog-card__excerpt mt-3 text-gray-600 text-sm">
-                  Discover why acne patches have become the go-to skincare product and how they can
-                  transform your routine.
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  Learn the biological difference between lipid deficiency and water loss. Clinical
+                  protocols for barrier repair based on ISDIN and Hashizume research.
                 </p>
-
-                <div class="blog-card__meta mt-4 flex items-center gap-4">
-                  <time datetime="2026-01-15">Jan 15, 2026</time>
-                  <span>•</span>
-                  <span>5 min read</span>
+                <div class="flex items-center justify-between">
+                  <div class="text-xs text-gray-400 flex items-center gap-2">
+                    <time datetime="2026-02-25">Feb 25, 2026</time> <span>&bull;</span>
+                    <span>4 min read</span>
+                  </div>
+                  <a
+                    href="posts/2026/02/skin-barrier-science-dry-vs-dehydrated.html"
+                    class="text-blissed-olive font-semibold text-sm hover:underline flex items-center gap-1"
+                  >
+                    Read more
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
                 </div>
-
-                <a
-                  href="posts/2026/01/beneficios-pimple-patches.html"
-                  class="blog-card__read-more mt-4 inline-flex"
-                >
-                  Read more
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </a>
               </div>
             </article>
-
-            <!-- Placeholder Cards (to be filled with actual content) -->
-            <article class="bg-white rounded-2xl shadow-lg overflow-hidden group opacity-50">
-              <div
-                class="aspect-video bg-gradient-to-br from-[#EEF9E3] to-[#E1E4DE] flex items-center justify-center"
+            <!-- Article 2: Circadian Skincare -->
+            <article
+              class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <a
+                href="posts/2026/02/circadian-skincare-optimizing-routine-architecture.html"
+                class="block overflow-hidden aspect-video"
               >
-                <span class="text-gray-400 text-sm">Coming Soon</span>
-              </div>
+                <img
+                  src="../assets/blog/thumbnails/Circadian Skincare Optimizing Routine Architecture/Circadian-Skincare-The-24-Hour-Cycle.webp"
+                  alt="Circadian Skincare: Optimizing Routine Architecture"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </a>
               <div class="p-6">
                 <span
-                  class="inline-block text-xs font-semibold bg-gray-100 text-gray-500 px-3 py-1 rounded-full"
+                  class="inline-block text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full mb-3"
+                  >Skincare Science</span
                 >
-                  Category
-                </span>
-                <h3 class="mt-3 text-xl font-playfair font-bold text-gray-400">
-                  New article coming soon
+                <h3 class="text-xl font-playfair font-bold text-blissed-gray mb-3 leading-snug">
+                  <a
+                    href="posts/2026/02/circadian-skincare-optimizing-routine-architecture.html"
+                    class="hover:text-blissed-olive transition-colors"
+                  >
+                    Circadian Skincare: Optimizing Routine Architecture
+                  </a>
                 </h3>
-                <p class="mt-3 text-gray-400 text-sm">
-                  We're preparing more amazing content for you...
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  Learn how to align your skincare with biological rhythms. Clinical protocols for
+                  AM protection and PM repair based on AAD and Cleveland Clinic.
                 </p>
+                <div class="flex items-center justify-between">
+                  <div class="text-xs text-gray-400 flex items-center gap-2">
+                    <time datetime="2026-02-25">Feb 25, 2026</time> <span>&bull;</span>
+                    <span>4 min read</span>
+                  </div>
+                  <a
+                    href="posts/2026/02/circadian-skincare-optimizing-routine-architecture.html"
+                    class="text-blissed-olive font-semibold text-sm hover:underline flex items-center gap-1"
+                  >
+                    Read more
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </article>
-
-            <article class="bg-white rounded-2xl shadow-lg overflow-hidden group opacity-50">
-              <div
-                class="aspect-video bg-gradient-to-br from-[#EEF9E3] to-[#E1E4DE] flex items-center justify-center"
+            <!-- Article 3: Microcomedone -->
+            <article
+              class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <a
+                href="posts/2026/02/microcomedone-immunological-organ-2026.html"
+                class="block overflow-hidden aspect-video"
               >
-                <span class="text-gray-400 text-sm">Coming Soon</span>
-              </div>
+                <img
+                  src="../assets/blog/thumbnails/The Microcomedone as an Immunological Organ/The-Invisible-Acne-Phase-320-More-Inflammation.webp"
+                  alt="The Microcomedone as an Immunological Organ"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </a>
               <div class="p-6">
                 <span
-                  class="inline-block text-xs font-semibold bg-gray-100 text-gray-500 px-3 py-1 rounded-full"
+                  class="inline-block text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full mb-3"
+                  >Skincare Science</span
                 >
-                  Category
-                </span>
-                <h3 class="mt-3 text-xl font-playfair font-bold text-gray-400">
-                  New article coming soon
+                <h3 class="text-xl font-playfair font-bold text-blissed-gray mb-3 leading-snug">
+                  <a
+                    href="posts/2026/02/microcomedone-immunological-organ-2026.html"
+                    class="hover:text-blissed-olive transition-colors"
+                  >
+                    The Microcomedone as an Immunological Organ: 2026 Update
+                  </a>
                 </h3>
-                <p class="mt-3 text-gray-400 text-sm">
-                  We're preparing more amazing content for you...
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  Discover how IL-1&alpha; triggers acne 8 weeks before it&rsquo;s visible. Learn
+                  the new molecular science of microcomedones and proactive skin barrier strategies.
                 </p>
+                <div class="flex items-center justify-between">
+                  <div class="text-xs text-gray-400 flex items-center gap-2">
+                    <time datetime="2026-02-15">Feb 15, 2026</time> <span>&bull;</span>
+                    <span>5 min read</span>
+                  </div>
+                  <a
+                    href="posts/2026/02/microcomedone-immunological-organ-2026.html"
+                    class="text-blissed-olive font-semibold text-sm hover:underline flex items-center gap-1"
+                  >
+                    Read more
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <!-- Article 4: Decoding C. acnes -->
+            <article
+              class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <a
+                href="posts/2026/02/decoding-c-acnes-ia1-transcriptomic-future.html"
+                class="block overflow-hidden aspect-video"
+              >
+                <img
+                  src="../assets/blog/thumbnails/Decoding-C-acnes-IA1/THE-INVISIBLE-DIALOGUE-HOW-BACTERIA-REPROGRAM-YOUR-SKIN.webp"
+                  alt="Decoding C. acnes IA1: The Transcriptomic Future of Acne Care"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </a>
+              <div class="p-6">
+                <span
+                  class="inline-block text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full mb-3"
+                  >Skincare Science</span
+                >
+                <h3 class="text-xl font-playfair font-bold text-blissed-gray mb-3 leading-snug">
+                  <a
+                    href="posts/2026/02/decoding-c-acnes-ia1-transcriptomic-future.html"
+                    class="hover:text-blissed-olive transition-colors"
+                  >
+                    Decoding C. acnes IA1: The Transcriptomic Future of Acne Care
+                  </a>
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  Explore how the C. acnes IA1 filotype triggers inflammatory Hub Genes via the CLR
+                  pathway. Learn the 2025 molecular science of host-pathogen signaling.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="text-xs text-gray-400 flex items-center gap-2">
+                    <time datetime="2026-02-15">Feb 15, 2026</time> <span>&bull;</span>
+                    <span>5 min read</span>
+                  </div>
+                  <a
+                    href="posts/2026/02/decoding-c-acnes-ia1-transcriptomic-future.html"
+                    class="text-blissed-olive font-semibold text-sm hover:underline flex items-center gap-1"
+                  >
+                    Read more
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </article>
           </div>
         </div>
       </section>
-
       <!-- CTA SECTION -->
       <section class="py-20 px-6 bg-gradient-to-r from-[#EEF9E3] to-[#E1E4DE]">
         <div class="container mx-auto max-w-4xl text-center">
@@ -384,7 +599,6 @@
         </div>
       </section>
     </main>
-
     <!-- FOOTER -->
     <footer
       class="w-full bg-gradient-to-r from-[#a63d97] to-[#d39ecb] font-sans main-footer"
@@ -479,7 +693,7 @@
                     ></path></svg
                 ></span>
               </button>
-              <p class="text-xs text-white/60 mt-1">© 2026 BlissedSkin, Powered by Shopify</p>
+              <p class="text-xs text-white/60 mt-1">ï¿½ 2026 BlissedSkin, Powered by Shopify</p>
               <p
                 class="footer-form-success hidden text-white/90 text-sm font-medium bg-white/10 rounded-lg px-4 py-3"
               >
@@ -521,13 +735,17 @@
                   >About Us</a
                 >
               </li>
-              <li><a href="index.html" class="hover:text-white transition-colors">Blog</a></li>
+              <li>
+                <a href="index.html" class="hover:text-white transition-colors">Blog</a>
+              </li>
             </ul>
           </div>
           <div>
             <h2 class="font-playfair text-xl font-bold text-white mb-4 tracking-wide">Help</h2>
             <ul class="flex flex-col gap-3 text-white/80 text-sm font-medium">
-              <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+              <li>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+              </li>
               <li>
                 <a href="mailto:support@blissedskin.us" class="hover:text-white transition-colors"
                   >support@blissedskin.us</a
@@ -560,8 +778,8 @@
         </div>
       </div>
     </footer>
-
     <!-- Scripts -->
+    <script src="../src/assets/js/cart.js"></script>
     <script src="/src/assets/js/components-init.js"></script>
     <script src="/src/components/main-header/main-header.js"></script>
     <script src="/src/components/main-footer/main-footer.js"></script>

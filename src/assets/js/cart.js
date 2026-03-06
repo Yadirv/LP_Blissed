@@ -252,7 +252,7 @@ const BlissedCart = (function () {
     const countElements = document.querySelectorAll(".cart-count");
     countElements.forEach((el) => {
       el.textContent = count;
-      el.style.display = count > 0 ? "inline" : "none";
+      el.style.display = count > 0 ? "inline-flex" : "none";
     });
 
     // Update cart total displays

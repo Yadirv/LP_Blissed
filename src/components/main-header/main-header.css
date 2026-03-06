@@ -32,3 +32,141 @@
   height: 2px;
   background-color: currentColor;
 }
+
+/* ── Products Dropdown ── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3c3c3c;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-dropdown-toggle:hover {
+  color: #16a34a;
+}
+
+.nav-dropdown-chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+}
+
+.nav-dropdown:hover .nav-dropdown-chevron,
+.nav-dropdown:focus-within .nav-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  padding-top: 8px;
+  min-width: 190px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.12),
+    0 4px 10px -5px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  z-index: 200;
+}
+
+/* Invisible bridge so cursor can travel from button to menu without gap */
+.nav-dropdown-menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #3c3c3c;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.nav-dropdown-item:hover {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+/* Acne Patches Sub-dropdown */
+.nav-subdropdown {
+  position: relative;
+}
+
+.nav-subdropdown-chevron {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.nav-subdropdown-menu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  min-width: 190px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.12),
+    0 4px 10px -5px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  padding: 6px 0;
+  z-index: 201;
+}
+
+/* Invisible bridge for subdropdown */
+.nav-subdropdown-menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.nav-subdropdown:hover .nav-subdropdown-menu,
+.nav-subdropdown:focus-within .nav-subdropdown-menu {
+  display: block;
+}
