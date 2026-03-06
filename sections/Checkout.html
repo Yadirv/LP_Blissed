@@ -397,7 +397,23 @@
         // For now, redirect to external payment (Amazon)
 
         // Simulate API call
-        setTimeout(() => {
+        setTimeout(async () => {
+          // Send lead to Google Sheets (non-blocking — purchase continues even if it fails)
+          try {
+            await fetch("/api/checkout-lead", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                email,
+                fullName,
+                phone,
+                cart: BlissedCart.get(),
+              }),
+            });
+          } catch (err) {
+            console.warn("Lead capture failed:", err);
+          }
+
           // Generate Amazon cart URL
           const amazonURL = generateAmazonCartURL();
 
