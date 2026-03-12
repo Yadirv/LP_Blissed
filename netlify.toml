@@ -9,6 +9,13 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Force www canonical domain
+[[redirects]]
+  from = "https://blissedskin.us/*"
+  to = "https://www.blissedskin.us/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

@@ -9,10 +9,6 @@ Disallow: /docs/
 Disallow: /src/
 Disallow: /node_modules/
 Disallow: /pagefind/
-Disallow: /sections/Checkout.html
-Disallow: /sections/ThankYou.html
-Disallow: /sections/Hero.html
-Disallow: /sections/HomeRegistration.html
 
 # AI Crawlers — Selective Policy (allow editorial + public content)
 User-agent: GPTBot
