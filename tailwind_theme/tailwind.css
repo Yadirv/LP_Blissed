@@ -1474,6 +1474,9 @@ Footer-component {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.mt-0 {
+  margin-top: 0px;
+}
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1590,6 +1593,9 @@ Footer-component {
 .h-\[120\%\] {
   height: 120%;
 }
+.h-\[260px\] {
+  height: 260px;
+}
 .h-\[273px\] {
   height: 273px;
 }
@@ -1628,6 +1634,9 @@ Footer-component {
 }
 .max-h-full {
   max-height: 100%;
+}
+.min-h-\[380px\] {
+  min-height: 380px;
 }
 .min-h-\[85vh\] {
   min-height: 85vh;
@@ -1763,6 +1772,9 @@ Footer-component {
 }
 .max-w-\[320px\] {
   max-width: 320px;
+}
+.max-w-\[500px\] {
+  max-width: 500px;
 }
 .max-w-\[551px\] {
   max-width: 551px;
@@ -1983,6 +1995,9 @@ Footer-component {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.overflow-visible {
+  overflow: visible;
 }
 .overflow-x-auto {
   overflow-x: auto;
@@ -2552,6 +2567,9 @@ Footer-component {
 .text-\[15px\] {
   font-size: 15px;
 }
+.text-\[18px\] {
+  font-size: 18px;
+}
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -3094,16 +3112,98 @@ body, html {
 }                    
 @media (min-width: 640px) {
 
+  .sm\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
+  .sm\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .sm\:mt-4 {
+    margin-top: 1rem;
+  }
+
   .sm\:flex {
     display: flex;
+  }
+
+  .sm\:h-14 {
+    height: 3.5rem;
+  }
+
+  .sm\:h-\[340px\] {
+    height: 340px;
+  }
+
+  .sm\:min-h-\[520px\] {
+    min-height: 520px;
+  }
+
+  .sm\:w-14 {
+    width: 3.5rem;
+  }
+
+  .sm\:w-auto {
+    width: auto;
+  }
+
+  .sm\:flex-1 {
+    flex: 1 1 0%;
   }
 
   .sm\:flex-row {
     flex-direction: row;
   }
 
+  .sm\:items-center {
+    align-items: center;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+
+  .sm\:gap-6 {
+    gap: 1.5rem;
+  }
+
   .sm\:gap-8 {
     gap: 2rem;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+
+  .sm\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .sm\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }                    
 @media (min-width: 768px) {
@@ -3111,6 +3211,10 @@ body, html {
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .md\:mb-\[46px\] {
+    margin-bottom: 46px;
   }
 
   .md\:ml-\[12px\] {
@@ -3183,6 +3287,10 @@ body, html {
 
   .md\:gap-0 {
     gap: 0px;
+  }
+
+  .md\:gap-12 {
+    gap: 3rem;
   }
 
   .md\:gap-8 {
@@ -3259,6 +3367,10 @@ body, html {
     line-height: 1;
   }
 
+  .md\:text-\[20px\] {
+    font-size: 20px;
+  }
+
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -3284,6 +3396,18 @@ body, html {
   .lg\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .lg\:mt-\[-7px\] {
+    margin-top: -7px;
+  }
+
+  .lg\:h-\[500px\] {
+    height: 500px;
+  }
+
+  .lg\:h-\[700px\] {
+    height: 700px;
   }
 
   .lg\:w-\[1137px\] {
@@ -3326,8 +3450,24 @@ body, html {
     flex-direction: row;
   }
 
+  .lg\:gap-6 {
+    gap: 1.5rem;
+  }
+
+  .lg\:gap-8 {
+    gap: 2rem;
+  }
+
+  .lg\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
   .lg\:p-12 {
     padding: 3rem;
+  }
+
+  .lg\:p-8 {
+    padding: 2rem;
   }
 
   .lg\:px-12 {
@@ -3343,6 +3483,11 @@ body, html {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .lg\:text-4xl {

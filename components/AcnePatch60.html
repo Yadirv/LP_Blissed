@@ -80,14 +80,42 @@
           data-pgc-field="Logo"
         />
       </div>
+      <button
+        type="button"
+        class="header-mobile-toggle"
+        aria-label="Open navigation menu"
+        aria-controls="main-nav-acne-60"
+        aria-expanded="false"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+      <div class="header-mobile-links" aria-label="Quick navigation">
+        <a href="../index.html">Home</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../sections/HowToUsed.html">How To Used</a>
+      </div>
       <!-- Navigation Menu -->
       <nav
+        id="main-nav-acne-60"
         class="flex flex-wrap justify-start items-center gap-x-6 gap-y-2 my-4 lg:my-0"
         aria-label="Main navigation"
       >
         <a
           href="../index.html"
-          class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
+          class="header-primary-link text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
           >Home</a
         >
         <!-- Products Dropdown -->
@@ -159,13 +187,13 @@
         </div>
         <a
           href="../blog/index.html"
-          class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
+          class="header-primary-link text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
           data-pgc-field="Nav Link 3"
           >Blog</a
         >
         <a
           href="../sections/HowToUsed.html"
-          class="text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
+          class="header-primary-link text-gray-700 font-semibold text-base hover:text-green-600 transition-colors duration-200 whitespace-nowrap"
           data-pgc-field="Nav Link 4"
           >How To Used</a
         >
@@ -177,7 +205,7 @@
         >
       </nav>
       <!-- Right Section: Search -->
-      <div class="flex items-center gap-6 ml-auto">
+      <div class="header-right flex items-center gap-6 ml-auto">
         <div
           data-component="site-search"
           class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
@@ -196,18 +224,31 @@
           />
         </div>
         <!-- Cart Icon -->
-        <a href="../sections/Checkout.html" class="relative inline-flex items-center" aria-label="Shopping cart">
+        <a
+          href="../sections/Checkout.html"
+          class="relative inline-flex items-center"
+          aria-label="Shopping cart"
+        >
           <img src="../assets/icons/cart.svg" alt="Cart" class="w-6 h-6" />
-          <span class="cart-count absolute -top-2 -right-2 bg-[#9AAD7A] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center" style="display:none">0</span>
+          <span
+            class="cart-count absolute -top-2 -right-2 bg-[#9AAD7A] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center"
+            style="display: none"
+            >0</span
+          >
         </a>
       </div>
+      <button
+        type="button"
+        class="header-mobile-overlay"
+        aria-label="Close navigation menu"
+      ></button>
     </header>
-    >
-      <div class="max-w-[1440px] mx-auto px-4 md:px-[90px] flex flex-col gap-12">
+    <section class="w-full">
+      <div class="max-w-[1440px] mx-auto px-4 md:px-[90px] flex flex-col gap-8 md:gap-12">
         <!-- Top Navigation & Socials -->
         <div class="flex flex-col w-full">
           <!-- Breadcrumb -->
-          <nav aria-label="Breadcrumb" class="md:ml-[12px] mb-[46px]">
+          <nav aria-label="Breadcrumb" class="md:ml-[12px] mb-6 md:mb-[46px]">
             <p class="font-light text-[15px] text-black/60">Home &gt; Products &gt; Acne Patch</p>
           </nav>
           <div class="flex flex-col lg:flex-row gap-[21px] items-start w-full">
@@ -215,7 +256,7 @@
             <div class="flex flex-col gap-[21px] w-full lg:w-[500px] shrink-0">
               <!-- Product Image -->
               <div
-                class="w-[500px] h-[700px] rounded-brand overflow-hidden bg-white/20 mx-auto lg:mx-0"
+                class="w-full max-w-[500px] h-auto lg:h-[700px] min-h-[380px] sm:min-h-[520px] rounded-brand overflow-hidden bg-white/20 mx-auto lg:mx-0"
               >
                 <img
                   src="../assets/products/Product-acne-patch-60-Front.png"
@@ -226,10 +267,12 @@
             </div>
             <!-- Product Info Column -->
             <article
-              class="w-full flex-1 h-[700px] bg-gradient-container opacity-90 rounded-brand p-[10px] shadow-lg overflow-hidden mt-[-7px]"
+              class="w-full flex-1 h-auto lg:h-[700px] bg-gradient-container opacity-90 rounded-brand p-[10px] shadow-lg overflow-hidden mt-0 lg:mt-[-7px]"
               aria-labelledby="product-title"
             >
-              <div class="w-full h-full flex flex-col gap-6 p-8 overflow-y-auto">
+              <div
+                class="w-full h-full flex flex-col gap-6 p-4 sm:p-6 lg:p-8 overflow-visible lg:overflow-y-auto"
+              >
                 <!-- Header Info -->
                 <div class="flex flex-col md:flex-row justify-between items-start gap-4">
                   <h1
@@ -251,7 +294,7 @@
                 <!-- Price & Purchase Actions -->
                 <div class="flex flex-col gap-6">
                   <p class="font-playfair font-medium text-h2 text-black">$ 13.99</p>
-                  <div class="flex flex-wrap items-center gap-6">
+                  <div class="flex flex-wrap items-center gap-4 sm:gap-6">
                     <!-- Quantity Selector -->
                     <div
                       class="flex items-center justify-between w-[76px] bg-white mix-blend-multiply border border-black/10 rounded-sm"
@@ -275,7 +318,7 @@
                     </div>
                     <!-- Add to Cart -->
                     <button
-                      class="bg-gradient-cta text-white px-10 py-3 rounded-lg-brand flex items-center gap-2 transition-transform hover:scale-105 shadow-md"
+                      class="bg-gradient-cta text-white w-full sm:w-auto px-10 py-3 rounded-lg-brand flex items-center justify-center gap-2 transition-transform hover:scale-105 shadow-md"
                       aria-label="Add to Cart"
                     >
                       <img src="../assets/icons/cart.svg" alt="" class="w-4 h-4" />
@@ -284,14 +327,14 @@
                   </div>
                   <!-- Instant Purchase -->
                   <button
-                    class="bg-gradient-cta text-white w-full md:w-[252px] py-2 rounded-lg-brand font-medium text-[20px] transition-transform hover:scale-105 shadow-md"
+                    class="bg-gradient-cta text-white w-full md:w-[252px] py-2 rounded-lg-brand font-medium text-[18px] md:text-[20px] transition-transform hover:scale-105 shadow-md"
                     aria-label="Instant Purchase"
                   >
                     Instant Purchase
                   </button>
                 </div>
                 <!-- Product Details -->
-                <div class="flex flex-col gap-8 mt-4">
+                <div class="flex flex-col gap-6 sm:gap-8 mt-2 sm:mt-4">
                   <!-- Ingredients -->
                   <section aria-labelledby="ingredients-heading">
                     <h2

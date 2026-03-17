@@ -85,14 +85,42 @@
           class="max-w-full max-h-full object-contain"
         />
       </div>
+      <button
+        type="button"
+        class="header-mobile-toggle"
+        aria-label="Open navigation menu"
+        aria-controls="main-nav-all-products"
+        aria-expanded="false"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+      <div class="header-mobile-links" aria-label="Quick navigation">
+        <a href="../index.html">Home</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="HowToUsed.html">How To Used</a>
+      </div>
       <!-- Navigation Menu -->
       <nav
+        id="main-nav-all-products"
         class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0"
         aria-label="Main navigation"
       >
         <a
           href="../index.html"
-          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          class="header-primary-link text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
           >Home</a
         >
         <!-- Products Dropdown -->
@@ -163,11 +191,11 @@
         </div>
         <a
           href="../blog/index.html"
-          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          class="header-primary-link text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
           >Blog</a
         ><a
           href="HowToUsed.html"
-          class="text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
+          class="header-primary-link text-blissed-gray font-semibold text-base hover:text-blissed-olive transition-colors duration-200 whitespace-nowrap"
           >How To Used</a
         ><a
           href="../index.html#reviews"
@@ -176,7 +204,7 @@
         >
       </nav>
       <!-- Right Section: Search -->
-      <div class="flex items-center gap-6">
+      <div class="header-right flex items-center gap-6">
         <div
           data-component="site-search"
           class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
@@ -207,17 +235,22 @@
           >
         </a>
       </div>
+      <button
+        type="button"
+        class="header-mobile-overlay"
+        aria-label="Close navigation menu"
+      ></button>
     </header>
     <!-- MAIN CONTENT -->
-    <main class="flex-grow w-full px-6 lg:px-12 py-12" data-pagefind-body>
+    <main class="flex-grow w-full px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12" data-pagefind-body>
       <!-- Breadcrumbs -->
-      <nav aria-label="Breadcrumb" class="mb-8 max-w-7xl mx-auto">
+      <nav aria-label="Breadcrumb" class="mb-5 sm:mb-8 max-w-7xl mx-auto">
         <p class="font-sans font-light text-[15px] text-white/80">
           Home &gt; Products &gt; <span class="font-semibold text-white">All Products</span>
         </p>
       </nav>
       <!-- Social Media Icons -->
-      <div class="flex items-center gap-4 mb-12 max-w-7xl mx-auto">
+      <div class="flex items-center gap-4 mb-8 sm:mb-12 max-w-7xl mx-auto">
         <a
           href="https://www.facebook.com/profile.php?id=61580285297427"
           class="w-9 h-9 hover:opacity-70 transition-opacity"
@@ -247,7 +280,7 @@
       <!-- Product Carousel + Description -->
       <section
         data-component="product-carousel-full"
-        class="max-w-7xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12"
+        class="max-w-7xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6 lg:p-12"
       >
         <!-- Carousel Container -->
         <div class="relative mb-12">
@@ -255,7 +288,7 @@
             <!-- Prev Button -->
             <button
               type="button"
-              class="js-prev-btn shrink-0 w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-white/50"
+              class="js-prev-btn shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Previous product"
             >
               <svg
@@ -287,7 +320,7 @@
                   data-features="Ultra-thin|Hydrocolloid technology|Tea tree oil infused|Suitable for all skin types"
                 >
                   <div
-                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                    class="flex gap-3 sm:gap-4 lg:gap-6 w-full max-w-4xl h-[260px] sm:h-[340px] lg:h-[500px] items-center justify-center px-2 sm:px-4"
                   >
                     <div
                       class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
@@ -363,7 +396,7 @@
                   data-features="Ultra-thin|Hydrocolloid technology|Tea tree oil infused|Best value pack"
                 >
                   <div
-                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                    class="flex gap-3 sm:gap-4 lg:gap-6 w-full max-w-4xl h-[260px] sm:h-[340px] lg:h-[500px] items-center justify-center px-2 sm:px-4"
                   >
                     <div
                       class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
@@ -439,7 +472,7 @@
                   data-features="Extra large size|Maximum absorption|Perfect for face patches|Invisible under makeup"
                 >
                   <div
-                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                    class="flex gap-3 sm:gap-4 lg:gap-6 w-full max-w-4xl h-[260px] sm:h-[340px] lg:h-[500px] items-center justify-center px-2 sm:px-4"
                   >
                     <div
                       class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
@@ -515,7 +548,7 @@
                   data-features="Drug-free solution|Instant relief|Reduces snoring|Improves breathing"
                 >
                   <div
-                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                    class="flex gap-3 sm:gap-4 lg:gap-6 w-full max-w-4xl h-[260px] sm:h-[340px] lg:h-[500px] items-center justify-center px-2 sm:px-4"
                   >
                     <div
                       class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
@@ -590,7 +623,7 @@
                   data-features="Complete bundle|Save 25%|Perfect starter kit|Best for daily care"
                 >
                   <div
-                    class="flex gap-6 w-full max-w-4xl h-[500px] items-center justify-center px-4"
+                    class="flex gap-3 sm:gap-4 lg:gap-6 w-full max-w-4xl h-[260px] sm:h-[340px] lg:h-[500px] items-center justify-center px-2 sm:px-4"
                   >
                     <div
                       class="relative w-1/2 h-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden cursor-zoom-in"
@@ -652,7 +685,7 @@
             <!-- Next Button -->
             <button
               type="button"
-              class="js-next-btn shrink-0 w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-white/50"
+              class="js-next-btn shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Next product"
             >
               <svg
@@ -708,14 +741,16 @@
           </nav>
         </div>
         <!-- Product Description (Dynamic) -->
-        <div class="js-product-description bg-white rounded-3xl p-8 lg:p-12 shadow-2xl">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="js-product-description bg-white rounded-3xl p-5 sm:p-6 lg:p-12 shadow-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             <!-- Left: Info -->
             <div class="flex flex-col gap-6">
-              <h2 class="js-title font-playfair text-3xl lg:text-4xl font-bold text-blissed-gray">
+              <h2
+                class="js-title font-playfair text-2xl sm:text-3xl lg:text-4xl font-bold text-blissed-gray"
+              >
                 60 Effective Zit Patches in Four Sizes
               </h2>
-              <p class="js-description text-lg text-gray-600 leading-relaxed">
+              <p class="js-description text-base sm:text-lg text-gray-600 leading-relaxed">
                 BLISSED SKIN Invisible Acne Patches with Tea Tree Oil. Our best-selling pack for
                 complete acne care with maximum value.
               </p>
@@ -727,11 +762,13 @@
               <!-- Features -->
               <div class="js-features flex flex-col gap-2"></div>
               <!-- Price & CTA -->
-              <div class="flex items-center gap-6 mt-4">
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-4"
+              >
                 <span class="js-price text-4xl font-bold text-blissed-gray">$13.99</span>
                 <button
                   type="button"
-                  class="js-add-to-cart flex-1 lg:flex-none px-8 py-4 rounded-full bg-gradient-to-r from-[#155dfc] to-[#9810fa] text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blissed-gray/50"
+                  class="js-add-to-cart w-full sm:w-auto sm:flex-1 lg:flex-none px-8 py-4 rounded-full bg-gradient-to-r from-[#155dfc] to-[#9810fa] text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blissed-gray/50"
                 >
                   Add to Cart
                 </button>
@@ -739,9 +776,11 @@
             </div>
             <!-- Right: Benefits -->
             <div
-              class="bg-gradient-to-br from-[#F3E8FF] to-white rounded-2xl p-8 flex flex-col gap-4"
+              class="bg-gradient-to-br from-[#F3E8FF] to-white rounded-2xl p-5 sm:p-6 lg:p-8 flex flex-col gap-4"
             >
-              <h3 class="font-playfair text-2xl font-bold text-blissed-gray">Why Choose This?</h3>
+              <h3 class="font-playfair text-xl sm:text-2xl font-bold text-blissed-gray">
+                Why Choose This?
+              </h3>
               <ul class="space-y-3 text-gray-700">
                 <li class="flex items-start gap-3">
                   <svg
