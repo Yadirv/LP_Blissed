@@ -20,6 +20,11 @@ window.ComponentLoader.registerComponent("main-header", (root) => {
   const mobileOverlay = root.querySelector(".header-mobile-overlay");
   const nav = root.querySelector("nav");
 
+  // Hard guardrail: pages with mobile header must not pan horizontally.
+  document.documentElement.style.overflowX = "hidden";
+  document.body.style.overflowX = "hidden";
+  document.body.style.touchAction = "pan-y";
+
   const isMobileViewport = () => window.matchMedia("(max-width: 1023px)").matches;
 
   const setMobileMenu = (isOpen) => {
@@ -31,6 +36,7 @@ window.ComponentLoader.registerComponent("main-header", (root) => {
     }
 
     document.body.style.overflow = isOpen ? "hidden" : "";
+    document.body.style.overflowX = "hidden";
   };
 
   /**

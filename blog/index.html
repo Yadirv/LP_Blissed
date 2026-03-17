@@ -73,7 +73,35 @@
           />
         </a>
       </div>
+      <button
+        type="button"
+        class="header-mobile-toggle"
+        aria-label="Open navigation menu"
+        aria-controls="main-nav-blog-index"
+        aria-expanded="false"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+      <div class="header-mobile-links" aria-label="Quick navigation">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="../sections/HowToUsed.html">How To Used</a>
+      </div>
       <nav
+        id="main-nav-blog-index"
         class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-4 lg:my-0"
         aria-label="Main navigation"
       >
@@ -165,7 +193,7 @@
           >Reviews</a
         >
       </nav>
-      <div class="flex items-center gap-6">
+      <div class="header-right flex items-center gap-6">
         <div
           data-component="site-search"
           class="hidden md:flex items-center bg-white border border-green-400 rounded-[10px] px-[8px] py-[2px] gap-[9px] w-64 hover:border-green-500 transition-colors"
@@ -226,6 +254,11 @@
           </a>
         </div>
       </div>
+      <button
+        type="button"
+        class="header-mobile-overlay"
+        aria-label="Close navigation menu"
+      ></button>
     </header>
     <!-- MAIN CONTENT -->
     <main class="flex-grow" data-pagefind-body>

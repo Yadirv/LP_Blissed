@@ -1,10 +1,150 @@
-<!-- product-list.html -->
-<section data-component="product-list" data-currency="€" class="product-list">
-  <h2 class="js-title">Nuestros Productos</h2>
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Product List Component — Blissed Skin</title>
+    <meta
+      name="description"
+      content="Interactive product list component with dynamic rendering and add functionality."
+    />
 
-  <div class="product-list__grid js-grid">
-    <!-- Los items se pueden renderizar aquí -->
-  </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../tailwind_theme/tailwind.css" />
+    <style>
+      /* Mobile-first: base styles for 360px and up */
+      .product-list {
+        width: 100%;
+        max-width: 100%;
+      }
 
-  <button type="button" class="js-add-item">Añadir Producto Demo</button>
-</section>
+      .product-list__header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .product-list__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #1f2937;
+      }
+
+      .product-list__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+      }
+
+      .product-list__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        background: #ffffff;
+        transition: box-shadow 0.2s ease;
+      }
+
+      .product-list__item:hover,
+      .product-list__item:focus-within {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-list__btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-height: 44px;
+      }
+
+      .product-list__btn:focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+
+      /* Tablet: 768px and up */
+      @media (min-width: 768px) {
+        .product-list__grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+
+        .product-list__header {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 2rem;
+        }
+      }
+
+      /* Desktop: 1024px and up */
+      @media (min-width: 1024px) {
+        .product-list__grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        }
+
+        .product-list__title {
+          font-size: 2rem;
+        }
+      }
+
+      /* Large Desktop: 1280px and up */
+      @media (min-width: 1280px) {
+        .product-list__grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white font-sans">
+    <!-- Product List Section -->
+    <section
+      data-component="product-list"
+      data-currency="€"
+      class="product-list w-full px-4 sm:px-6 md:px-8 lg:px-12 py-8 md:py-12"
+      aria-labelledby="product-list-title"
+      role="region"
+    >
+      <!-- Header with Title and Add Button -->
+      <div class="product-list__header">
+        <h2 id="product-list-title" class="product-list__title js-title">Nuestros Productos</h2>
+
+        <button
+          type="button"
+          class="product-list__btn js-add-item bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 w-full sm:w-auto"
+          aria-label="Añadir un nuevo producto de demostración a la lista"
+        >
+          + Añadir Producto Demo
+        </button>
+      </div>
+
+      <!-- Products Grid Container -->
+      <div
+        class="product-list__grid js-grid"
+        role="list"
+        aria-live="polite"
+        aria-label="Lista de productos disponibles"
+      >
+        <!-- Los items se renderizarán aquí dinamicamente -->
+        <div class="product-list__item" role="listitem">
+          <span class="text-gray-500 text-sm italic">
+            Los productos aparecerán aquí después de hacer clic en "Añadir Producto Demo"
+          </span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

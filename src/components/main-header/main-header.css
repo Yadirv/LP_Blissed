@@ -191,6 +191,20 @@
   display: none;
 }
 
+/* Prevent accidental horizontal drag on mobile pages with header */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
 @media (max-width: 1023px) {
   .main-header {
     display: grid;
@@ -261,13 +275,14 @@
     gap: 0.75rem;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     bottom: 0;
     width: min(84vw, 340px);
     padding: 4.5rem 1.25rem 1.5rem;
     background: #ffffff;
     overflow-y: auto;
-    box-shadow: -14px 0 36px rgba(0, 0, 0, 0.18);
+    overscroll-behavior-x: contain;
+    box-shadow: 14px 0 36px rgba(0, 0, 0, 0.18);
     z-index: 1300;
   }
 
@@ -285,7 +300,7 @@
   .main-header.is-mobile-open .header-mobile-toggle {
     position: fixed;
     top: 1rem;
-    right: 1rem;
+    left: 1rem;
   }
 
   .main-header nav > a,
