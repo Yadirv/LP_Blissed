@@ -83,7 +83,7 @@ window.ComponentLoader.registerComponent("main-footer", (root) => {
         if (errorMsg)
           errorMsg.textContent =
             data.error ||
-            "Something went wrong. Please try again or contact support@blissedskin.us.";
+            "Something went wrong. Please try again or contact quickbuyvl@blissedskin.us.";
         setTimeout(() => setState("idle"), 6000);
       }
     } catch {
